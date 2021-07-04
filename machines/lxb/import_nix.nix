@@ -8,6 +8,8 @@
       ../../modules/binaryCaches.nix
       ../../modules/systemPackages.nix
       ../../modules/enable_flake.nix
+      ../../modules/network.nix
+      ../../users/lxb.nix
       ../../users/liuxb.nix
     ];
 }
