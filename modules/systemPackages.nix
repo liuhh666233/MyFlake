@@ -64,6 +64,13 @@
       gnomeExtensions.system-monitor
       gnome.gnome-weather
       gnomeExtensions.sound-output-device-chooser
+
+   # wine
+      wineWowPackages.stable
+      wine
+      (wine.override { wineBuild = "wine64"; })
+      wineWowPackages.staging
+      (winetricks.override { wine = wineWowPackages.staging; })
      
   ];
 }
