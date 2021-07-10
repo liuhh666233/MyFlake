@@ -33,8 +33,6 @@
       awscli2
       gftp
       zoom-us
-      p3x-onenote
-      notion
       dbeaver
       clickhouse-cli
       graphviz
