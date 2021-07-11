@@ -23,6 +23,7 @@
       unrar
       inetutils
       dpkg
+      ag
 
    # Work
       vscode
