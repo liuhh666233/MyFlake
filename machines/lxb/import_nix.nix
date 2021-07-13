@@ -9,6 +9,7 @@
       ../../modules/systemPackages.nix
       ../../modules/enable_flake.nix
       ../../modules/network.nix
+      ../../modules/service/clickhouse
       ../../users/lxb.nix
       ../../users/liuxb.nix
     ];
