@@ -44,7 +44,7 @@
 
    # Python
       python3
-      (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel pandas numpy systemd click Jinja2]))
+      (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel pandas numpy systemd click jinja2]))
 
    # C++
       gcc
