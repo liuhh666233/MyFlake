@@ -73,4 +73,13 @@
       (winetricks.override { wine = wineWowPackages.staging; })
      
   ];
+
+  environment.interactiveShellInit = ''
+        alias gs='git status'
+        alias ga='git add'
+        alias gc='git commit -m'
+        alias nu='nix flake lock --update-input '
+        alias nw='sudo nixos-rebuild switch --flake .#'
+        alias nm='nixos-rebuild build-vm --flake .#'
+    '';
 }
