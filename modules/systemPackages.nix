@@ -80,8 +80,8 @@
         alias gl='git log'
         alias gp='git push'
         alias gc='git commit -m'
-        alias nu='nix flake lock --update-input '
-        alias nw='sudo nixos-rebuild switch --flake .#'
-        alias nm='nixos-rebuild build-vm --flake .#'
+        alias nu='nix flake lock --update-input'
+        alias nw='sudo nixos-rebuild switch --flake'
+        alias nm='nixos-rebuild build-vm --flake'
     '';
 }
