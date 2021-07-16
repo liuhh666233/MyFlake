@@ -37,6 +37,7 @@
       dbeaver
       clickhouse-cli
       graphviz
+      mailspring
 
    # VPN
       v2ray
