@@ -29,7 +29,7 @@
         name = "nix-demo-env";
         
         buildInputs = with pkgs; [
-          (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel systemd ]))
+          (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel systemd autopep8 pip ]))
         ];
 
         shellHook = ''
