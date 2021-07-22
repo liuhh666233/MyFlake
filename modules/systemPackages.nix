@@ -45,7 +45,7 @@
 
    # Python
       python3
-      (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel pandas numpy systemd click jinja2 clickhouse-driver flask]))
+      (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel pandas numpy systemd click jinja2 clickhouse-driver flask autopep8 pip]))
 
    # C++
       gcc
