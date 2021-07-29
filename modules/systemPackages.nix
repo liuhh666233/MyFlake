@@ -24,6 +24,18 @@
       inetutils
       dpkg
       ag
+      tig
+      tmux
+      starship
+      fish
+      zsh-z
+      bat
+      tree
+      ncdu
+      ripgrep
+
+
+
 
    # Work
       vscode
