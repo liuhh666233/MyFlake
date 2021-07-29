@@ -34,9 +34,6 @@
       ncdu
       ripgrep
 
-
-
-
    # Work
       vscode
       google-chrome
@@ -93,8 +90,11 @@
         alias gl='git log'
         alias gp='git push'
         alias gc='git commit -m'
-        alias nu='nix flake lock --update-input'
-        alias nw='sudo nixos-rebuild switch --flake'
-        alias nm='nixos-rebuild build-vm --flake'
+        alias gb='git branch'
+        alias gd='git diff'
+        alias grep='ripgrep'
+        alias cat='bat'
+        alias cc='code -n'
+        alias gg='gedit'
     '';
 }
