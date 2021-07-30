@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users = {
@@ -8,6 +8,8 @@
      uid = 1001;
      home = "/home/lxb";
      description = "The user lxb.";
+     programs.fish.enable = true;
+     shell = pkgs.fish;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
    };
  };
