@@ -3,14 +3,14 @@
  # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   # Dedit
+    # Dedit
       vim
       neovim
       typora
       emacs
       zeal
 
-   # System
+    # System
       wget
       spotify
       ibus
@@ -34,7 +34,7 @@
       ncdu
       ripgrep
 
-   # Work
+    # Work
       vscode
       google-chrome
       git
@@ -48,15 +48,15 @@
       graphviz
       mailspring
 
-   # VPN
+    # VPN
       v2ray
       qv2ray
 
-   # Python
+    # Python
       python3
       (python38.withPackages(ps: with ps; [ jupyter jupyter_core notebook ipython ipykernel pandas numpy systemd click jinja2 clickhouse-driver flask autopep8 pip]))
 
-   # C++
+    # C++
       gcc
       gdb
       clang
@@ -66,7 +66,7 @@
       doxygen
       doxygen_gui
      
-   # Gnome extension
+    # Gnome extension
       chrome-gnome-shell
       gnome.gnome-tweak-tool
       gnomeExtensions.appindicator
@@ -75,12 +75,14 @@
       gnome.gnome-weather
       gnomeExtensions.sound-output-device-chooser
 
-   # wine
+    # wine
       wineWowPackages.stable
       wine
       (wine.override { wineBuild = "wine64"; })
       wineWowPackages.staging
       (winetricks.override { wine = wineWowPackages.staging; })
-     
+
+    # game
+      steam
   ];
 }
