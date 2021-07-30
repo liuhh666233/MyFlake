@@ -28,7 +28,7 @@
       tmux
       starship
       fish
-      zsh-z
+      z-lua
       bat
       tree
       ncdu
