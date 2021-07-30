@@ -83,18 +83,4 @@
       (winetricks.override { wine = wineWowPackages.staging; })
      
   ];
-
-  environment.interactiveShellInit = ''
-        alias gs='git status'
-        alias ga='git add'
-        alias gl='git log'
-        alias gp='git push'
-        alias gc='git commit -m'
-        alias gb='git branch'
-        alias gd='git diff'
-        alias grep='ripgrep'
-        alias cat='bat'
-        alias cc='code -n'
-        alias gg='gedit'
-    '';
 }
