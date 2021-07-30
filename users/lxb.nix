@@ -26,4 +26,8 @@
         "cc"="code -n";
         "gg"="gedit";
     };
+
+    programs.fish.shellInit = ''
+      source (${pkgs.z-lua}/bin/z --init fish | psub)
+    '';
 }
