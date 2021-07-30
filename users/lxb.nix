@@ -21,7 +21,7 @@
         "gc"="git commit -m";
         "gb"="git branch";
         "gd"="git diff";
-        "grep"="ripgrep";
+        "grep"="rg";
         "cat"="bat";
         "cc"="code -n";
         "gg"="gedit";
