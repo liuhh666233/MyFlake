@@ -33,6 +33,7 @@
       tree
       ncdu
       ripgrep
+      synergy
 
     # Work
       vscode
