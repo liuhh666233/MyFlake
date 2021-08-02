@@ -34,9 +34,7 @@
       ncdu
       ripgrep
       synergy
-      rdesktop
-      gtk-frdp
-      freerdp
+      remmina
 
 
     # Work
