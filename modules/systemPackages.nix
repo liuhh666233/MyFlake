@@ -74,6 +74,7 @@
     # Gnome extension
       chrome-gnome-shell
       gnome.gnome-tweak-tool
+      gnome.gnome-remote-desktop
       gnomeExtensions.appindicator
       gnomeExtensions.dash-to-dock
       gnomeExtensions.system-monitor
