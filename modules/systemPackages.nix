@@ -34,6 +34,8 @@
       ncdu
       ripgrep
       synergy
+      rdesktop
+      
 
     # Work
       vscode
