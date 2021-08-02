@@ -35,7 +35,8 @@
       ripgrep
       synergy
       rdesktop
-      
+      xrdp
+
 
     # Work
       vscode
