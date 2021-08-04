@@ -35,6 +35,7 @@
       ripgrep
       synergy
       remmina
+      borgbackup
 
 
     # Work
