@@ -23,6 +23,14 @@
             ./machines/lxb
           ];
         };
+
+        demo-vm = nixpkgs.lib.nixosSystem rec{
+          inherit system;
+          modules = [
+            ./machines/demo-vm
+          ];
+        };
+
       };
 
       devShell."${system}" = pkgs.mkShell rec {
