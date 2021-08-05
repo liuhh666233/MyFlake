@@ -30,29 +30,4 @@
     programs.fish.shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
     '';
-
-    services.borgbackup.repos = {
-        backup_repos = {
-            user = "lxb";
-            authorizedKeys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB//oIgJern4hluCMaQ3ZwCBb27yhjsWg6ZtAW/3lnDO root@nixos"
-            ] ;
-            path = "/var/lib/backup" ;
-        };
-    };
-
-    services.borgbackup.jobs = {
-            backupToLocalServer = {
-                paths = [ "/home/lxb/github" ];
-                doInit = true;
-                repo =  "lxb@nixos:." ;
-                encryption = {
-                    mode = "repokey-blake2";
-                    passCommand = "cat /run/keys/borgbackup_passphrase";
-                };
-                environment = { BORG_RSH = "ssh -i /run/keys/id_ed25519_backup"; };
-                compression = "auto,lzma";
-                startAt = "daily";
-            };
-        };
 }
