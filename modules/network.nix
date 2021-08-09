@@ -2,10 +2,13 @@
 
 {
         networking.useDHCP = false;
+        
         networking.hostName = "lxb";
-        networking.interfaces.enp0s.useDHCP = true;
-        networking.interfaces.wlp165s0.useDHCP = true;
+        # head -c 8 /etc/machine-id
+        networking.hostId = "8d885cfc";
 
+        networking.interfaces.wlp165s0.useDHCP = true;
+        
         nixpkgs.config.allowUnfree = true;
 
         services.openssh.enable = true;
