@@ -30,18 +30,4 @@
     programs.fish.shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
     '';
-
-    services.borgbackup.jobs = {
-        backupToLocalServer = {
-        paths = [ "/var/lib/wonder/warehouse/archive/" ];
-        doInit = true;
-        repo =  "lxb@bishop:backup" ;
-        encryption = {
-            mode = "repokey-blake2";
-            passCommand = "bishop";
-        };
-        compression = "auto,lzma";
-        startAt = "hourly";
-        };
-    };
 }
