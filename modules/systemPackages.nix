@@ -51,6 +51,7 @@
       clickhouse-cli
       graphviz
       mailspring
+      nixfmt
 
     # VPN
       v2ray
