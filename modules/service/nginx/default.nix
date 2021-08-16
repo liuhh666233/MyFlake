@@ -40,7 +40,19 @@
             worker_connections  1024;
         }
         ";
+    };
 
+    security.acme = {
+      acceptTerms = true;
+      email = "liuxiaobo666233@gmail.com";
+      certs  = {
+        "monitor.wondercapital.xyz" = {
+          webroot = "/var/lib/acme/monitor.wondercapital.xyz/";
+        };
+        "clickhouse.wondercapital.xyz" = {
+          webroot = "/var/lib/acme/clickhouse.wondercapital.xyz/";
+        };
+      };
     };
 
     networking.firewall.allowedTCPPorts = [ 10000 ];
