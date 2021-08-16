@@ -50,6 +50,7 @@
     graphviz
     mailspring
     nixfmt
+    sqlitebrowser
 
     # VPN
     v2ray
