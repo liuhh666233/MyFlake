@@ -7,17 +7,33 @@
       recommendedProxySettings = true;
       # Enable recommended TLS settings.
       recommendedTlsSettings = true;
-      virtualHosts."localhost" = {
-        listen = [{
-          addr = "0.0.0.0";
-          port = 10000;
-        }];
-        locations = {
-          "/" = { proxyPass = "http://localhost:5000"; };
-          "~ \"/monitor/(.*)\"" = { proxyPass = "http://localhost:5000/$1"; };
-          "~ \"/monitor2/(.*)\"" = { proxyPass = "http://localhost:5001/$1"; };
-        };
-      };
+
+      config = "
+      http {
+          server{
+              listen 10000;
+              location / {
+                proxy_pass http://192.168.110.161:10000;
+            }
+          }
+      }
+      stream {
+            upstream ssh {
+                server 192.168.110.161:22;
+                }
+            server { 
+                    listen 10000;
+                    server_name 127.0.0.1;
+                    proxy_pass ssh;
+                    proxy_connect_timeout 1h;
+                    proxy_timeout 1h;
+                    }
+        }
+      events {
+            worker_connections  1024;
+        }
+        ";
+
     };
 
     networking.firewall.allowedTCPPorts = [ 80 443 10000 ];
