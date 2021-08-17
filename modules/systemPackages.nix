@@ -51,6 +51,8 @@
     mailspring
     nixfmt
     sqlitebrowser
+    cloud-init
+    win-virtio
 
     # VPN
     v2ray
