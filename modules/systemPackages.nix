@@ -53,7 +53,8 @@
     sqlitebrowser
     cloud-init
     win-virtio
-    nixops
+    nixopsUnstable
+    # nixops
 
     # VPN
     v2ray
