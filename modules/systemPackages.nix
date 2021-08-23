@@ -54,8 +54,6 @@
     cloud-init
     win-virtio
     nixopsUnstable
-    boto
-    boto3
     # nixops
 
     # VPN
@@ -81,6 +79,8 @@
         autopep8
         pip
         pyyaml
+        boto
+        boto3
       ]))
 
     # C++
