@@ -54,6 +54,8 @@
     cloud-init
     win-virtio
     nixopsUnstable
+    boto
+    boto3
     # nixops
 
     # VPN
