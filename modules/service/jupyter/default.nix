@@ -39,7 +39,7 @@ in {
         User = cfg.user;
         Group = "users";
         ExecStart = ''
-          ${pkgs.jupyter}/bin/jupyter notebook  \
+          ${pkgs.jupyter}/bin/jupyter-notebook  \
           --no-browser --port ${toString cfg.port} --ip 0.0.0.0 
           --config ${cfg.configPath}
         '';
