@@ -8,8 +8,9 @@
     ../../modules/systemPackages.nix
     ../../modules/enable_flake.nix
     ../../modules/network.nix
+    ../../modules/service/jupyter
     ../../users/lxb.nix
     ../../users/liuxb.nix
   ];
-
+    
 }
