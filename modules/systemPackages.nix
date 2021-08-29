@@ -97,10 +97,12 @@
     chrome-gnome-shell
     gnome.gnome-tweak-tool
     gnome.gnome-remote-desktop
+    gnome.gnome-backgrounds
+    gnome.gnome-weather
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     gnomeExtensions.system-monitor
-    gnome.gnome-weather
+    gnomeExtensions.unlock-dialog-background
     gnomeExtensions.sound-output-device-chooser
 
   ];
