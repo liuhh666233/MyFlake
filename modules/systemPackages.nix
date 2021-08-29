@@ -81,6 +81,7 @@
         pyyaml
         boto
         boto3
+        pytz
       ]))
 
     # C++
