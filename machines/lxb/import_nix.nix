@@ -9,8 +9,9 @@
     ../../modules/enable_flake.nix
     ../../modules/network.nix
     ../../modules/service/jupyter
+    ../../modules/service/nginx
     ../../users/lxb.nix
     ../../users/liuxb.nix
   ];
-    
+
 }
