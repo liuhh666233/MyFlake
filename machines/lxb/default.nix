@@ -21,5 +21,7 @@
 
   vital.jupyter-notebook = { enable = true; };
 
+  virtualisation.docker.enable = true;
+
 }
 
