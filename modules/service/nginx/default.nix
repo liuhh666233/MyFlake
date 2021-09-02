@@ -1,4 +1,18 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  proxyConfig = { listenPort, proxyUrl, extraLocations ? { }, }: {
+    forceSSL = false;
+    enableACME = false;
+
+    basicAuth = { admin = "password"; };
+
+    listen = [{
+      addr = "0.0.0.0";
+      port = listenPort;
+    }];
+    locations = { "/" = { proxyPass = proxyUrl; }; } // extraLocations;
+  };
+in {
   config = {
 
     services.nginx = {
@@ -7,52 +21,14 @@
       recommendedProxySettings = true;
       # Enable recommended TLS settings.
       recommendedTlsSettings = true;
+      # Enable recommended optimisation settings.
+      recommendedOptimisation = true;
 
-      config = "
-      http {
-          server{
-              listen 10000;
-              server_name monitor.wondercapital.xyz;
-              location / {
-                proxy_pass http://192.168.110.161:10000;
-            }
-          }
-          server{
-              listen 10000;
-              server_name clickhouse.wondercapital.xyz;
-              location / {
-                proxy_pass http://192.168.110.161:9001;
-            }
-          }
-      }
-      stream {
-            upstream ssh {
-                server 192.168.110.161:22;
-                }
-            server { 
-                    listen 9000;
-                    proxy_pass ssh;
-                    proxy_connect_timeout 1h;
-                    proxy_timeout 1h;
-                    }
-        }
-      events {
-            worker_connections  1024;
-        }
-        ";
-    };
-
-    security.acme = {
-      acceptTerms = true;
-      email = "liuxiaobo666233@gmail.com";
-      certs  = {
-        "monitor.wondercapital.xyz" = {
-          webroot = "/var/lib/acme/monitor.wondercapital.xyz/";
-        };
-        "clickhouse.wondercapital.xyz" = {
-          webroot = "/var/lib/acme/clickhouse.wondercapital.xyz/";
-        };
+      virtualHosts."127.0.0.1" = proxyConfig {
+        listenPort = 10000;
+        proxyUrl = "http://localhost:5000";
       };
+
     };
 
     networking.firewall.allowedTCPPorts = [ 10000 ];
