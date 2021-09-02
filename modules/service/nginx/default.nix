@@ -4,7 +4,7 @@ let
     forceSSL = false;
     enableACME = false;
 
-    basicAuth = { admin = "password"; };
+    basicAuthFile = ./admin;
 
     listen = [{
       addr = "0.0.0.0";
@@ -26,7 +26,7 @@ in {
 
       virtualHosts."127.0.0.1" = proxyConfig {
         listenPort = 10000;
-        proxyUrl = "http://localhost:5000";
+        proxyUrl = "http://localhost:5555";
       };
 
     };
