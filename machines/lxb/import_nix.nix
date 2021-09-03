@@ -10,7 +10,7 @@
     ../../modules/network.nix
     ../../modules/service/jupyter
     ../../modules/service/nginx
-    ../../modules/github-runner
+    ../../modules/service/github-runner
     ../../users/lxb.nix
     ../../users/liuxb.nix
   ];
