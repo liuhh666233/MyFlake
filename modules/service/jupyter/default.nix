@@ -29,6 +29,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+
     systemd.services.jupyter-notebook = {
       description = "Long running Jupyter notebook server.";
       after = [ "network.target" ];
@@ -40,7 +41,7 @@ in {
         Group = "users";
         ExecStart = ''
           ${pkgs.jupyter}/bin/jupyter-notebook  \
-          --no-browser --port ${toString cfg.port} --ip 0.0.0.0 
+          --no-browser --port ${toString cfg.port} --ip 0.0.0.0 \
           --config ${cfg.configPath}
         '';
       };
