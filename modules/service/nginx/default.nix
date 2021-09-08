@@ -23,7 +23,6 @@ in {
       recommendedTlsSettings = true;
       # Enable recommended optimisation settings.
       recommendedOptimisation = true;
-
       virtualHosts."127.0.0.1" = {
         forceSSL = false;
         enableACME = false;
@@ -31,28 +30,15 @@ in {
           addr = "0.0.0.0";
           port = 10000;
         }];
+
         locations = {
           "/" = {
-            proxyPass = "http://192.168.110.15";
+            proxyPass = "http://192.168.110.15:3000";
             extraConfig = ''
-              ### force timeouts if one of backend is died ##
-              proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
-
-              ### Set headers ####
-              proxy_set_header        Accept-Encoding   "";
-              proxy_set_header        Host            $host;
-              proxy_set_header        X-Real-IP       $remote_addr;
-              proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-
-              ### Most PHP, Python, Rails, Java App can use this header ###
-              #proxy_set_header X-Forwarded-Proto https;##
-              #This is better##
-              proxy_set_header        X-Forwarded-Proto $scheme;
-              add_header              Front-End-Https   on;
-
-              ### By default we don't want to redirect it ####
-              proxy_redirect     off;
-                  '';
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            '';
           };
         };
       };
