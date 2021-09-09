@@ -26,16 +26,16 @@ in {
       virtualHosts."127.0.0.1" = {
         forceSSL = false;
         enableACME = false;
-        # listen = [{
-        #   addr = "0.0.0.0";
-        #   port = 10000;
-        # }];
+        listen = [{
+          addr = "0.0.0.0";
+          port = 10000;
+        }];
 
         locations = {
           "/" = {
-            proxyPass = "http://192.168.110.15";
             extraConfig = ''
-              proxy_set_header Host $http_host;
+              proxy_pass http://192.168.110.15;
+              proxy_set_header Host $host;
               proxy_set_header X-Real-IP $remote_addr;
               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             '';
