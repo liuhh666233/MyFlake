@@ -34,31 +34,8 @@ in {
       description = "Long running Jupyter notebook server.";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
-      path = with pkgs;
-        [
-          (python38.withPackages (ps:
-            with ps; [
-              jupyter
-              jupyter_core
-              notebook
-              ipython
-              ipykernel
-              pandas
-              numpy
-              systemd
-              click
-              jinja2
-              clickhouse-driver
-              flask
-              autopep8
-              pip
-              pyyaml
-              boto
-              boto3
-              pytz
-            ]))
-
-        ];
+      path = with pkgs; [ bash python ];
+      #   TODO"https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/development/jupyter/default.nix"
       serviceConfig = {
         Type = "simple";
         User = cfg.user;
