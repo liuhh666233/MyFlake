@@ -54,6 +54,7 @@
     cloud-init
     win-virtio
     nixopsUnstable
+    hydra-check-latest
     # nixops
 
     # VPN
