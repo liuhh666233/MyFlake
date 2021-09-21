@@ -3,9 +3,6 @@ let
   proxyConfig = { listenPort, proxyUrl, extraLocations ? { }, }: {
     forceSSL = false;
     enableACME = false;
-
-    # basicAuthFile = ./admin;
-
     listen = [{
       addr = "0.0.0.0";
       port = listenPort;
@@ -23,26 +20,11 @@ in {
       recommendedTlsSettings = true;
       # Enable recommended optimisation settings.
       recommendedOptimisation = true;
-      virtualHosts."127.0.0.1" = {
-        forceSSL = false;
-        enableACME = false;
-        listen = [{
-          addr = "0.0.0.0";
-          port = 10000;
-        }];
 
-        locations = {
-          "/" = {
-            extraConfig = ''
-              proxy_pass http://192.168.110.15:3000;
-              proxy_set_header Host $host:10000;
-              proxy_set_header X-Real-IP $remote_addr;
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            '';
-          };
-        };
+      virtualHosts."127.0.0.1" = proxyConfig {
+        listenPort = 10000;
+        proxyUrl = "http://127.0.0.1:5555";
       };
-
     };
 
     networking.firewall.allowedTCPPorts = [ 10000 ];
