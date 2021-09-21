@@ -75,11 +75,12 @@ in {
 
     systemd.services.jupyter-notebook = {
       description = "Long running Jupyter notebook server.";
+
       after = [ "network.target" ];
 
       wantedBy = [ "multi-user.target" ];
 
-      path = with pkgs; [ bash python ];
+      path = [ pkgs.bash ];
 
       environment = { JUPYTER_PATH = toString kernels; };
 
