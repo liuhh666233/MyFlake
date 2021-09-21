@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -54,7 +54,6 @@
     cloud-init
     win-virtio
     nixopsUnstable
-    hydra-check-latest
     # nixops
 
     # VPN
@@ -109,45 +108,42 @@
 
   ];
 
-  service.vital.jupyter-notebook = {
-    kernels = literalExample ''
-      {
-        python3 = let
-          env = (pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
-                        jupyter
-                        jupyter_core
-                        notebook
-                        ipython
-                        ipykernel
-                        pandas
-                        numpy
-                        systemd
-                        click
-                        jinja2
-                        clickhouse-driver
-                        flask
-                        autopep8
-                        pip
-                        pyyaml
-                        boto
-                        boto3
-                        pytz
-                ]));
-        in {
-          displayName = "Python 3 for machine learning";
-          argv = [
-            "''${env.interpreter}"
-            "-m"
-            "ipykernel_launcher"
-            "-f"
-            "{connection_file}"
-          ];
-          language = "python";
-          logo32 = "''${env.sitePackages}/ipykernel/resources/logo-32x32.png";
-          logo64 = "''${env.sitePackages}/ipykernel/resources/logo-64x64.png";
-        };
-      }
-    '';
+  vital.jupyter-notebook = with lib; {
+    kernels = {
+      python3 = let
+        env = (pkgs.python3.withPackages (pythonPackages:
+          with pythonPackages; [
+            jupyter
+            jupyter_core
+            notebook
+            ipython
+            ipykernel
+            pandas
+            numpy
+            systemd
+            click
+            jinja2
+            clickhouse-driver
+            flask
+            autopep8
+            pip
+            pyyaml
+            boto
+            boto3
+            pytz
+          ]));
+      in {
+        displayName = "Python 3 for machine learning";
+        argv = [
+          "''${env.interpreter}"
+          "-m"
+          "ipykernel_launcher"
+          "-f"
+          "{connection_file}"
+        ];
+        language = "python";
+      };
+    };
   };
 
 }
