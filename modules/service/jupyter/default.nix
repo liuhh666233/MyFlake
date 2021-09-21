@@ -10,7 +10,6 @@
       "argon2:$argon2id$v=19$m=10240,t=10,p=8$OEgjjTojGX8e+bmi431VBg$WjUsHTZdM2EOIjpwgn5dXw";
     notebookConfig = ''
       c.NotebookApp.allow_remote_access = True
-      c.NotebookApp.password = \'\'
           '';
     kernels = {
       python3 = let
