@@ -1,14 +1,21 @@
 { config, pkgs, ... }:
 let
-  proxyConfig = { listenPort, proxyUrl, extraLocations ? { }, }: {
-    forceSSL = false;
-    enableACME = false;
-    listen = [{
-      addr = "0.0.0.0";
-      port = listenPort;
-    }];
-    locations = { "/" = { proxyPass = proxyUrl; }; } // extraLocations;
-  };
+  proxyConfig = { listenPort, proxyUrl ? null, extraLocations ? { }
+    , extraConfig ? "", authFile ? null, }: {
+      forceSSL = false;
+      enableACME = false;
+      basicAuthFile = authFile;
+      listen = [{
+        addr = "0.0.0.0";
+        port = listenPort;
+      }];
+      locations = {
+        "/" = {
+          proxyPass = proxyUrl;
+          extraConfig = extraConfig;
+        };
+      } // extraLocations;
+    };
 in {
   config = {
 
@@ -21,29 +28,20 @@ in {
       # Enable recommended optimisation settings.
       recommendedOptimisation = true;
 
+      # nginx 代理jupyter notebook  
       virtualHosts."127.0.0.1" = proxyConfig {
         listenPort = 10000;
-        proxyUrl = "http://127.0.0.1:5555";
-        extraLocations = {
-          "~ /api/kernels/" = {
-            proxyPass = "http://127.0.0.1:5555";
-            extraConfig = ''
-              proxy_http_version    1.1;
-              proxy_set_header      Upgrade "websocket";
-              proxy_set_header      Connection "Upgrade";
-              proxy_read_timeout    86400;
-            '';
-          };
-          "~ /terminals/" = {
-            proxyPass = "http://127.0.0.1:5555";
-            extraConfig = ''
-              proxy_http_version    1.1;
-              proxy_set_header      Upgrade "websocket";
-              proxy_set_header      Connection "Upgrade";
-              proxy_read_timeout    86400;
-            '';
-          };
-        };
+        extraConfig = ''
+          proxy_pass http://127.0.0.1:5555;
+          proxy_set_header Host $host:10000;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+          proxy_http_version    1.1;
+          proxy_set_header      Upgrade "websocket";
+          proxy_set_header      Connection "Upgrade";
+          proxy_read_timeout    86400;
+        '';
       };
     };
 
