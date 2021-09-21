@@ -26,7 +26,7 @@ in {
         proxyUrl = "http://127.0.0.1:5555";
         extraLocations = {
           "~ /api/kernels/" = {
-            proxyPass = "http://localhost:7777";
+            proxyPass = "http://127.0.0.1:5555";
             extraConfig = ''
               proxy_http_version    1.1;
               proxy_set_header      Upgrade "websocket";
@@ -35,7 +35,7 @@ in {
             '';
           };
           "~ /terminals/" = {
-            proxyPass = "http://localhost:7777";
+            proxyPass = ""http://127.0.0.1:5555";
             extraConfig = ''
               proxy_http_version    1.1;
               proxy_set_header      Upgrade "websocket";
