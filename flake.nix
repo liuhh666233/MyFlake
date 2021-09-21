@@ -3,9 +3,8 @@
   description = "All of our deployment, period";
 
   inputs = {
+      
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
-
-    hydra-check-latest.url = "git+ssh://git@github.com/liuhh666233/hydra-check";
 
   };
 
@@ -23,10 +22,6 @@
           inherit system;
           modules = [
             ./machines/lxb
-            (final: prev: {
-              hydra-check-latest =
-                inputs.hydra-check-latest.defaultPackage."${system}";
-            })
           ];
         };
 
