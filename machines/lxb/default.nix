@@ -19,8 +19,6 @@
   services.gnome.gnome-remote-desktop.enable = true;
   system.stateVersion = "21.05";
 
-  vital.jupyter-notebook = { enable = true; };
-
   virtualisation.docker.enable = true;
 
 }

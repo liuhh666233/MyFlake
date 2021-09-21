@@ -107,43 +107,4 @@
     gnomeExtensions.sound-output-device-chooser
 
   ];
-
-  vital.jupyter-notebook = with lib; {
-    kernels = {
-      python3 = let
-        env = (pkgs.python3.withPackages (pythonPackages:
-          with pythonPackages; [
-            jupyter
-            jupyter_core
-            notebook
-            ipython
-            ipykernel
-            pandas
-            numpy
-            systemd
-            click
-            jinja2
-            clickhouse-driver
-            flask
-            autopep8
-            pip
-            pyyaml
-            boto
-            boto3
-            pytz
-          ]));
-      in {
-        displayName = "Python 3 for machine learning";
-        argv = [
-          "''${env.interpreter}"
-          "-m"
-          "ipykernel_launcher"
-          "-f"
-          "{connection_file}"
-        ];
-        language = "python";
-      };
-    };
-  };
-
 }
