@@ -24,6 +24,26 @@ in {
       virtualHosts."127.0.0.1" = proxyConfig {
         listenPort = 10000;
         proxyUrl = "http://127.0.0.1:5555";
+        extraLocations = {
+          "~ /api/kernels/" = {
+            proxyPass = "http://localhost:7777";
+            extraConfig = ''
+              proxy_http_version    1.1;
+              proxy_set_header      Upgrade "websocket";
+              proxy_set_header      Connection "Upgrade";
+              proxy_read_timeout    86400;
+            '';
+          };
+          "~ /terminals/" = {
+            proxyPass = "http://localhost:7777";
+            extraConfig = ''
+              proxy_http_version    1.1;
+              proxy_set_header      Upgrade "websocket";
+              proxy_set_header      Connection "Upgrade";
+              proxy_read_timeout    86400;
+            '';
+          };
+        };
       };
     };
 
