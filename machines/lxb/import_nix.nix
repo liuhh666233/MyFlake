@@ -11,6 +11,7 @@
     ../../modules/service/jupyter
     ../../modules/service/nginx
     ../../modules/service/github-runner
+    ../../modules/service/monitoring/grafana.nix
     ../../users/lxb.nix
     ../../users/liuxb.nix
   ];
