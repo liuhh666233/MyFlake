@@ -13,6 +13,7 @@ scrape_configs:
     journal:
       labels:
         job: systemd-journal
+      max_age: 24h
       path: /var/log/journal
     relabel_configs:
     - source_labels:
