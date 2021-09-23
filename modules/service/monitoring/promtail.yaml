@@ -36,7 +36,7 @@ scrape_configs:
     pipeline_stages:
       - timestamp:
           format: RFC3339Nano
-          location: "CST"
+          location: "Asia/Shanghai"
           source: ts
       - template:
           source: level
