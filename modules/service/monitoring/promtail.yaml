@@ -11,19 +11,6 @@ clients:
 scrape_configs:
   - job_name: journal
     journal:
-      pipeline_stages:
-        stages:
-        - regex:
-          expression: '.*level=(?P<level>[a-zA-Z]+).*ts=(?P<timestamp>[T\d-:.Z]*).*component=(?P<component>[a-zA-Z]+)'
-        - labels:
-          level:
-          component:
-        - timestamp:
-          format: RFC3339Nano
-          source: timestamp
-        - drop:
-          source: __journal__systemd_unit
-          regex: ".*loki.service.*"
       labels:
         job: systemd-journal
       max_age: 24h
@@ -45,4 +32,12 @@ scrape_configs:
     - source_labels:
       - __journal__transport
       target_label: transport
+
+    pipeline_stages:
+      - match:
+        selector: '{job="systemd-journal"}'
+        stages:
+        - drop:
+          source: syslog_identifier
+          regex: ".*[loki.service|prometheus-node-exporter.service].*"
     
