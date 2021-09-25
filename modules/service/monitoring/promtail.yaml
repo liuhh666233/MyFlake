@@ -58,11 +58,10 @@ scrape_configs:
             - labels:
                 level:
                 archiver_job:
-            - timestamp:
-                source: time
-                format: RFC3339Nano
-            - output:
-                source: conclusion
+                conclusion:
+            # - timestamp:
+            #     source: time
+            #     format: RFC3339Nano
       - match:
           selector: '{syslog_identifier="promtail"} |~ ".*noisy error.*"'
           action: drop
