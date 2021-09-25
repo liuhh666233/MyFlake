@@ -6,6 +6,13 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
 
+    vitalpkgs.url = "github:nixvital/vitalpkgs";
+    vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Use vital-modules, with the same nixpkgs
+    vital-modules.url = "github:nixvital/vital-modules";
+    vital-modules.inputs.nixpkgs.follows = "nixpkgs";
+
     datawarehouse.url =
       "git+ssh://git@github.com/quant-wonderland/data-warehouse?rev=f2a4e59189a65aa4293692d2774d69d745c39b68";
     datawarehouse.inputs.nixpkgs.follows = "nixpkgs";
