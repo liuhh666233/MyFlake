@@ -56,7 +56,6 @@ scrape_configs:
                 # ^(\s?)(\[\S+\s?\S+\])(\s?)(\[(error|info)\])(\s?)(.*)$
                 expression: "^(\\s?)\\[(?P<time>\\S+\\s?\\S+)\\](\\s?)\\[(?P<level>(info|warning|error))\\](\\s?)(.*JSY::Archive::(?P<archiver_job>\\S+\\s?\\S+)'(.*conclusion = (?P<conclusion>.*))?)?.*$"
             - labels:
-                time:
                 level:
                 archiver_job:
       - match:
