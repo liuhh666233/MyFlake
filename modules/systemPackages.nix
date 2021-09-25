@@ -83,6 +83,8 @@
         boto3
         pytz
       ]))
+    # GO
+    go
 
     # C++
     gcc
