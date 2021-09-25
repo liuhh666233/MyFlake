@@ -1,14 +1,16 @@
-{ config, pkgs, ... }: 
-{ nix = {
-    binaryCaches = [ 
+{ config, pkgs, ... }: {
+  nix = {
+    binaryCaches = [
+      "http://192.168.110.15:5000/"
       "https://cache.nixos.org/"
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];
     trustedBinaryCaches = [
-     "https://cache.nixos.org/"
-     "https://mirror.sjtu.edu.cn/nix-channels/store"
-     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store/"
-   ];
+      "http://192.168.110.15:5000/"
+      "https://cache.nixos.org/"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store/"
+    ];
   };
 }

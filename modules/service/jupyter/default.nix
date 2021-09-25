@@ -13,6 +13,10 @@
       python3 = let
         env = (pkgs.python3.withPackages (pythonPackages:
           with pythonPackages; [
+            jupyter
+            jupyter_core
+            notebook
+            ipython
             ipykernel
             pandas
             scikitlearn
@@ -28,6 +32,7 @@
             boto
             boto3
             pytz
+            matplotlib
           ]));
       in {
         displayName = "Python 3";
