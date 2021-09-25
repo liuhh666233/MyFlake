@@ -3,8 +3,12 @@
   description = "All of our deployment, period";
 
   inputs = {
-      
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+
+    datawarehouse.url =
+      "git+ssh://git@github.com/quant-wonderland/data-warehouse?rev=f2a4e59189a65aa4293692d2774d69d745c39b68";
+    datawarehouse.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
@@ -22,6 +26,14 @@
           inherit system;
           modules = [
             ./machines/lxb
+            ({
+              nixpkgs.overlays = [
+                (final: prev: {
+                  warehouse = inputs.datawarehouse.defaultPackage."${system}";
+                })
+              ];
+            })
+
           ];
         };
 

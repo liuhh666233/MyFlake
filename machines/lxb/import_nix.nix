@@ -14,6 +14,7 @@
     ../../modules/service/monitoring/grafana.nix
     ../../modules/service/monitoring/prometheus.nix
     ../../modules/service/monitoring/loki.nix
+    ../../modules/service/jsy-archiver
     ../../users/lxb.nix
     ../../users/liuxb.nix
   ];
