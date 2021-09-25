@@ -37,6 +37,9 @@
               nixpkgs.overlays = [
                 (final: prev: {
                   warehouse = inputs.datawarehouse.defaultPackage."${system}";
+
+                  dp-webui =
+                    inputs.datawarehouse.inputs.data-pipeline-webui-flake.defaultPackage."${system}";
                 })
               ];
             })
