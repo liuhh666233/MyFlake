@@ -53,7 +53,7 @@ in {
         }];
         locations."/" = {
           proxyPass =
-            "http://127.0.0.1}:${toString config.services.grafana.port}";
+            "http://127.0.0.1:${toString config.services.grafana.port}";
           proxyWebsockets = true;
         };
       };
