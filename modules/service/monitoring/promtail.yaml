@@ -59,7 +59,6 @@ scrape_configs:
                 time:
                 level:
                 archiver_job:
-                conclusion:
       - match:
           selector: '{syslog_identifier="promtail"} |~ ".*noisy error.*"'
           action: drop
