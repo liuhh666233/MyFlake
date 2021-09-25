@@ -11,6 +11,7 @@ clients:
 scrape_configs:
   - job_name: journal
     journal:
+      # json: true
       labels:
         job: systemd-journal
       max_age: 24h
@@ -34,16 +35,34 @@ scrape_configs:
         target_label: transport
 
     pipeline_stages:
-      - timestamp:
-          format: RFC3339Nano
-          location: "Asia/Shanghai"
-          source: ts
-      - template:
-          source: level
-          template: '{{ if eq .Value "0" }}{{ Replace .Value "0" "emerg" 1 }}{{ else if eq .Value "1" }}{{ Replace .Value "1" "alert" 1 }}{{ else if eq .Value "2" }}{{ Replace .Value "2" "crit" 1 }}{{ else if eq .Value "3" }}{{ Replace .Value "3" "err" 1 }}{{ else if eq .Value "4" }}{{ Replace .Value "4" "warning" 1 }}{{ else if eq .Value "5" }}{{ Replace .Value "5" "notice" 1 }}{{ else if eq .Value "6" }}{{ Replace .Value "6" "info" 1 }}{{ else if eq .Value "7" }}{{ Replace .Value "7" "debug" 1 }}{{ end }}'
-      - labels:
-          level:
+      # - timestamp:
+      #     format: RFC3339Nano
+      #     location: "Asia/Shanghai"
+      #     source: ts
+      # - template:
+      #     source: level
+      #     template: '{{ if eq .Value "0" }}{{ Replace .Value "0" "emerg" 1 }}{{ else if eq .Value "1" }}{{ Replace .Value "1" "alert" 1 }}{{ else if eq .Value "2" }}{{ Replace .Value "2" "crit" 1 }}{{ else if eq .Value "3" }}{{ Replace .Value "3" "err" 1 }}{{ else if eq .Value "4" }}{{ Replace .Value "4" "warning" 1 }}{{ else if eq .Value "5" }}{{ Replace .Value "5" "notice" 1 }}{{ else if eq .Value "6" }}{{ Replace .Value "6" "info" 1 }}{{ else if eq .Value "7" }}{{ Replace .Value "7" "debug" 1 }}{{ end }}'
+      # - labels:
+      #     level:
       # 过滤系统服务日志
       - drop:
           source: syslog_identifier
           expression: ".*(ModemManager|accounts-daemon|cupsd|dbus-daemon|dbus-send|dhcpcd|dnsmasq|dnsmasq-dhcp|gpg-agent|kernel|nscd|polkitd|wpa_supplicant).*"
+      - match:
+          selector: '{systemd_unit="jsy-archiver.service"}'
+          action: keep
+          stages:
+            - regex:
+                # ^(\s?)(\[\S+\s?\S+\])(\s?)(\[(error|info)\])(\s?)(.*)$
+                expression: "^(\\s?)\\[(?P<time>\\S+\\s?\\S+)\\](\\s?)\\[(?P<level>(info|warning|error))\\](\\s?)(.*JSY::Archive::(?P<archiver_job>\\S+\\s?\\S+)'(.*conclusion = (?P<conclusion>.*))?)?.*$"
+            - labels:
+                time:
+                level:
+            - output:
+              source: archiver_job
+            - output:
+              source: conclusion
+      - match:
+          selector: '{syslog_identifier="promtail"} |~ ".*noisy error.*"'
+          action: drop
+          drop_counter_reason: promtail_noisy_error
