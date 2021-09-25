@@ -59,6 +59,7 @@
     # VPN
     v2ray
     qv2ray
+    clash
 
     # Python
     python3
