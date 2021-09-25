@@ -43,6 +43,20 @@ in {
           proxy_read_timeout    86400;
         '';
       };
+
+      virtualHosts."192.168.0.110" = {
+        forceSSL = false;
+        enableACME = false;
+        listen = [{
+          addr = "0.0.0.0";
+          port = 10001;
+        }];
+        locations."/" = {
+          proxyPass =
+            "http://127.0.0.1}:${toString config.services.grafana.port}";
+          proxyWebsockets = true;
+        };
+      };
     };
 
     networking.firewall.allowedTCPPorts = [ 10000 ];
