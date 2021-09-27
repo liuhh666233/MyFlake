@@ -4,16 +4,15 @@ let
   regex-components = import ./regex-component.nix;
 
   promtail-config = pkgs.callPackage ./config {
-    lokiHttpAddress = static-ip-config.sisyphus;
+    lokiHttpAddress = static-ip-config.localhost;
     lokiHttpPort = 3100;
     httpPort = 28183;
     excludeServicesRegex = regex-components.excludeServicesRegex;
-    jsyArchiverLogRegex = regex-components.logRegexSet.jsy-archiver; 
-    windImporterLogRegex= regex-components.logRegexSet.jsy-importer; 
-    jsyImporterLogRegex= regex-components.logRegexSet.wind-importer; 
+    jsyArchiverLogRegex = regex-components.logRegexSet.jsy-archiver;
+    windImporterLogRegex = regex-components.logRegexSet.jsy-importer;
+    jsyImporterLogRegex = regex-components.logRegexSet.wind-importer;
   };
-in
-{
+in {
   systemd.services.promtail = {
     description = "Promtail service for Loki";
     wantedBy = [ "multi-user.target" ];
