@@ -13,7 +13,8 @@
     ../../modules/service/github-runner
     ../../modules/service/monitoring/grafana.nix
     ../../modules/service/monitoring/prometheus.nix
-    ../../modules/service/monitoring/loki.nix
+    ../../modules/service/monitoring/loki
+    ../../modules/service/monitoring/promtail
     ../../modules/service/jsy-archiver
     ../../modules/service/redis
     ../../users/lxb.nix
