@@ -4,6 +4,7 @@
     port = 6379;
     openFirewall = true;
     bind = "127.0.0.1";
+    vmOverCommit = true;
     appendOnly = true;
     logLevel = "notice";
     databases = 16;
