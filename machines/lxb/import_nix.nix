@@ -16,7 +16,7 @@
     ../../modules/service/monitoring/loki
     ../../modules/service/monitoring/promtail
     ../../modules/service/jsy-archiver
-    # ../../modules/service/redis
+    ../../modules/service/redis
     ../../users/lxb.nix
     ../../users/liuxb.nix
   ];
