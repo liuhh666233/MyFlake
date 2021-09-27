@@ -9,8 +9,8 @@ let
     httpPort = 28183;
     excludeServicesRegex = regex-components.excludeServicesRegex;
     jsyArchiverLogRegex = regex-components.logRegexSet.jsy-archiver;
-    windImporterLogRegex = regex-components.logRegexSet.jsy-importer;
-    jsyImporterLogRegex = regex-components.logRegexSet.wind-importer;
+    windImporterLogRegex = regex-components.logRegexSet.wind-importer;
+    jsyImporterLogRegex = regex-components.logRegexSet.jsy-importer;
   };
 in {
   systemd.services.promtail = {
