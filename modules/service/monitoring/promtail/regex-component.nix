@@ -39,7 +39,7 @@ rec {
       "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
     #  格式： Job 'WindIndexWeightDeriverJob 2021-09-26' | Job 'WindDailyImporterJob /var/lib/wonder/warehouse/raw/wind/__DATA__/AShareCapitalization 2021-09-26'
     wind-importer =
-      "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?(${escaping}S+)?${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
+      "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+(${escaping}s?(/var/lib/wonder/warehouse/raw/wind/__DATA__/${escaping}S+)?${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping})?'";
   };
 
   # 匹配任务运行结果 
