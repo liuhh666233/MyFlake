@@ -8,6 +8,6 @@
     databases = 16;
     maxclients = 10000;
     save = [ [ 900 1 ] [ 300 10 ] [ 60 10000 ] ];
-    settings = { dir = lib.mkForce "/var/lib/wonder/warehouse/redis"; };
+    # settings = { dir = lib.mkForce "/var/lib/wonder/warehouse/redis"; };
   };
 }
