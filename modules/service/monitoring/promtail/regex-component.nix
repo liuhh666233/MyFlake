@@ -6,11 +6,11 @@ rec {
   # 匹配服务日志 
   logRegexSet = {
     jsy-archiver =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*${any-chars}(${jobNameRegexSet.jsy-archiver})?${any-chars}(${conclusionRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-archiver})?${escaping}s*(${conclusionRegexSet.datapipeline})?${any-chars}$";
     jsy-importer =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*${any-chars}(${jobNameRegexSet.jsy-importer})?${any-chars}(${conclusionRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-importer})?${escaping}s*(${conclusionRegexSet.datapipeline})?${any-chars}$";
     wind-importer =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*${any-chars}(${jobNameRegexSet.wind-importer})?${any-chars}(${conclusionRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.wind-importer})?${escaping}s*(${conclusionRegexSet.datapipeline})?${any-chars}$";
   };
 
   # 匹配日志时间 
@@ -33,20 +33,20 @@ rec {
   jobNameRegexSet = {
     #  格式：'JSY::Archive::PriceDBDaily 2021-09-24'
     jsy-archiver =
-      "${escaping}'JSY::Archive::(?P<archiver_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}'";
+      "(Spawned job|Job)${escaping}s?${escaping}'JSY::Archive::(?P<archiver_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
     #  格式：Job 'JsyMinBarArcImporterDaily 2021-09-24'
     jsy-importer =
-      "(job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}'";
+      "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
     #  格式： Job 'WindIndexWeightDeriverJob 2021-09-26' | Job 'WindDailyImporterJob /var/lib/wonder/warehouse/raw/wind/__DATA__/AShareCapitalization 2021-09-26'
     wind-importer =
-      "(job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?(${escaping}S+)?${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}'";
+      "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?(${escaping}S+)?${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
   };
 
   # 匹配任务运行结果 
   conclusionRegexSet = {
     # 格式：conclusion = OK | conclusion = ALREADY_EXISTS: Output file '/var/lib/wonder/warehouse/archive/price_db/2021/09/24.arc' exists
     datapipeline =
-      "conclusion =${escaping}s?(?P<conclusion>(OK|${escaping}S+:))s?";
+      "${escaping}s?is completed, conclusion =${escaping}s?(?P<conclusion>(OK|${escaping}S+:))${escaping}s?";
   };
 
   #  匹配任意多个字符
