@@ -33,7 +33,7 @@ rec {
   jobNameRegexSet = {
     #  格式：'JSY::Archive::PriceDBDaily 2021-09-24'
     jsy-archiver =
-      "(${escaping}'JSY::Archive::(?P<archiver_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}'";
+      "${escaping}'JSY::Archive::(?P<archiver_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}'";
     #  格式：Job 'JsyMinBarArcImporterDaily 2021-09-24'
     jsy-importer =
       "(job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}'";
