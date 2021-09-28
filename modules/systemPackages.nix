@@ -83,6 +83,7 @@
         boto
         boto3
         pytz
+        websockets
       ]))
     # GO
     go

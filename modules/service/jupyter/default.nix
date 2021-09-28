@@ -33,6 +33,7 @@
             boto3
             pytz
             matplotlib
+            websockets
           ]));
       in {
         displayName = "Python 3";
