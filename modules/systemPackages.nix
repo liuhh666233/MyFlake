@@ -87,6 +87,7 @@
       ]))
     # GO
     go
+    gophernotes
 
     # C++
     gcc
