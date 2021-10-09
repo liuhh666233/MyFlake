@@ -10,6 +10,10 @@
           enabledCollectors = [ "systemd" ];
           port = 9002;
         };
+        apcupsd = {
+          enable = true;
+          port = 9162;
+        };
       };
       # configure Prometheus to read metrics from this exporter
       scrapeConfigs = [{
@@ -19,6 +23,10 @@
             "127.0.0.1:${
               toString config.services.prometheus.exporters.node.port
             }"
+            "127.0.0.1:${
+              toString config.services.prometheus.exporters.apcupsd.port
+            }"
+
           ];
         }];
       }];
