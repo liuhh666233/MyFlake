@@ -30,6 +30,7 @@
             ];
           }];
         }
+        # Add test python exporter
         {
           job_name = "test";
           static_configs = [{ targets = [ "127.0.0.1:${toString 8000}" ]; }];
