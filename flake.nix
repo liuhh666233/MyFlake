@@ -6,6 +6,8 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
 
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     vitalpkgs.url = "github:nixvital/vitalpkgs";
     vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -19,10 +21,14 @@
 
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -40,6 +46,10 @@
 
                   dp-webui =
                     inputs.datawarehouse.inputs.data-pipeline-webui-flake.defaultPackage."${system}";
+
+                  grafana-latest = pkgs-unstable.grafana;
+
+                  google-chrome-latest = pkgs-unstable.google-chrome;
                 })
               ];
             })

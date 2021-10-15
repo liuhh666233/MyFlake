@@ -38,7 +38,7 @@
 
     # Work
     vscode
-    google-chrome
+    google-chrome-latest
     git
     freeoffice
     goffice
