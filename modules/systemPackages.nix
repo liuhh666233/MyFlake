@@ -84,6 +84,7 @@
         boto3
         pytz
         websockets
+        black
       ]))
     # GO
     go

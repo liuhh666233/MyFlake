@@ -34,6 +34,7 @@
             pytz
             matplotlib
             websockets
+            black
           ]));
       in {
         displayName = "Python 3";
