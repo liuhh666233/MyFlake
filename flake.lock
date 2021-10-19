@@ -57,15 +57,15 @@
         "vitalpkgs": "vitalpkgs"
       },
       "locked": {
-        "lastModified": 1631959626,
-        "narHash": "sha256-pxncZYHhfTE3sMZJJKJBD/bB6Yi+dSj89Y9apbX4S7I=",
-        "rev": "f2a4e59189a65aa4293692d2774d69d745c39b68",
-        "revCount": 1016,
+        "lastModified": 1634633214,
+        "narHash": "sha256-tn5C9rVIwo7DJHhTvClqqW54oqzbRvTF82pgNmhHwnU=",
+        "ref": "master",
+        "rev": "ed15fe003c6773f3b10a5cb70b74cfa804bc470b",
+        "revCount": 1077,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/data-warehouse"
       },
       "original": {
-        "rev": "f2a4e59189a65aa4293692d2774d69d745c39b68",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/data-warehouse"
       }
@@ -201,11 +201,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1627011119,
-        "narHash": "sha256-3poh2b9xF9RKsqKHSV/qJWr2on2goMeK+slnNWMKao4=",
+        "lastModified": 1634630686,
+        "narHash": "sha256-XnQt+QEkYWDTQxDlRhYkg5eGViywww+B0Y4kxguv1e4=",
         "ref": "master",
-        "rev": "033a751e1b5f78bc07f02de45d8642aa7ae13c72",
-        "revCount": 80,
+        "rev": "9fc7b0a4571cf3c9cdd45d29b93c15f252d5d4e5",
+        "revCount": 90,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/job-dispatcher"
       },
@@ -337,11 +337,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1631934563,
-        "narHash": "sha256-6fesXsvbxmmqwTOuBgbiB+uqIxuQ+jkeggSarq7aTrQ=",
+        "lastModified": 1633929914,
+        "narHash": "sha256-fnBoydFWP5Y2QmX2rD8muq4FOEzK2jlO0lQCtegXqb0=",
         "ref": "master",
-        "rev": "3946135fc83ff9dd31847d448e2812033961f135",
-        "revCount": 94,
+        "rev": "913d0093a29678a9890435c7c46f0e5c3da5ebf2",
+        "revCount": 97,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/record-archive"
       },
