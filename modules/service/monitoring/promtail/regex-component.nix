@@ -6,11 +6,11 @@ rec {
   # 匹配服务日志 
   logRegexSet = {
     jsy-archiver =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-archiver})?${escaping}s*(${conclusionRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-archiver}${escaping}s*${conclusionRegexSet.datapipeline}${any-chars}${durationRegexSet})?${any-chars}$";
     jsy-importer =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-importer})?${escaping}s*(${conclusionRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-importer}${escaping}s*${conclusionRegexSet.datapipeline}${any-chars}${durationRegexSet})?${any-chars}$";
     wind-importer =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.wind-importer})?${escaping}s*(${conclusionRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.wind-importer}${escaping}s*${conclusionRegexSet.datapipeline}${any-chars}${durationRegexSet})?${any-chars}$";
   };
 
   # 匹配日志时间 
@@ -31,15 +31,16 @@ rec {
 
   # 匹配任务名称
   jobNameRegexSet = {
-    #  格式：'JSY::Archive::PriceDBDaily 2021-09-24'
+    #  格式：'JsyDailyArchiveJob JsyPriceDBArchiver 2021-10-19' is completed, conclusion = OK, duration = 20996Ms'
     jsy-archiver =
-      "(Spawned job|Job)${escaping}s?${escaping}'JSY::Archive::(?P<archiver_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
-    #  格式：Job 'JsyMinBarArcImporterDaily 2021-09-24'
+      "${escaping}'JsyDailyArchiveJob${escaping}s?(?P<archiver_job>${escaping}S+)${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?${escaping}'";
+    #  格式：'JsyDailyImporterJob JsyTickTradeArcImporter 2021-10-19' is completed, conclusion = OK, duration = 48448Ms'
     jsy-importer =
-      "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2})${escaping}s?${escaping}'";
-    #  格式： Job 'WindIndexWeightDeriverJob 2021-09-26' | Job 'WindDailyImporterJob /var/lib/wonder/warehouse/raw/wind/__DATA__/AShareCapitalization 2021-09-26'
+      "${escaping}'JsyDailyImporterJob${escaping}s?(?P<importer_job>${escaping}S+)${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?${escaping}'";
+    #  格式：'WindDailyImporterJob WindStockRatingImporter 2021-10-19' is completed, conclusion = OK, duration = 98Ms'
+    #            'WindBulkImporterJob WindFinancialStatementBulkJob' is completed, conclusion = OK, duration = 162059Ms'
     wind-importer =
-      "(Spawned job|Job)${escaping}s?${escaping}'(?P<importer_job>${escaping}S+(${escaping}s?(/.*/${escaping}S+)?${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?)?)${escaping}'";
+      "${escaping}'(WindDailyImporterJob|WindBulkImporterJob)${escaping}s?(?P<importer_job>${escaping}S+)${escaping}s?(${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?)?${escaping}'";
   };
 
   # 匹配任务运行结果 
@@ -47,6 +48,12 @@ rec {
     # 格式：conclusion = OK | conclusion = ALREADY_EXISTS: Output file '/var/lib/wonder/warehouse/archive/price_db/2021/09/24.arc' exists
     datapipeline =
       "${escaping}s?is completed, conclusion =${escaping}s?(?P<conclusion>(OK|${escaping}S+:))${escaping}s?";
+  };
+
+  # 匹配任务耗时
+  durationRegexSet = {
+    datapipeline =
+      "${escaping}s?duration =${escaping}s?(?P<duration>[0-9]*)Ms${escaping}s?";
   };
 
   #  匹配任意多个字符
