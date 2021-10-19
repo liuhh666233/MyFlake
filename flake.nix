@@ -16,7 +16,7 @@
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
     datawarehouse.url =
-      "git+ssh://git@github.com/quant-wonderland/data-warehouse?rev=f2a4e59189a65aa4293692d2774d69d745c39b68";
+      "git+ssh://git@github.com/quant-wonderland/data-warehouse";
     datawarehouse.inputs.nixpkgs.follows = "nixpkgs";
 
   };
