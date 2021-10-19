@@ -73,18 +73,17 @@ in {
         User = "lxb";
         Restart = "always";
         RestartSec = "10s";
+        ExecStart = ''
+          ${pkgs.warehouse}/bin/jsy_archiver_app \
+          -a ${pkgs.dp-webui}/webapp \
+          -t '${cfg.tickTradeStartTime} tick_trade' \
+          -t '${cfg.tickSliceStartTime} tick_slice' \
+          -t '${cfg.minbarStartTime} minbar' \
+          -i ${cfg.warehousePath} \
+          -d ${toString (cfg.enableDiscovery)} \
+          --port ${toString (cfg.webServerPort)}
+        '';
       };
-
-      script = ''
-        ${pkgs.warehouse}/bin/jsy_archiver_app \
-        -a ${pkgs.dp-webui}/webapp \
-        -t '${cfg.tickTradeStartTime} tick_trade' \
-        -t '${cfg.tickSliceStartTime} tick_slice' \
-        -t '${cfg.minbarStartTime} minbar' \
-        -i ${cfg.warehousePath} \
-        -d ${toString (cfg.enableDiscovery)} \
-        --port ${toString (cfg.webServerPort)}
-      '';
     };
 
     networking.firewall.allowedTCPPorts = [ cfg.webServerPort ];
