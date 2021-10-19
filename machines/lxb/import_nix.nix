@@ -15,7 +15,7 @@
     ../../modules/service/monitoring/prometheus.nix
     ../../modules/service/monitoring/loki
     ../../modules/service/monitoring/promtail
-    # ../../modules/service/jsy-archiver
+    ../../modules/service/jsy-archiver
     ../../modules/service/redis
     ../../users/lxb.nix
     ../../users/liuxb.nix
