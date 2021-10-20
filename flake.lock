@@ -57,11 +57,11 @@
         "vitalpkgs": "vitalpkgs"
       },
       "locked": {
-        "lastModified": 1634633214,
-        "narHash": "sha256-tn5C9rVIwo7DJHhTvClqqW54oqzbRvTF82pgNmhHwnU=",
+        "lastModified": 1634699429,
+        "narHash": "sha256-hgNmH8RfrWQiBvtr6vGi0QH3czeMfdRfaHMPqFtoYAE=",
         "ref": "master",
-        "rev": "ed15fe003c6773f3b10a5cb70b74cfa804bc470b",
-        "revCount": 1077,
+        "rev": "1cce559a2967c08cf01660f61448cd8bcad6c33b",
+        "revCount": 1080,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/data-warehouse"
       },
@@ -201,11 +201,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1634630686,
-        "narHash": "sha256-XnQt+QEkYWDTQxDlRhYkg5eGViywww+B0Y4kxguv1e4=",
+        "lastModified": 1634693439,
+        "narHash": "sha256-8zlHJhAFFz15w6puNlMwUrqlIGYB7bWb3HecrTq4eHY=",
         "ref": "master",
-        "rev": "9fc7b0a4571cf3c9cdd45d29b93c15f252d5d4e5",
-        "revCount": 90,
+        "rev": "879a7bda1e227ad8b19b215a35d1e6524921104e",
+        "revCount": 92,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/job-dispatcher"
       },
