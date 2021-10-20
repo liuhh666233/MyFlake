@@ -53,6 +53,7 @@ scrape_configs:
                 level:
                 archiver_job:
                 conclusion:
+                duration:
       - match:
           selector: '{systemd_unit="wind-importer.service"}'
           action: keep
@@ -63,6 +64,7 @@ scrape_configs:
                 level:
                 importer_job:
                 conclusion:
+                duration:
       - match:
           selector: '{systemd_unit="jsy-importer.service"}'
           action: keep
@@ -73,3 +75,4 @@ scrape_configs:
                 level:
                 importer_job:
                 conclusion:
+                duration:
