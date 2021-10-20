@@ -47,13 +47,13 @@ rec {
   conclusionRegexSet = {
     # 格式：conclusion = OK | conclusion = ALREADY_EXISTS: Output file '/var/lib/wonder/warehouse/archive/price_db/2021/09/24.arc' exists
     datapipeline =
-      "${escaping}s?is completed, conclusion =${escaping}s?(?P<conclusion>(OK|${escaping}S+:))${escaping}s?";
+      "${escaping}s?conclusion =${escaping}s?(?P<conclusion>(OK|${escaping}S+:))${escaping}s?";
   };
 
   # 匹配任务耗时
   durationRegexSet = {
     datapipeline =
-      "${escaping}s?duration =${escaping}s?(?P<duration>[0-9]*)Ms${escaping}s?";
+      "${escaping}s?is completed,  duration =${escaping}s?(?P<duration>[0-9]*)Ms,${escaping}s?";
   };
 
   #  匹配任意多个字符
