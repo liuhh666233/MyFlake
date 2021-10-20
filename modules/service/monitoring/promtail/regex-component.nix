@@ -6,11 +6,11 @@ rec {
   # 匹配服务日志 
   logRegexSet = {
     jsy-archiver =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-archiver}${escaping}s*${conclusionRegexSet.datapipeline}${any-chars}${durationRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-archiver}${escaping}s*${durationRegexSet.datapipeline}s*${conclusionRegexSet.datapipeline})?${any-chars}$";
     jsy-importer =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-importer}${escaping}s*${conclusionRegexSet.datapipeline}${any-chars}${durationRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.jsy-importer}${escaping}s*${durationRegexSet.datapipeline}s*${conclusionRegexSet.datapipeline})?${any-chars}$";
     wind-importer =
-      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.wind-importer}${escaping}s*${conclusionRegexSet.datapipeline}${any-chars}${durationRegexSet.datapipeline})?${any-chars}$";
+      "^${escaping}s*${timeRegexSet.Y-M-D_H-M-S}${escaping}s*${levelRegesSet.lowerLogLevel}${escaping}s*(${jobNameRegexSet.wind-importer}${escaping}s*${durationRegexSet.datapipeline}s*${conclusionRegexSet.datapipeline})?${any-chars}$";
   };
 
   # 匹配日志时间 
