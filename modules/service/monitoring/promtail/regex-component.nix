@@ -31,14 +31,14 @@ rec {
 
   # 匹配任务名称
   jobNameRegexSet = {
-    #  格式：'JsyDailyArchiveJob JsyPriceDBArchiver 2021-10-19' is completed, conclusion = OK, duration = 20996Ms'
+    #  格式：'JsyDailyArchiveJob JsyPriceDBArchiver 2021-10-19' is completed, duration = 20996Ms, conclusion = OK'
     jsy-archiver =
       "${escaping}'JsyDailyArchiveJob${escaping}s?(?P<archiver_job>${escaping}S+)${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?${escaping}'";
-    #  格式：'JsyDailyImporterJob JsyTickTradeArcImporter 2021-10-19' is completed, conclusion = OK, duration = 48448Ms'
+    #  格式：'JsyDailyImporterJob JsyTickTradeArcImporter 2021-10-19' is completed, duration = 48448Ms, conclusion = OK'
     jsy-importer =
       "${escaping}'JsyDailyImporterJob${escaping}s?(?P<importer_job>${escaping}S+)${escaping}s?${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?${escaping}'";
-    #  格式：'WindDailyImporterJob WindStockRatingImporter 2021-10-19' is completed, conclusion = OK, duration = 98Ms'
-    #            'WindBulkImporterJob WindFinancialStatementBulkJob' is completed, conclusion = OK, duration = 162059Ms'
+    #  格式：'WindDailyImporterJob WindStockRatingImporter 2021-10-19' is completed, duration = 98Ms, conclusion = OK'
+    #            'WindBulkImporterJob WindFinancialStatementBulkJob' is completed, duration = 162059Ms, conclusion = OK'
     wind-importer =
       "${escaping}'(WindDailyImporterJob|WindBulkImporterJob)${escaping}s?(?P<importer_job>${escaping}S+)${escaping}s?(${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?)?${escaping}'";
   };
