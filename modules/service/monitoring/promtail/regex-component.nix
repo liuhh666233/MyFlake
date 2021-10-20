@@ -15,7 +15,7 @@ rec {
 
   # 匹配日志时间 
   timeRegexSet = {
-    # 格式： [ 2021-09-26 08:49:31.227 ]
+    # 格式： [2021-10-20 15:23:13.027] [info] 'JsyDailyArchiveJob JsyMinBarArchiver 2021-10-20' is completed, duration = 2752Ms, conclusion = OK
     Y-M-D_H-M-S =
       "${escaping}[${escaping}s?(?P<time>${escaping}d{4}-${escaping}d{2}-${escaping}d{2}${escaping}s?${escaping}d{2}:${escaping}d{2}:${escaping}d{2}${escaping}.${escaping}d{3})${escaping}s?${escaping}]";
   };
@@ -47,13 +47,13 @@ rec {
   conclusionRegexSet = {
     # 格式：conclusion = OK | conclusion = ALREADY_EXISTS: Output file '/var/lib/wonder/warehouse/archive/price_db/2021/09/24.arc' exists
     datapipeline =
-      "${escaping}s?conclusion =${escaping}s?(?P<conclusion>(OK|${escaping}S+:))${escaping}s?";
+      "${escaping}s?conclusion${escaping}s?=${escaping}s?(?P<conclusion>(OK|${escaping}S+:))${escaping}s?";
   };
 
   # 匹配任务耗时
   durationRegexSet = {
     datapipeline =
-      "${escaping}s?is completed,  duration =${escaping}s?(?P<duration>[0-9]*)Ms,${escaping}s?";
+      "${escaping}s?is${escaping}s?completed,${escaping}s?duration${escaping}s?=${escaping}s?(?P<duration>[0-9]*)Ms,${escaping}s?";
   };
 
   #  匹配任意多个字符
