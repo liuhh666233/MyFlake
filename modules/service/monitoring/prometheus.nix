@@ -15,7 +15,7 @@
           port = 9558;
         };
         sql = {
-          enable = true;
+          enable = false;
           port = 9237;
           configuration = {
             jobs = {
