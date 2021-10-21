@@ -20,7 +20,7 @@
           configuration = {
             jobs = {
               windFinancialStatementExceptionData = {
-                interval = "1h";
+                interval = "1s";
                 connections = [ "clickhouse://hua:9000?database=wind" ];
                 queries = {
                   queryNetIncomeParent = {
