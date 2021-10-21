@@ -21,13 +21,15 @@
             jobs = {
               windFinancialStatementExceptionData = {
                 interval = "1h";
-                connections = "clickhouse://hua:9000?database=wind";
+                connections = [ "clickhouse://hua:9000?database=wind" ];
                 queries = {
-                  help = "Examine exceptional wind FinancialStatement data.";
-                  labels = [ ];
-                  query =
-                    "SELECT fs.ReportDate,fs.StockId,fs.NetIncomeParent from wind.FinancialStatement fs where fs.NetIncomeParent > 100000000000 order by fs.NetIncomeParent desc;";
-                  values = [ "ReportDate" "StockId" "NetIncomeParent" ];
+                  queryNetIncomeParent = {
+                    help = "Examine exceptional wind FinancialStatement data.";
+                    labels = [ ];
+                    query =
+                      "SELECT toDate(fs.ReportDate) as `Date`,fs.StockId,fs.NetIncomeParent from wind.FinancialStatement fs where fs.NetIncomeParent > 100000000000 order by fs.NetIncomeParent desc;";
+                    values = [ "Date" "StockId" "NetIncomeParent" ];
+                  };
                 };
               };
             };
