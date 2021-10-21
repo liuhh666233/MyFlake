@@ -14,6 +14,25 @@
           enable = true;
           port = 9558;
         };
+        sql = {
+          enable = true;
+          port = 9237;
+          configuration = {
+            jobs = {
+              windFinancialStatementExceptionData = {
+                interval = "1h";
+                connections = "clickhouse://hua:9000?database=wind";
+                queries = {
+                  help = "Examine exceptional wind FinancialStatement data.";
+                  labels = [ ];
+                  query =
+                    "SELECT fs.ReportDate,fs.StockId,fs.NetIncomeParent from wind.FinancialStatement fs where fs.NetIncomeParent > 100000000000 order by fs.NetIncomeParent desc;";
+                  values = [ "ReportDate" "StockId" "NetIncomeParent" ];
+                };
+              };
+            };
+          };
+        };
       };
       # configure Prometheus to read metrics from this exporter
       scrapeConfigs = [{
@@ -26,6 +45,10 @@
             "127.0.0.1:${
               toString config.services.prometheus.exporters.systemd.port
             }"
+            "127.0.0.1:${
+              toString config.services.prometheus.exporters.sql.port
+            }"
+
           ];
         }];
       }
