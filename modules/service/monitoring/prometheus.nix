@@ -37,29 +37,30 @@
         };
       };
       # configure Prometheus to read metrics from this exporter
-      scrapeConfigs = [{
-        job_name = "chrysalis";
-        static_configs = [{
-          targets = [
-            "127.0.0.1:${
-              toString config.services.prometheus.exporters.node.port
-            }"
-            "127.0.0.1:${
-              toString config.services.prometheus.exporters.systemd.port
-            }"
-            "127.0.0.1:${
-              toString config.services.prometheus.exporters.sql.port
-            }"
+      scrapeConfigs = [
+        {
+          job_name = "chrysalis";
+          static_configs = [{
+            targets = [
+              "127.0.0.1:${
+                toString config.services.prometheus.exporters.node.port
+              }"
+              "127.0.0.1:${
+                toString config.services.prometheus.exporters.systemd.port
+              }"
+              "127.0.0.1:${
+                toString config.services.prometheus.exporters.sql.port
+              }"
 
-          ];
-        }];
-      }
-      # Add test python exporter
-      # {
-      #   job_name = "test";
-      #   static_configs = [{ targets = [ "127.0.0.1:${toString 8000}" ]; }];
-      # }
-        ];
+            ];
+          }];
+        }
+        # Add test python exporter
+        {
+          job_name = "test";
+          static_configs = [{ targets = [ "127.0.0.1:${toString 5000}" ]; }];
+        }
+      ];
     };
   };
 }

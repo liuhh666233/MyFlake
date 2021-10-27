@@ -35,6 +35,7 @@
     synergy
     remmina
     borgbackup
+    jq
 
     # Work
     vscode
