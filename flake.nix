@@ -49,7 +49,7 @@
 
                   grafana-latest = pkgs-unstable.grafana;
 
-                  google-chrome-latest = pkgs-unstable.google-chrome-beta;
+                  google-chrome-latest = pkgs-unstable.google-chrome;
                 })
               ];
             })
