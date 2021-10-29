@@ -7,12 +7,10 @@
     nix = {
       package = pkgs.nixFlakes;
       extraOptions = ''
-        experimental-features = nix-command flakes
+        experimental-features = nix-command flakes ca-references
       '';
     };
-    
-    environment.systemPackages = with pkgs; [
-      git openssh
-    ];
+
+    environment.systemPackages = with pkgs; [ git openssh ];
   };
 }
