@@ -16,9 +16,11 @@
   programs.fish.enable = true;
   programs.fish.shellAliases = {
     "gs" = "git status";
+    "gsw" = "git switch";
     "ga" = "git add";
     "gl" = "git log";
     "gp" = "git push";
+    "gpp" = "git pull";
     "gc" = "git commit -m";
     "gb" = "git branch";
     "gd" = "git diff";
