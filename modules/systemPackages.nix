@@ -95,7 +95,7 @@
     # C++
     gcc
     gdb
-    clang
+    clang_11
     nodejs
     lua
     cmake
