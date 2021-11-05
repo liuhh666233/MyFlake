@@ -5,6 +5,16 @@
     ./import_nix.nix
   ];
 
+  fonts.fonts = with pkgs; [
+    # Add Wenquanyi Microsoft Ya Hei, a nice-looking Chinese font.
+    wqy_microhei
+    # Fira code is a good font for coding
+    fira-code
+    fira-code-symbols
+    font-awesome-ttf
+    inconsolata
+  ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
