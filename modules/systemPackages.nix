@@ -59,6 +59,7 @@
 
     # Personal
     beancount
+    fava
 
     # VPN
     v2ray
@@ -89,6 +90,7 @@
         pytz
         websockets
         black
+        beancount
       ]))
     # GO
     go
