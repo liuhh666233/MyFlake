@@ -10,6 +10,7 @@
     ../../modules/network.nix
     ../../modules/service/jupyter
     ../../modules/service/nginx
+    ../../modules/service/mysql
     # ../../modules/service/github-runner
     ../../modules/service/monitoring/grafana.nix
     ../../modules/service/monitoring/prometheus.nix
