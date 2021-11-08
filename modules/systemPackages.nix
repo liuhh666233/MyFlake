@@ -57,6 +57,9 @@
     nixopsUnstable
     # nixops
 
+    # Personal
+    beancount
+
     # VPN
     v2ray
     qv2ray
