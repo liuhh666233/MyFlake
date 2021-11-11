@@ -65,6 +65,7 @@
     v2ray
     qv2ray
     clash
+    openvpn
 
     # Python
     python3
