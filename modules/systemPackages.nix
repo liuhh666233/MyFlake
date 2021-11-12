@@ -67,6 +67,9 @@
     clash
     openvpn
     networkmanager-l2tp
+    strongswan
+    xl2tpd
+    net-tools
 
     # Python
     python3
