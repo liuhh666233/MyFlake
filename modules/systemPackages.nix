@@ -69,7 +69,7 @@
     networkmanager-l2tp
     strongswan
     xl2tpd
-    net-tools
+    nettools
 
     # Python
     python3
