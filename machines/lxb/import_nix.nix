@@ -8,6 +8,7 @@
     ../../modules/systemPackages.nix
     ../../modules/enable_flake.nix
     ../../modules/network.nix
+    ../../modules/nix-build.nix
     ../../modules/service/jupyter
     ../../modules/service/nginx
     ../../modules/service/mysql
