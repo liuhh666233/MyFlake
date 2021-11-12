@@ -66,7 +66,7 @@
     qv2ray
     clash
     openvpn
-    xl2tpd
+    networkmanager-l2tp
 
     # Python
     python3
