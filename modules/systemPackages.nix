@@ -115,6 +115,7 @@
     gnome.gnome-remote-desktop
     gnome.gnome-backgrounds
     gnome.gnome-weather
+    gnome.networkmanager-l2tp
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
     gnomeExtensions.system-monitor
