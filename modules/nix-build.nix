@@ -3,7 +3,7 @@
 {
   nix.distributedBuilds = true;
   nix.buildMachines = [{
-    hostName = "sisyphus";
+    hostName = "192.168.110.15";
     system = "x86_64-linux";
     supportedFeatures = [ "kvm" "nixos-test" "big-parallel" "benchmark" ];
     sshUser = "lxb";
