@@ -13,6 +13,7 @@
 
   services.openssh.enable = true;
   networking.firewall.enable = false;
+  networking.networkmanager.enable = true;
 
   services.strongswan = {
     enable = true;
