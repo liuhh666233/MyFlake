@@ -11,12 +11,6 @@
     # Use vital-modules, with the same nixpkgs
     vital-modules.url = "github:nixvital/vital-modules";
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
-
-    wonder-deployhub.url =
-      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=updateWareHouser";
-    # wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
-    # wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
-
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -50,7 +44,6 @@
                 })
               ];
             })
-            inputs.wonder-deployhub.nixosModules.warehouser
             ./machines/lxb
           ];
         };
