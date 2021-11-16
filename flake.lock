@@ -9,10 +9,7 @@
           "nixpkgs"
         ],
         "nixpkgs-20-09": "nixpkgs-20-09",
-        "utils": [
-          "wonder-deployhub",
-          "utils"
-        ]
+        "utils": "utils_2"
       },
       "locked": {
         "lastModified": 1637060212,
@@ -34,7 +31,7 @@
           "wonder-deployhub",
           "nixpkgs"
         ],
-        "utils": "utils_2"
+        "utils": "utils_3"
       },
       "locked": {
         "lastModified": 1636426248,
@@ -56,7 +53,7 @@
           "wonder-deployhub",
           "nixpkgs"
         ],
-        "utils": "utils_7",
+        "utils": "utils_8",
         "vitalpkgs": [
           "wonder-deployhub",
           "vitalpkgs"
@@ -110,7 +107,7 @@
         "nixpkgs": "nixpkgs_6",
         "record-archive-flake": "record-archive-flake",
         "sipuix": "sipuix",
-        "utils": "utils_6",
+        "utils": "utils_7",
         "vitalpkgs": "vitalpkgs_2"
       },
       "locked": {
@@ -160,7 +157,7 @@
       "inputs": {
         "butler-test-data-flake": "butler-test-data-flake_2",
         "nixpkgs": "nixpkgs_4",
-        "utils": "utils_4"
+        "utils": "utils_5"
       },
       "locked": {
         "lastModified": 1635240398,
@@ -198,7 +195,7 @@
     "butler-test-data-flake_2": {
       "inputs": {
         "nixpkgs": "nixpkgs_3",
-        "utils": "utils_3"
+        "utils": "utils_4"
       },
       "locked": {
         "lastModified": 1635239409,
@@ -217,7 +214,7 @@
     "butler-test-data-flake_3": {
       "inputs": {
         "nixpkgs": "nixpkgs_5",
-        "utils": "utils_5"
+        "utils": "utils_6"
       },
       "locked": {
         "lastModified": 1635239409,
@@ -1117,11 +1114,11 @@
     },
     "utils_3": {
       "locked": {
-        "lastModified": 1631561581,
-        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
         "type": "github"
       },
       "original": {
@@ -1132,6 +1129,21 @@
     },
     "utils_4": {
       "locked": {
+        "lastModified": 1631561581,
+        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_5": {
+      "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
         "owner": "numtide",
@@ -1145,7 +1157,7 @@
         "type": "github"
       }
     },
-    "utils_5": {
+    "utils_6": {
       "locked": {
         "lastModified": 1631561581,
         "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
@@ -1160,7 +1172,7 @@
         "type": "github"
       }
     },
-    "utils_6": {
+    "utils_7": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
@@ -1175,7 +1187,7 @@
         "type": "github"
       }
     },
-    "utils_7": {
+    "utils_8": {
       "locked": {
         "lastModified": 1634851050,
         "narHash": "sha256-N83GlSGPJJdcqhUxSCS/WwW5pksYf3VP1M13cDRTSVA=",
@@ -1190,7 +1202,7 @@
         "type": "github"
       }
     },
-    "utils_8": {
+    "utils_9": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
@@ -1356,7 +1368,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "utils": "utils_8",
+        "utils": "utils_9",
         "vital-modules": [
           "vital-modules"
         ],
@@ -1364,16 +1376,16 @@
         "wind-mirrorer": "wind-mirrorer"
       },
       "locked": {
-        "lastModified": 1637068540,
-        "narHash": "sha256-cWq9bj468tm5xuBbY/8tHz7FIckmts/qtJr+HIPuWj0=",
-        "ref": "updateWareHouser",
-        "rev": "7cb6aee71237cd96afb16803c28ddf2b06cab3b2",
-        "revCount": 862,
+        "lastModified": 1637070605,
+        "narHash": "sha256-SsABzztymiiBiaLTvr6Kkk9m1pdvgPlq7UnLCZ5hqYU=",
+        "ref": "warehouserAddDerive",
+        "rev": "fe0564dec25534d961170e41dd506c8adcd9bd5a",
+        "revCount": 852,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       },
       "original": {
-        "ref": "updateWareHouser",
+        "ref": "warehouserAddDerive",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       }
