@@ -6,7 +6,7 @@
     ../../modules/i18n.nix
     ../../modules/binaryCaches.nix
     ../../modules/systemPackages.nix
-    ../../modules/enable_flake.nix
+    # ../../modules/enable_flake.nix
     ../../modules/network.nix
     ../../modules/nix-build.nix
     ../../modules/service/jupyter

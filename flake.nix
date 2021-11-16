@@ -11,9 +11,20 @@
     # Use vital-modules, with the same nixpkgs
     vital-modules.url = "github:nixvital/vital-modules";
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
+
+    wonder-devops.url =
+      "git+ssh://git@github.com/quant-wonderland/devops-tools.git";
+    wonder-devops.inputs.nixpkgs.follows = "nixpkgs";
+
+    wonder-deployhub.url =
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git";
+    wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
+    wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
+    wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, vital-modules, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -30,6 +41,7 @@
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
+            vital-modules.nixosModules.foundation
             ({
               nixpkgs.overlays = [
                 (final: prev: {
@@ -45,6 +57,7 @@
               ];
             })
             ./machines/lxb
+            inputs.wonder-deployhub.nixosModules.warehouser
           ];
         };
 

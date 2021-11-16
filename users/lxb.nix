@@ -3,11 +3,8 @@
   users = {
     users.lxb = {
       isNormalUser = true;
-      initialHashedPassword = lib.mkDefault
-        "$6$c7xWgHnMCJKXlPHK$2Owbgw3Y5z/pgwD76O45nPzuRtABjN.Mr6M.yO1jOteDyVsXSOqgzgkAl1sD1kIowEQRFIoyXT45j8ZLmZ5SF1";
-      uid = 1001;
+      uid = 1000;
       home = "/home/lxb";
-      description = "The user lxb.";
       extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
       shell = pkgs.fish;
     };

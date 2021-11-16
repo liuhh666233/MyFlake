@@ -4,7 +4,7 @@
   imports = [ # Include the results of the hardware scan.
     ./import_nix.nix
   ];
-
+  vital.mainUser = "lxb";
   fonts.fonts = with pkgs; [
     # Add Wenquanyi Microsoft Ya Hei, a nice-looking Chinese font.
     wqy_microhei
