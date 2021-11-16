@@ -1,5 +1,5 @@
 {
-  sisyphus = "192.168.110.15";
+  sisyphus = "192.168.110.207";
   bishop = "192.168.110.161";
   publicAddress = "182.151.40.8";
   awsBackupAddress =
