@@ -6,8 +6,10 @@
     hostName = "sisyphus";
     system = "x86_64-linux";
     supportedFeatures = [ "kvm" "nixos-test" "big-parallel" "benchmark" ];
-    sshUser = "lxb";
-    sshKey = "/home/lxb/.ssh/id_rsa";
+    speedFactor = 2;
     maxJobs = 1;
   }];
+  nix.extraOptions = ''
+    builders-use-substitutes = true
+  '';
 }
