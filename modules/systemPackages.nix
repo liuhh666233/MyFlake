@@ -53,6 +53,7 @@
     nixfmt
     sqlitebrowser
     nixopsUnstable
+    nixUnstable
     # nixops
 
     # Personal
