@@ -1,14 +1,18 @@
-{ config, pkgs, ... }: {
+{ config, lib, ... }:
+let IPaddressPorts = import ./IPaddress-ports.nix;
+in {
   nix = {
-    binaryCaches = [
+    binaryCaches = lib.mkForce [
+      "http://${IPaddressPorts.sisyphus}:${
+        toString IPaddressPorts.nixServerPort
+      }/"
       "https://cache.nixos.org/"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];
+
     trustedBinaryCaches = [
-      "https://cache.nixos.org/"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store/"
+      "http://${IPaddressPorts.sisyphus}:${
+        toString IPaddressPorts.nixServerPort
+      }/"
     ];
   };
 }
