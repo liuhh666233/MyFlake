@@ -52,8 +52,6 @@
     mailspring
     nixfmt
     sqlitebrowser
-    cloud-init
-    win-virtio
     nixopsUnstable
     # nixops
 
@@ -126,4 +124,5 @@
     gnomeExtensions.sound-output-device-chooser
 
   ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-9.4.4" ];
 }

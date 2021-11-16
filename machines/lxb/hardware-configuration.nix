@@ -10,7 +10,6 @@
     [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelPackages = pkgs.linuxPackages_5_12;
   boot.extraModulePackages = [ ];
   boot.kernel.sysctl = { "vm.swappiness" = 40; };
 
