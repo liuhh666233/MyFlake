@@ -6,7 +6,7 @@ with lib; {
     package = pkgs.mariadb;
     user = "mysql";
     group = "mysql";
-    dataDir = "/var/lib/wonder/warehouse/mysql";
+    dataDir = "/var/lib/mysql";
     settings = {
       mysqld = {
         key_buffer_size = "6G";
