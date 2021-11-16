@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib; {
   services.mysql = {
-    enable = false;
+    enable = true;
     port = 3306;
     package = pkgs.mariadb;
     user = "mysql";
