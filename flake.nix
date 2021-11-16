@@ -19,6 +19,16 @@
       "git+ssh://git@github.com/quant-wonderland/data-warehouse";
     datawarehouse.inputs.nixpkgs.follows = "nixpkgs";
 
+    wonder-devops.url =
+      "git+ssh://git@github.com/quant-wonderland/devops-tools.git";
+    wonder-devops.inputs.nixpkgs.follows = "nixpkgs";
+
+    wonder-deployhub.url =
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git";
+    wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
+    wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
+    wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -53,7 +63,7 @@
                 })
               ];
             })
-
+            inputs.wonder-deployhub.nixosModules.warehouser
           ];
         };
 
