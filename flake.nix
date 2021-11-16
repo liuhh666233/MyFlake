@@ -8,26 +8,14 @@
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    vitalpkgs.url = "github:nixvital/vitalpkgs";
-    vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
-
     # Use vital-modules, with the same nixpkgs
     vital-modules.url = "github:nixvital/vital-modules";
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
-    datawarehouse.url =
-      "git+ssh://git@github.com/quant-wonderland/data-warehouse";
-    datawarehouse.inputs.nixpkgs.follows = "nixpkgs";
-
-    wonder-devops.url =
-      "git+ssh://git@github.com/quant-wonderland/devops-tools.git";
-    wonder-devops.inputs.nixpkgs.follows = "nixpkgs";
-
     wonder-deployhub.url =
-      "git+ssh://git@github.com/quant-wonderland/deployhub.git";
-    wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
-    wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
-    wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=updateWareHouser";
+    # wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
+    # wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
 
   };
 
@@ -48,7 +36,6 @@
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
-            ./machines/lxb
             ({
               nixpkgs.overlays = [
                 (final: prev: {
@@ -64,6 +51,7 @@
               ];
             })
             inputs.wonder-deployhub.nixosModules.warehouser
+            ./machines/lxb
           ];
         };
 
