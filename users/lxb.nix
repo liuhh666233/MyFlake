@@ -3,7 +3,7 @@
   users = {
     users.lxb = {
       isNormalUser = true;
-      uid = 1000;
+      uid = 1001;
       home = "/home/lxb";
       extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
       shell = pkgs.fish;
