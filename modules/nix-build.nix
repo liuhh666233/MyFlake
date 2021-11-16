@@ -7,6 +7,7 @@
     system = "x86_64-linux";
     supportedFeatures = [ "kvm" "nixos-test" "big-parallel" "benchmark" ];
     speedFactor = 2;
+    sshUser = "root";
     maxJobs = 1;
   }];
   nix.extraOptions = ''
