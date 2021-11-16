@@ -305,29 +305,26 @@
         "data-pipeline-webui-flake": "data-pipeline-webui-flake",
         "flake-utils": "flake-utils_7",
         "job-dispatcher-flake": "job-dispatcher-flake",
-        "nixpkgs": [
-          "wonder-deployhub",
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_7",
         "nixpkgs-20-09": "nixpkgs-20-09_2",
         "record-archive-flake": "record-archive-flake_2",
         "sipuix-flake": "sipuix-flake",
         "vitalpkgs": "vitalpkgs_3"
       },
       "locked": {
-        "lastModified": 1636971480,
-        "narHash": "sha256-pXuG1otYg2zDnM0/bTA0f1mbZbFILz4Mt97i5E/oJDg=",
+        "lastModified": 1637058345,
+        "narHash": "sha256-QeRairlc+unLEWonZ9ruEGXECWF+DMeDTjml4re/120=",
         "ref": "master",
-        "rev": "d390c28af720826061269ceeefe212a901c55f46",
-        "revCount": 1161,
+        "rev": "013d2dc6df1699812586340719bb7f85f2383f83",
+        "revCount": 1164,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tags=v2.1.2"
+        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tags=v2.1.3"
       },
       "original": {
         "ref": "master",
-        "rev": "d390c28af720826061269ceeefe212a901c55f46",
+        "rev": "013d2dc6df1699812586340719bb7f85f2383f83",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tags=v2.1.2"
+        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tags=v2.1.3"
       }
     },
     "flake-utils": {
@@ -723,7 +720,7 @@
     "nix": {
       "inputs": {
         "lowdown-src": "lowdown-src",
-        "nixpkgs": "nixpkgs_7"
+        "nixpkgs": "nixpkgs_8"
       },
       "locked": {
         "lastModified": 1628586117,
@@ -963,6 +960,22 @@
       }
     },
     "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1622516815,
+        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_8": {
       "locked": {
         "lastModified": 1624862269,
         "narHash": "sha256-JFcsh2+7QtfKdJFoPibLFPLgIW6Ycnv8Bts9a7RYme0=",
@@ -1376,11 +1389,11 @@
         "wind-mirrorer": "wind-mirrorer"
       },
       "locked": {
-        "lastModified": 1637023718,
-        "narHash": "sha256-ThKENtdkM/JxUMciJKJjqUsF3P+eoRkaj82vIRYozaA=",
+        "lastModified": 1637061331,
+        "narHash": "sha256-1gXPSrYDLB+EmDmxmBCqMwyXi6xy/XhZVz1jdvh7F6s=",
         "ref": "master",
-        "rev": "475fdd019133c27a1ff39601e0a8aae3847ec15a",
-        "revCount": 836,
+        "rev": "f068ceca7a6a0eacba32972cdaf93b3509514044",
+        "revCount": 848,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       },
