@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   i18n = {
@@ -9,8 +9,8 @@
     #   fcitx5.addons =
     #     [ pkgs.fcitx5-rime-latest pkgs.fcitx5-chinese-addons-latest ];
     # };
-    inputMethod.enabled = "ibus";
-    inputMethod.ibus.engines = pkgs.ibus-engines;
+    inputMethod.enabled = lib.mkForce "uim";
+    i18n.inputMethod.uim.toolbar = "gtk";
   };
 
   time.timeZone = "Asia/Shanghai";
