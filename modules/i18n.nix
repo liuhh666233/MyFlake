@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 
 {
   i18n = {
@@ -7,7 +7,7 @@
     inputMethod = {
       enabled = "fcitx5";
       fcitx5.addons =
-        [ pkgs-unstable.fcitx5-rime pkgs-unstable.fcitx5-chinese-addons ];
+        [ pkgs.fcitx5-rime-latest pkgs.fcitx5-chinese-addons-latest ];
     };
   };
 

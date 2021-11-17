@@ -54,6 +54,10 @@
 
                   google-chrome-latest = pkgs-unstable.google-chrome-beta;
                   fcitx5-latest = pkgs-unstable.fcitx5;
+                  fcitx5-rime-latest = pkgs-unstable.fcitx5-rime;
+                  fcitx5-chinese-addons-latest =
+                    pkgs-unstable.fcitx5-chinese-addons;
+
                 })
               ];
             })
