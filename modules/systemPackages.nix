@@ -13,7 +13,7 @@
     wget
     spotify
     ibus
-    fcitx
+    # fcitx5
     docker
     lsd
     glances
