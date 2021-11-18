@@ -23,6 +23,7 @@ in {
     };
     replication = {
       role = "slave";
+      serverId = 2;
       masterHost = IPaddressPorts.bishop;
       masterUser = "zyyx";
       masterPassword = "123456";
