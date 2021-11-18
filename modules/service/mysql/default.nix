@@ -1,7 +1,9 @@
 { config, pkgs, lib, ... }:
-with lib; {
+with lib;
+let IPaddressPorts = import ../../IPaddress-ports.nix;
+in {
   services.mysql = {
-    enable = false;
+    enable = true;
     port = 3306;
     package = pkgs.mariadb;
     user = "mysql";
@@ -18,6 +20,13 @@ with lib; {
         quick = true;
         max_allowed_packet = "16M";
       };
+    };
+    replication = {
+      role = "slave";
+      masterHost = IPaddressPorts.bishop;
+      masterUser = "zyyx";
+      masterPassword = "123456";
+      masterPort = 3306;
     };
   };
 }
