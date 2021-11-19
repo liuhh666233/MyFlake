@@ -8,8 +8,6 @@
      enabled = "fcitx5";
      fcitx5.addons = [ pkgs.fcitx5-rime pkgs.fcitx5-chinese-addons ];
    };
-  #   inputMethod.enabled = lib.mkForce "uim";
-  #   inputMethod.uim.toolbar = "gtk";
   };
 
   time.timeZone = "Asia/Shanghai";

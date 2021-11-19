@@ -41,7 +41,6 @@
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
-            vital-modules.nixosModules.foundation
             ({
               nixpkgs.overlays = [
                 (final: prev: {
@@ -59,7 +58,6 @@
               ];
             })
             ./machines/lxb
-            # inputs.wonder-deployhub.nixosModules.warehouser
           ];
         };
 
