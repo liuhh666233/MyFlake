@@ -59,7 +59,7 @@
               ];
             })
             ./machines/lxb
-            inputs.wonder-deployhub.nixosModules.warehouser
+            # inputs.wonder-deployhub.nixosModules.warehouser
           ];
         };
 
