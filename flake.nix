@@ -41,6 +41,7 @@
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
+            vital-modules.nixosModules.foundation
             ({
               nixpkgs.overlays = [
                 (final: prev: {
@@ -48,7 +49,6 @@
                   grafana-latest = pkgs-unstable.grafana;
 
                   google-chrome-latest = pkgs.google-chrome;
-
                 })
               ];
             })
@@ -62,29 +62,5 @@
         };
 
       };
-
-      devShell."${system}" = pkgs.mkShell rec {
-        name = "nix-demo-env";
-
-        buildInputs = with pkgs;
-          [
-            (python38.withPackages (ps:
-              with ps; [
-                jupyter
-                jupyter_core
-                notebook
-                ipython
-                ipykernel
-                systemd
-                autopep8
-                pip
-              ]))
-          ];
-
-        shellHook = ''
-          export PS1="$(echo -e '\uf3e2') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (${name}) \\$ \[$(tput sgr0)\]"
-        '';
-      };
-
     };
 }
