@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  static-ip-config = import ../../../static-ip-config.nix;
+  static-ip-config = import ../../../IPaddress-ports.nix;
 
   loki-config = pkgs.callPackage ./config {
     lokiLocalhost = static-ip-config.localhost;
@@ -8,8 +8,7 @@ let
     httpPort = 3100;
     grpcPort = 9096;
   };
-in
-{
+in {
   services.loki = {
     enable = true;
     configFile = "${loki-config}/loki-local-config.yaml";

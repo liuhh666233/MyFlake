@@ -20,7 +20,6 @@
     # ../../modules/service/jsy-archiver
     # ../../modules/service/redis
     ../../users/lxb.nix
-    ../../users/liuxb.nix
   ];
 
 }

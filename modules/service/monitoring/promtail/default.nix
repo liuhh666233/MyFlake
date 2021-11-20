@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  static-ip-config = import ../../../static-ip-config.nix;
+  static-ip-config = import ../../../IPaddress-ports.nix;
   regex-components = import ./regex-component.nix;
 
   promtail-config = pkgs.callPackage ./config {
