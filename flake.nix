@@ -44,16 +44,11 @@
             ({
               nixpkgs.overlays = [
                 (final: prev: {
-                  warehouse = inputs.datawarehouse.defaultPackage."${system}";
-
-                  dp-webui =
-                    inputs.datawarehouse.inputs.data-pipeline-webui-flake.defaultPackage."${system}";
 
                   grafana-latest = pkgs-unstable.grafana;
 
                   google-chrome-latest = pkgs.google-chrome;
 
-                  fcitx5-latest = pkgs.fcitx5-with-addons;
                 })
               ];
             })

@@ -5,15 +5,10 @@
     # Dedit
     vim
     neovim
-    typora
-    emacs
-    zeal
 
     # System
     wget
-    spotify
     ibus
-    fcitx5-latest
     docker
     lsd
     glances
@@ -49,7 +44,6 @@
     dbeaver
     clickhouse-cli
     graphviz
-    mailspring
     nixfmt
     sqlitebrowser
     nixopsUnstable
@@ -63,12 +57,7 @@
     # VPN
     v2ray
     qv2ray
-    clash
     openvpn
-    networkmanager-l2tp
-    strongswan
-    xl2tpd
-    nettools
 
     # Python
     python3
