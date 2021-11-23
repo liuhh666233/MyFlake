@@ -17,7 +17,7 @@
     wonder-devops.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-deployhub.url =
-      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=master";
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=updateWarehouser";
     wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
     wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
@@ -52,6 +52,7 @@
                 })
               ];
             })
+            inputs.wonder-deployhub.nixosModules.warehouser
             ./machines/lxb
           ];
         };
