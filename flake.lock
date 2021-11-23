@@ -12,11 +12,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1637060212,
-        "narHash": "sha256-ETnYqR6qUnjVwEzczzCARCV4nTpynFXDyLjjUCVi5aA=",
+        "lastModified": 1637620052,
+        "narHash": "sha256-Q5+Hk2rl29HyzKhKRjNNENiUmuf8AgYtK7Kflh/fxNE=",
         "ref": "master",
-        "rev": "6bcd81922a8081847d15e9c06e1c9f49a5eed3eb",
-        "revCount": 553,
+        "rev": "3b61a14567d400361f16124652b44f22ba0e8ed7",
+        "revCount": 561,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/alpha-research"
       },
@@ -111,19 +111,19 @@
         "vitalpkgs": "vitalpkgs_2"
       },
       "locked": {
-        "lastModified": 1636449462,
-        "narHash": "sha256-n/a6wNHu8TVRvJ/5Y01UyRbFJz8kEChfr0cCzptcOhg=",
+        "lastModified": 1637570663,
+        "narHash": "sha256-WDMbzKzGjATWy1S3RKMnelUkTpM43Kcd4aiiZ+UVt+0=",
         "ref": "master",
-        "rev": "1c344f67ff5942030bac505bda9090e691e98831",
-        "revCount": 538,
+        "rev": "668c12bd93a3af0d9bfa9b615013d63cd51a11dc",
+        "revCount": 545,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/butler?tags=v2.3.3"
+        "url": "ssh://git@github.com/quant-wonderland/butler?tags=v2.3.6"
       },
       "original": {
         "ref": "master",
-        "rev": "1c344f67ff5942030bac505bda9090e691e98831",
+        "rev": "668c12bd93a3af0d9bfa9b615013d63cd51a11dc",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/butler?tags=v2.3.3"
+        "url": "ssh://git@github.com/quant-wonderland/butler?tags=v2.3.6"
       }
     },
     "butler-py": {
@@ -242,11 +242,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1636449388,
-        "narHash": "sha256-l/8rcZf/BStGLcEC18TQESPAraBkZR2T06+a0jDbeVg=",
+        "lastModified": 1637557869,
+        "narHash": "sha256-McP9YFqhBtyLUAyhvEaltE1ihAF9wEBEHGGDznSGwtk=",
         "ref": "master",
-        "rev": "f23c954efb3005bc05a1b5da910a1ca1d9864ab4",
-        "revCount": 109,
+        "rev": "ed749df4ed76d9252b687e360132be03f943a03b",
+        "revCount": 113,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/butler-webui"
       },
@@ -596,11 +596,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1631010465,
-        "narHash": "sha256-ZVFH04G2HgEmETy9/c+A6YzUENacZFeTshuiW22j7JA=",
+        "lastModified": 1637315609,
+        "narHash": "sha256-CGCv+vBoSpsR6wFg9smrjHSUsd4L4yvhDZtXLsmY1kw=",
         "ref": "master",
-        "rev": "173c3ee1a357e5ff786c00faea9fe133e680f457",
-        "revCount": 3402,
+        "rev": "9ccb91bbea0a0dbde3824179ea4f93c76d5720fe",
+        "revCount": 3499,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/hydra"
       },
@@ -1376,16 +1376,16 @@
         "wind-mirrorer": "wind-mirrorer"
       },
       "locked": {
-        "lastModified": 1637287484,
-        "narHash": "sha256-nMgwrlRlM3y4Dq/38cO6E8iDnhDxCIdZJTiiAJEPrfA=",
-        "ref": "master",
-        "rev": "53a04eab3bf0da8742b0cf5cf40fc2ed2c5200b9",
-        "revCount": 867,
+        "lastModified": 1637650775,
+        "narHash": "sha256-lPQXCdTn0e1Y0XA2uoVcS2004lMqz7j7admaAtIexAk=",
+        "ref": "updateWarehouser",
+        "rev": "550fb535fcd67bd2086640f826447a8a92cc7d54",
+        "revCount": 894,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       },
       "original": {
-        "ref": "master",
+        "ref": "updateWarehouser",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       }
