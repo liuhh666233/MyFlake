@@ -8,11 +8,8 @@ in {
       }/"
       "https://cache.nixos.org/"
     ];
-    binaryCachePublicKeys = [
-      "${IPaddressPorts.sisyphus}:${
-        toString IPaddressPorts.nixServerPort
-      }:e0r/Sp9h7UI8siGsMhKsK/w4glRrdMLAGhKV1BFJ0nQ="
-    ];
+    binaryCachePublicKeys =
+      [ "sisyphus:A+04lWKcliP1HDMpJZCvjPwM0ZMPjRpU8zijgDsHjpk=" ];
     trustedBinaryCaches = [
       "http://${IPaddressPorts.sisyphus}:${
         toString IPaddressPorts.nixServerPort
