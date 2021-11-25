@@ -27,7 +27,7 @@ in {
       recommendedTlsSettings = true;
       # Enable recommended optimisation settings.
       recommendedOptimisation = true;
-      config = ''
+      appendHttpConfig = ''
         server {
           listen       10000;
           server_name  localhost;
