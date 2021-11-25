@@ -16,6 +16,7 @@ let
         };
       } // extraLocations;
     };
+  auth_file = ./admin;
 in {
   config = {
 
@@ -41,6 +42,8 @@ in {
             proxy_set_header      Upgrade "websocket";
             proxy_set_header      Connection "Upgrade";
             proxy_read_timeout    86400;
+            auth_basic secured;
+            auth_basic_user_file ${auth_file};
           }
         }
         server {
