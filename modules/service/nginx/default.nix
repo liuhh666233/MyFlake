@@ -43,6 +43,21 @@ in {
             proxy_read_timeout    86400;
           }
         }
+        server {
+          listen       10001;
+          server_name  localhost;
+          location / {
+            proxy_pass http://127.0.0.1:2342;
+            proxy_set_header Host $host:10001;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+            proxy_http_version    1.1;
+            proxy_set_header      Upgrade "websocket";
+            proxy_set_header      Connection "Upgrade";
+            proxy_read_timeout    86400;
+          }
+        }
       '';
       # nginx 代理jupyter notebook  
       # virtualHosts."127.0.0.1" =   {
