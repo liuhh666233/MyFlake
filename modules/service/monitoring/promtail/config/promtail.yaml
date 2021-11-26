@@ -77,7 +77,6 @@ scrape_configs:
                 conclusion:
                 duration:
   - job_name: nginx
-    entry_parser: raw
     static_configs:
       - targets:
           - localhost
