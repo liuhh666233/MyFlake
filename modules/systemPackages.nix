@@ -31,6 +31,7 @@
     remmina
     borgbackup
     jq
+    flameshot
 
     # Work
     vscode
