@@ -21,8 +21,8 @@
     # ../../modules/service/redis
     ../../users/lxb.nix
   ];
-  # serviceContainers.warehouser = {
-  #   mainUser = "liuxiaobo";
-  #   mysqlServerId = 4;
-  # };
+  serviceContainers.warehouser = {
+    mainUser = "liuxiaobo";
+    mysqlServerId = 4;
+  };
 }
