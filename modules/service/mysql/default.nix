@@ -3,7 +3,7 @@ with lib;
 let IPaddressPorts = import ../../IPaddress-ports.nix;
 in {
   services.mysql = {
-    enable = true;
+    enable = false;
     port = 3306;
     package = pkgs.mariadb;
     user = "mysql";

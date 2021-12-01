@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
-
-{
+let IPaddressPorts = import ../../modules/IPaddress-ports.nix;
+in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/i18n.nix
@@ -24,5 +24,7 @@
   serviceContainers.warehouser = {
     mainUser = "liuxiaobo";
     mysqlServerId = 4;
+    mysqlMasterHost = IPaddressPorts.bishop;
+    mysqlMasterPort = IPaddressPorts.mysqlTcpPort;
   };
 }
