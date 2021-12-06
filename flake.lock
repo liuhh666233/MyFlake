@@ -1408,16 +1408,16 @@
         "wind-mirrorer": "wind-mirrorer"
       },
       "locked": {
-        "lastModified": 1638752211,
-        "narHash": "sha256-a2q4Im8K6zQgxctpQrebwX8cSDaJzaDd5HgG82q3BTQ=",
-        "ref": "master",
-        "rev": "25a9080db512859265bd64a5af179caab70f6f5c",
-        "revCount": 1005,
+        "lastModified": 1638761228,
+        "narHash": "sha256-xEsRDgsKePLcN5RPuxfhKdUNdIlQYhEHvf0qfzEWcz0=",
+        "ref": "updateWarehouser",
+        "rev": "16b861610ba1a13e4849970fb51aa7295ad9be46",
+        "revCount": 1007,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       },
       "original": {
-        "ref": "master",
+        "ref": "updateWarehouser",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       }
