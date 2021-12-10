@@ -48,6 +48,8 @@
               nixpkgs.overlays = [
                 (final: prev: {
 
+                  apache-airflow = pkgs-unstable.apache-airflow;
+
                   grafana-latest = pkgs-unstable.grafana;
 
                   google-chrome-latest = pkgs.google-chrome;
