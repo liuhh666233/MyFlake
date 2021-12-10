@@ -49,6 +49,7 @@
     sqlitebrowser
     nixopsUnstable
     nixUnstable
+    apache-airflow
     # nixops
 
     # Personal
