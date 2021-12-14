@@ -86,6 +86,7 @@
         websockets
         black
         beancount
+        apache-airflow
       ]))
     # GO
     go
