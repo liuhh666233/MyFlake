@@ -22,6 +22,9 @@
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
     wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
 
+    airflow-dags.url =
+      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git";
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, vital-modules, ... }@inputs:
@@ -53,6 +56,8 @@
                   grafana-latest = pkgs-unstable.grafana;
 
                   google-chrome-latest = pkgs.google-chrome;
+
+                  airflow-dags = inputs.airflow-dags.defaultPackage."${system}";
                 })
               ];
             })

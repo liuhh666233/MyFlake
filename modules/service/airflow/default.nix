@@ -44,6 +44,11 @@ in {
           mkdir ${cfg.airflowHome}
         fi
         cp -rf ${airflow-config}/* ${cfg.airflowHome}
+
+        if [ ! -d "${cfg.airflowHome}/dags" ]; then
+          mkdir ${cfg.airflowHome}/dags
+        fi
+        cp -rf ${pkgs.airflow-dags}/* ${cfg.airflowHome}/dags
       '';
       serviceConfig = {
         Type = "simple";
