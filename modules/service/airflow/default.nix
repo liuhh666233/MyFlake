@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
-let cfg = config.services.airflow;
+let
+  cfg = config.services.airflow;
+  airflow-config =
+    pkgs.callPackage ./airflow-config { airflowHome = cfg.airflowHome; };
 in {
 
   options.services.airflow = with lib; {
@@ -36,6 +39,12 @@ in {
       description = "Start airflow webserver.";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
+      preStart = ''
+        if [ ! -d "${cfg.airflowHome}" ]; then
+          mkdir ${cfg.airflowHome}
+        cp -rf ${airflow-config}/* ${cfg.airflowHome}
+        fi
+      '';
       serviceConfig = {
         Type = "simple";
         User = cfg.user;
@@ -50,7 +59,7 @@ in {
 
     systemd.services.airflow-scheduler = {
       description = "Start airflow scheduler.";
-      after = [ "network.target" ];
+      after = [ "airflow-webserver.target" ];
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "simple";
