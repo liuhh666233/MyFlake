@@ -42,8 +42,8 @@ in {
       preStart = ''
         if [ ! -d "${cfg.airflowHome}" ]; then
           mkdir ${cfg.airflowHome}
-        cp -rf ${airflow-config}/* ${cfg.airflowHome}
         fi
+        cp -rf ${airflow-config}/* ${cfg.airflowHome}
       '';
       serviceConfig = {
         Type = "simple";
@@ -59,7 +59,7 @@ in {
 
     systemd.services.airflow-scheduler = {
       description = "Start airflow scheduler.";
-      after = [ "airflow-webserver.target" ];
+      after = [ "airflow-webserver.services" ];
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "simple";

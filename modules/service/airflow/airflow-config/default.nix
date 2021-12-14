@@ -12,7 +12,6 @@ stdenv.mkDerivation {
     mkdir -p $out
     cp $src/airflow.cfg $out
     cp $src/webserver_config.py $out
-    substituteInPlace $out/airflow.cfg \
-        --replace "{%AIRFLOW_HOME%}" "${airflowHome}"
+    substituteInPlace $out/airflow.cfg --replace "{%AIRFLOW_HOME%}" ${airflowHome}
   '';
 }
