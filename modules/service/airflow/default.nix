@@ -74,6 +74,7 @@ in {
         ExecStart = "${pkgs.apache-airflow}/bin/airflow scheduler";
       };
       environment = { AIRFLOW_HOME = cfg.airflowHome; };
+      path = [ pkgs.bash ];
     };
 
     networking.firewall.allowedTCPPorts = [ cfg.webServerPort ];
