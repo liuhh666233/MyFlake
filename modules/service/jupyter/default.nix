@@ -37,6 +37,7 @@
             black
             PyGithub
             GitPython
+            redis
           ]));
       in {
         displayName = "Python 3";
