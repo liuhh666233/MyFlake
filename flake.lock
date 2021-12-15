@@ -6,15 +6,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1639465706,
-        "narHash": "sha256-ki+xH5FwHR09gLOXBZTzR49zRoru/WlBFQWAJ0r5ku8=",
-        "ref": "master",
-        "rev": "c8fe3a9eb8b6116bcef7054178152f6202800478",
-        "revCount": 2,
+        "lastModified": 1639563568,
+        "narHash": "sha256-laDNNbG9LaLm0vdmMABrrQVBCC2qio0H96hczb2vcKQ=",
+        "ref": "addCleanHistoryData",
+        "rev": "bf9079dc0650302389d5b6d8980e9dd804ed2ac0",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/airflow-dags.git"
       },
       "original": {
+        "ref": "addCleanHistoryData",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/airflow-dags.git"
       }
@@ -773,16 +774,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
+        "lastModified": 1638239011,
+        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
+        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "21.05",
+        "ref": "21.11",
         "repo": "nixpkgs",
         "type": "github"
       }
