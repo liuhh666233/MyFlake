@@ -35,6 +35,7 @@
             matplotlib
             websockets
             black
+            PyGithub
           ]));
       in {
         displayName = "Python 3";
