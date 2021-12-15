@@ -86,6 +86,7 @@
         websockets
         black
         beancount
+        PyGithub
       ]))
     # GO
     go
