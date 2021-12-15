@@ -36,6 +36,7 @@
             websockets
             black
             PyGithub
+            GitPython
           ]));
       in {
         displayName = "Python 3";
