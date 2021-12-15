@@ -23,7 +23,7 @@
     wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
 
     airflow-dags.url =
-      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git";
+      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=addCleanHistoryData";
 
   };
 
@@ -58,6 +58,9 @@
                   google-chrome-latest = pkgs.google-chrome;
 
                   airflow-dags = inputs.airflow-dags.defaultPackage."${system}";
+
+                  airflow-python =
+                    inputs.airflow-dags.packages."${system}".airflow-python;
                 })
               ];
             })
