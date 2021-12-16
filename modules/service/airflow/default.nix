@@ -73,8 +73,11 @@ in {
         RestartSec = "10s";
         ExecStart = "${pkgs.airflow-python}/bin/airflow scheduler";
       };
-      environment = { AIRFLOW_HOME = cfg.airflowHome; };
-      path = [ pkgs.bash ];
+      environment = {
+        AIRFLOW_HOME = cfg.airflowHome;
+        PYTHONPATH = "${pkgs.airflow-python}/lib/python3.9/site-packages";
+      };
+      path = [ pkgs.bash pkgs.airflow-python ];
     };
 
     networking.firewall.allowedTCPPorts = [ cfg.webServerPort ];
