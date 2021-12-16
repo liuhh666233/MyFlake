@@ -49,7 +49,7 @@
     sqlitebrowser
     nixopsUnstable
     nixUnstable
-    apache-airflow
+    airflow-python
     # nixops
 
     # Personal

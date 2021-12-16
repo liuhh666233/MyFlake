@@ -55,7 +55,7 @@ in {
         User = cfg.user;
         Restart = "always";
         RestartSec = "10s";
-        ExecStart = "${pkgs.apache-airflow}/bin/airflow webserver --port ${
+        ExecStart = "${pkgs.airflow-python}/bin/airflow webserver --port ${
             toString cfg.webServerPort
           } ";
       };
@@ -71,7 +71,7 @@ in {
         User = cfg.user;
         Restart = "always";
         RestartSec = "10s";
-        ExecStart = "${pkgs.apache-airflow}/bin/airflow scheduler";
+        ExecStart = "${pkgs.airflow-python}/bin/airflow scheduler";
       };
       environment = { AIRFLOW_HOME = cfg.airflowHome; };
       path = [ pkgs.bash ];
