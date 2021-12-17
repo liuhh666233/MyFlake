@@ -23,7 +23,7 @@
     wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
 
     airflow-dags.url =
-      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=addCleanHistoryData";
+      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=master";
 
   };
 

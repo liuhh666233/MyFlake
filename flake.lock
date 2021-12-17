@@ -6,16 +6,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1639724522,
-        "narHash": "sha256-LMM1XQoOAJmmgbfgRofaZcWKiF4kiO/rvocJfGXyQwQ=",
-        "ref": "addCleanHistoryData",
-        "rev": "ae209af1d279a07e2a617ff3026dfc3464d7d0ff",
-        "revCount": 15,
+        "lastModified": 1639731189,
+        "narHash": "sha256-mbqF+yWcTMn4eOzjMB49MpJ0Wu+9d8gQCDxVrkWxqmU=",
+        "ref": "master",
+        "rev": "5bf5604d0cf6c9d11bb61b2b7e9ebe4a9ab774e5",
+        "revCount": 20,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/airflow-dags.git"
       },
       "original": {
-        "ref": "addCleanHistoryData",
+        "ref": "master",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/airflow-dags.git"
       }
