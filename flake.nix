@@ -53,6 +53,8 @@
 
                   grafana-latest = pkgs-unstable.grafana;
 
+                  fastavro = pkgs-unstable.python38Packages.fastavro;
+
                   google-chrome-latest = pkgs.google-chrome;
 
                   airflow-dags = inputs.airflow-dags.defaultPackage."${system}";

@@ -38,6 +38,7 @@
             PyGithub
             GitPython
             redis
+            pkgs.fastavro
           ]));
       in {
         displayName = "Python 3";
