@@ -11,9 +11,9 @@ in {
 
     user = mkOption {
       type = types.str;
-      default = "lxb";
+      default = "root";
       description = "The user under which airflow service runs";
-      example = "lxb";
+      example = "root";
     };
 
     webServerPort = mkOption {
