@@ -22,11 +22,11 @@ in {
     ../../modules/service/redis
     ../../users/lxb.nix
   ];
-  # serviceContainers.warehouser = {
-  #   mainUser = "liuxiaobo";
-  #   mysqlServerId = 4;
-  #   mysqlMasterHost = IPaddressPorts.bishop;
-  #   mysqlMasterPort = IPaddressPorts.mysqlTcpPort;
-  # };
+  serviceContainers.warehouser = {
+    mainUser = "liuxiaobo";
+    mysqlServerId = 4;
+    mysqlMasterHost = IPaddressPorts.bishop;
+    mysqlMasterPort = IPaddressPorts.mysqlTcpPort;
+  };
   services.airflow = { enable = true; };
 }

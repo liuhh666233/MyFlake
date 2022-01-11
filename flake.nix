@@ -12,15 +12,9 @@
     vital-modules.url = "github:nixvital/vital-modules";
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
-    wonder-devops.url =
-      "git+ssh://git@github.com/quant-wonderland/devops-tools.git";
-    wonder-devops.inputs.nixpkgs.follows = "nixpkgs";
-
     wonder-deployhub.url =
-      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=updateWarehouser";
-    wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=master";
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
-    wonder-deployhub.inputs.devops-tools.follows = "wonder-devops";
 
     airflow-dags.url =
       "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=updateCheckGithubDag";
@@ -65,7 +59,7 @@
                 })
               ];
             })
-            # inputs.wonder-deployhub.nixosModules.warehouser
+            inputs.wonder-deployhub.nixosModules.warehouser
             ./machines/lxb
           ];
         };
