@@ -64,7 +64,7 @@ in {
 
     systemd.services.airflow-scheduler = {
       description = "Start airflow scheduler.";
-      after = [ "airflow-webserver.services" ];
+      after = [ "airflow-webserver.service" ];
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "simple";
