@@ -49,6 +49,8 @@
 
                   fastavro = pkgs-unstable.python38Packages.fastavro;
 
+                  teams = pkgs-unstable.teams;
+
                   google-chrome-latest = pkgs.google-chrome;
 
                   airflow-dags = inputs.airflow-dags.defaultPackage."${system}";
