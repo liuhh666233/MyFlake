@@ -88,6 +88,7 @@
         black
         beancount
         PyGithub
+        paramiko
       ]))
     # GO
     go

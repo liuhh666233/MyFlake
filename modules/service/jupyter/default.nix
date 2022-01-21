@@ -39,6 +39,7 @@
             GitPython
             redis
             pkgs.fastavro
+            paramiko
           ]));
       in {
         displayName = "Python 3";
