@@ -51,7 +51,6 @@
     nixUnstable
     airflow-python
     # nixops
-    teams
 
     # Personal
     beancount
