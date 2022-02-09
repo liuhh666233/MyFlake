@@ -14,6 +14,10 @@
           enable = true;
           port = 9558;
         };
+        redis = {
+          enable = true;
+          port = 9121;
+        };
         sql = {
           enable = false;
           port = 9237;
@@ -59,6 +63,16 @@
         {
           job_name = "test";
           static_configs = [{ targets = [ "127.0.0.1:${toString 5000}" ]; }];
+        }
+        {
+          job_name = "redis_exporter";
+          static_configs = [{
+            targets = [
+              "127.0.0.1:${
+                toString config.services.prometheus.exporters.redis.port
+              }"
+            ];
+          }];
         }
       ];
     };
