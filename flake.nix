@@ -17,7 +17,7 @@
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
 
     airflow-dags.url =
-      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=updateCheckGithubDag";
+      "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=master";
 
   };
 
