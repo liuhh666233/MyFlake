@@ -395,19 +395,19 @@
         "vitalpkgs": "vitalpkgs_4"
       },
       "locked": {
-        "lastModified": 1644372960,
-        "narHash": "sha256-0H6dUkPXMOetWgABdYFXGSHlp2aUdUXJaZlGkqwTByc=",
+        "lastModified": 1644834062,
+        "narHash": "sha256-qWmxH2czxQAiCsVJljwA6xG/lAFeXW3n54Mm1E+0Apk=",
         "ref": "master",
-        "rev": "8437b36f6e7a5db359aa42bdfd04de946b9b6f1c",
-        "revCount": 1533,
+        "rev": "800f4c1f8b67ff71806d7b8f4e060b77da5de18d",
+        "revCount": 1535,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.6.2"
+        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.6.3"
       },
       "original": {
         "ref": "master",
-        "rev": "8437b36f6e7a5db359aa42bdfd04de946b9b6f1c",
+        "rev": "800f4c1f8b67ff71806d7b8f4e060b77da5de18d",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.6.2"
+        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.6.3"
       }
     },
     "devops-tools": {
@@ -821,11 +821,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1642662592,
-        "narHash": "sha256-xKLrjktwkvrSw4WwHxUi0AEWFPigkYvgcpse8dgKC7E=",
+        "lastModified": 1644816135,
+        "narHash": "sha256-3V1KccQhxNEZwcE3VjSPjWBXkI7yrRb54lBhmHoTPhU=",
         "ref": "master",
-        "rev": "e9c1a248bb8e1bba665d5087645457601f242b38",
-        "revCount": 99,
+        "rev": "d0499fb41a061c79667c6c3e95c3884138cc2561",
+        "revCount": 102,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/job-dispatcher"
       },
@@ -1798,16 +1798,16 @@
         "wind-mirrorer": "wind-mirrorer"
       },
       "locked": {
-        "lastModified": 1644824770,
-        "narHash": "sha256-pzsXbQpw+Jr7HJqWvbA667/8JmYWiC2I0u6r0XrRbuo=",
-        "ref": "master",
-        "rev": "30bb020d10a1cf5c02819a3ba8b585d3996f7a2e",
-        "revCount": 1361,
+        "lastModified": 1644918234,
+        "narHash": "sha256-A3y7UmTHczZZVDn583c/t/f+WiysIzgZUiKFL540yVQ=",
+        "ref": "StagingTest20220211",
+        "rev": "531dc4e82208371b7557e681628c4c8cab5739f7",
+        "revCount": 1366,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       },
       "original": {
-        "ref": "master",
+        "ref": "StagingTest20220211",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/deployhub.git"
       }

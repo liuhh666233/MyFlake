@@ -13,7 +13,7 @@
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-deployhub.url =
-      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=master";
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=StagingTest20220211";
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
 
     airflow-dags.url =
