@@ -4,16 +4,15 @@
 
   inputs = {
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Use vital-modules, with the same nixpkgs
     vital-modules.url = "github:nixvital/vital-modules";
-    vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-deployhub.url =
-      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=StagingTest20220211";
+      "git+ssh://git@github.com/quant-wonderland/deployhub.git?ref=master";
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
 
     airflow-dags.url =
