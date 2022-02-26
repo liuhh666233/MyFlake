@@ -29,8 +29,6 @@
             autopep8
             pip
             pyyaml
-            boto
-            boto3
             pytz
             matplotlib
             websockets

@@ -63,7 +63,7 @@
 
     # Python
     python3
-    (python38.withPackages (ps:
+    (python3.withPackages (ps:
       with ps; [
         jupyter
         jupyter_core
@@ -80,8 +80,6 @@
         autopep8
         pip
         pyyaml
-        boto
-        boto3
         pytz
         websockets
         black
