@@ -60,6 +60,7 @@
     v2ray
     qv2ray
     openvpn
+    cloudflared
 
     # Python
     python3
