@@ -52,6 +52,8 @@
 
                   teams = pkgs-unstable.teams;
 
+                  cloudflared = pkgs-unstable.cloudflared;
+
                   google-chrome-latest = pkgs.google-chrome;
 
                   airflow-dags = inputs.airflow-dags.defaultPackage."${system}";
