@@ -12,6 +12,12 @@
   nixpkgs.config.allowUnfree = true;
 
   services.openssh.enable = true;
+
+  services.openssh.extraConfig = ''
+    ClientAliveInterval 3
+    ClientAliveCountMax 10
+  '';
+
   networking.firewall.enable = false;
   networking.networkmanager.enable = true;
 
