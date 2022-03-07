@@ -1,0 +1,5 @@
+{ pkgs, ... }:
+
+{
+  imports = [ ./ssh.nix ];
+}

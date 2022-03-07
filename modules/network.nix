@@ -21,13 +21,4 @@
   networking.firewall.enable = false;
   networking.networkmanager.enable = true;
 
-  services.strongswan = {
-    enable = false;
-    secrets = [ "ipsec.d/ipsec.nm-l2tp.secrets" ];
-  };
-
-  programs.ssh.extraConfig = ''
-    ServerAliveInterval 3
-    ServerAliveCountMax 10
-  '';
 }

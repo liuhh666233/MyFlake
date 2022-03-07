@@ -8,6 +8,9 @@
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     # Use vital-modules, with the same nixpkgs
     vital-modules.url = "github:nixvital/vital-modules";
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +25,8 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, vital-modules, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, vital-modules, ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -35,9 +39,27 @@
         config.allowUnfree = true;
         config.allowBroken = true;
       };
+      mkHomeManagerModule = { user, imports }:
+        { config, ... }: {
+          imports = [ (home-manager.nixosModules.home-manager) ];
+          home-manager = {
+            # This is needed to make sure that home-manager follows the
+            # pkgs/nixpkgs specified in this flake.
+            #
+            # Relevant github issue: https://github.com/divnix/devos/issues/30
+            useGlobalPkgs = true;
+            useUserPackages = true;
+          };
+          home-manager.users."${user}" = { inherit imports; };
+        };
     in {
-      nixosConfigurations = {
 
+      nixosModules.lxb-home = mkHomeManagerModule {
+        user = "lxb";
+        imports = [ ./by-user/lxb ];
+      };
+
+      nixosConfigurations = {
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
@@ -61,10 +83,13 @@
                   airflow-python =
                     inputs.airflow-dags.packages."${system}".airflow-python;
 
+                  home-manager = inputs.home-manager.defaultPackage."${system}";
+
                 })
               ];
             })
             inputs.wonder-deployhub.nixosModules.warehouser
+            self.nixosModules.lxb-home
             ./machines/lxb
           ];
         };
