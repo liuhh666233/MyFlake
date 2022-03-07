@@ -26,4 +26,8 @@
     secrets = [ "ipsec.d/ipsec.nm-l2tp.secrets" ];
   };
 
+  programs.ssh.extraConfig = ''
+    ServerAliveInterval 3
+    ServerAliveCountMax 10
+  '';
 }
