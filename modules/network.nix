@@ -22,7 +22,8 @@
   networking.networkmanager.enable = true;
 
   services.strongswan = {
-    enable = true;
+    enable = false;
     secrets = [ "ipsec.d/ipsec.nm-l2tp.secrets" ];
   };
+
 }
