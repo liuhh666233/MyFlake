@@ -11,6 +11,11 @@
     matchBlocks = {
       "*" = { identityFile = "~/.ssh/id_rsa"; };
 
+      "wonder" = {
+        hostname = "192.168.110.59";
+        port = 22;
+      };
+
       "sisyphus" = {
         hostname = "192.168.110.207";
         port = 22;
