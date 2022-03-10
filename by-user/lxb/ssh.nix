@@ -12,6 +12,7 @@
       "*" = { identityFile = "~/.ssh/id_rsa"; };
 
       "wonder" = {
+        user = "wonder";
         hostname = "192.168.110.59";
         port = 22;
       };
