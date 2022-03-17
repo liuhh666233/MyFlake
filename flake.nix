@@ -72,7 +72,7 @@
 
                   fastavro = pkgs-unstable.python38Packages.fastavro;
 
-                  teams = pkgs-unstable.teams;
+                  flameshot = pkgs-unstable.flameshot;
 
                   cloudflared = pkgs-unstable.cloudflared;
 
