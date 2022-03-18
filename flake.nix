@@ -20,13 +20,16 @@
     wonder-deployhub.inputs.vital-modules.follows = "vital-modules";
     wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
 
+    wonder-modules.url =
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=addServices";
+
     airflow-dags.url =
       "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=master";
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, vital-modules, ...
-    }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, vital-modules
+    , wonder-modules, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -64,6 +67,7 @@
           inherit system;
           modules = [
             vital-modules.nixosModules.foundation
+            wonder-modules.nixosModules.datapipeline
             ({
               nixpkgs.overlays = [
                 (final: prev: {

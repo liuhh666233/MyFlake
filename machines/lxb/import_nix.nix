@@ -29,4 +29,22 @@ in {
   #   mysqlMasterPort = IPaddressPorts.mysqlTcpPort;
   # };
   services.airflow = { enable = false; };
+
+  services.wind-importer = {
+    enable = false;
+    startOnBoot = true;
+    user = "lxb";
+    dependency =
+      [ "network.target" "redis.service" "clickhouse-server.service" ];
+    webServerPort = 15040;
+    redis = {
+      host = "localhost";
+      port = 6379;
+      pubStreamsRedisNum = 1;
+    };
+    clickhouse = {
+      host = "localhost";
+      port = 9005;
+    };
+  };
 }
