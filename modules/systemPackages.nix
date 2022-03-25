@@ -51,6 +51,7 @@
     nixUnstable
     airflow-python
     # nixops
+    thefuck
 
     # Personal
     beancount
