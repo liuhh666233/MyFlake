@@ -11,7 +11,7 @@ in {
     ../../modules/nix-build.nix
     ../../modules/service/jupyter
     # ../../modules/service/nginx
-    # ../../modules/service/mysql
+    ../../modules/service/mysql
     ../../modules/service/airflow
     # ../../modules/service/github-runner
     # ../../modules/service/monitoring/grafana.nix

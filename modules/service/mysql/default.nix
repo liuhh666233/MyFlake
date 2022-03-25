@@ -21,13 +21,14 @@ in {
         max_allowed_packet = "16M";
       };
     };
-    replication = {
-      role = "slave";
-      serverId = 2;
-      masterHost = IPaddressPorts.bishop;
-      masterUser = "zyyx";
-      masterPassword = "123456";
-      masterPort = 3306;
-    };
+    initialScript = ./initial-script.sql;
+    # replication = {
+    #   role = "slave";
+    #   serverId = 2;
+    #   masterHost = IPaddressPorts.bishop;
+    #   masterUser = "zyyx";
+    #   masterPassword = "123456";
+    #   masterPort = 3306;
+    # };
   };
 }
