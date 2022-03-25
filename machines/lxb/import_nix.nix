@@ -19,7 +19,7 @@ in {
     # ../../modules/service/monitoring/loki
     # ../../modules/service/monitoring/promtail
     # ../../modules/service/jsy-archiver
-    # ../../modules/service/redis
+    ../../modules/service/redis
     ../../users/lxb.nix
   ];
   # serviceContainers.warehouser = {
@@ -30,13 +30,8 @@ in {
   # };
   services.airflow = { enable = false; };
 
-  services.wind-importer = {
+  wonder.datapipeline = {
     enable = false;
-    startOnBoot = true;
-    user = "lxb";
-    dependency =
-      [ "network.target" "redis.service" "clickhouse-server.service" ];
-    webServerPort = 15040;
     redis = {
       host = "localhost";
       port = 6379;
@@ -44,7 +39,7 @@ in {
     };
     clickhouse = {
       host = "localhost";
-      port = 9005;
+      port = 29002;
     };
   };
 }

@@ -3971,11 +3971,11 @@
         "wind-mirrorer": "wind-mirrorer_2"
       },
       "locked": {
-        "lastModified": 1647587817,
-        "narHash": "sha256-K5S3y94RYVy7tXiSMfUkAlblPfrgenVjyjUm/AIItWQ=",
+        "lastModified": 1647596005,
+        "narHash": "sha256-sAb1muMNqaSeZyWFjj32p60cq+q7+Li9GhJTnA3BidA=",
         "ref": "addServices",
-        "rev": "49427da786cf08c59b29c10cf86693c1b27e42a6",
-        "revCount": 19,
+        "rev": "5af0f917a200b26d86754afffaf4c328a8080871",
+        "revCount": 21,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-modules.git"
       },
