@@ -93,7 +93,7 @@
               ];
             })
             # inputs.wonder-deployhub.nixosModules.warehouser
-            self.nixosModules.lxb-home
+            # self.nixosModules.lxb-home
             ./machines/lxb
           ];
         };
