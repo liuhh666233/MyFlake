@@ -21,7 +21,7 @@
     wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=AddWarehouser";
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=master";
 
     airflow-dags.url =
       "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=master";
