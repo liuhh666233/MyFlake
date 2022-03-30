@@ -21,7 +21,7 @@
     wonder-deployhub.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=addServices";
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=AddWarehouser";
 
     airflow-dags.url =
       "git+ssh://git@github.com/quant-wonderland/airflow-dags.git?ref=master";
@@ -67,7 +67,7 @@
           inherit system;
           modules = [
             vital-modules.nixosModules.foundation
-            wonder-modules.nixosModules.datapipeline
+            wonder-modules.nixosModules.warehouser
             ({
               nixpkgs.overlays = [
                 (final: prev: {

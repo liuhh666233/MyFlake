@@ -29,17 +29,12 @@ in {
   #   mysqlMasterPort = IPaddressPorts.mysqlTcpPort;
   # };
   services.airflow = { enable = false; };
-
-  wonder.datapipeline = {
+  serviceContainers.warehouser = {
     enable = false;
-    redis = {
-      host = "localhost";
-      port = 6379;
-      pubStreamsRedisNum = 1;
-    };
-    clickhouse = {
-      host = "localhost";
-      port = 29002;
+    user = "liuxiaobo";
+    loki = {
+      host = "lxb";
+      port = 3100;
     };
   };
 }
