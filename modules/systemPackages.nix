@@ -52,6 +52,7 @@
     airflow-python
     # nixops
     thefuck
+    gnupg1
 
     # Personal
     beancount
@@ -61,7 +62,6 @@
     v2ray
     qv2ray
     openvpn
-    cloudflared
 
     # Python
     python3

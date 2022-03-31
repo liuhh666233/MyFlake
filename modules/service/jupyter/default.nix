@@ -36,7 +36,6 @@
             PyGithub
             GitPython
             redis
-            pkgs.fastavro
             paramiko
           ]));
       in {
