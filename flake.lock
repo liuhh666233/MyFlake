@@ -1986,11 +1986,11 @@
         "wind-mirrorer": "wind-mirrorer"
       },
       "locked": {
-        "lastModified": 1648794882,
-        "narHash": "sha256-NnzuemnLODeRheS8XOqxXpTPkhdK8rTPg9BgQ3XMIZU=",
+        "lastModified": 1648800187,
+        "narHash": "sha256-FLYyFdjlLhwuaxfZ+GA28Hv+DPfcAgIbGAqO7SXho44=",
         "ref": "UpdateFoundationModule",
-        "rev": "ffffc40a4e2864b28f28549732ad9630b53bf113",
-        "revCount": 159,
+        "rev": "2515af379a0727da769e0c1485ed4504fd5c4707",
+        "revCount": 162,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-modules.git"
       },
