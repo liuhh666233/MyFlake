@@ -1,36 +1,37 @@
 { config, pkgs, ... }:
-
-{
+let
+  baseParams = config.wonder.baseParams;
+  vitalParams = config.wonder.vitalParams;
+in {
   imports = [ # Include the results of the hardware scan.
-    ./import_nix.nix
+    ./hardware-configuration.nix
+    ../../modules/systemPackages.nix
+    ../../modules/network.nix
+    ../../modules/service/jupyter
+    ../../users/lxb.nix
   ];
 
   vital.mainUser = "liuxiaobo";
 
-  fonts.fonts = with pkgs; [
-    # Add Wenquanyi Microsoft Ya Hei, a nice-looking Chinese font.
-    wqy_microhei
-    # Fira code is a good font for coding
-    fira-code
-    fira-code-symbols
-    font-awesome-ttf
-    inconsolata
-  ];
+  vital.graphical.enable = true;
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  vital.pre-installed.level = 5;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  vital.programs.modern-utils.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.gnome.chrome-gnome-shell.enable = true;
-  services.gnome.gnome-remote-desktop.enable = true;
-  # Disable gnome all apps
-  # services.gnome.core-utilities.enable = false;
+  wonder.binaryCaches = {
+    enable = true;
+    nixServe.host = "sisyphus";
+    nixServe.port = baseParams.ports.nixServerPort;
+  };
+
+  wonder.remoteNixBuild = {
+    enable = true;
+    user = "root";
+    host = baseParams.hosts.sisyphus;
+  };
+
+  nixpkgs.config.allowUnfree = true;
 
   environment.gnome.excludePackages = with pkgs.gnome; [
     baobab # disk usage analyzer
@@ -60,9 +61,4 @@
     pkgs.gnome-connections
   ];
 
-  system.stateVersion = "21.05";
-
-  virtualisation.docker.enable = true;
-
 }
-
