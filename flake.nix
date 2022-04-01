@@ -26,11 +26,6 @@
         config.allowUnfree = true;
         config.allowBroken = true;
       };
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-        config.allowBroken = true;
-      };
     in {
       nixosConfigurations = {
         lxb = nixpkgs.lib.nixosSystem rec {
@@ -42,8 +37,8 @@
             ({
               nixpkgs.overlays = [
                 (final: prev: {
-                  flameshot = pkgs-unstable.flameshot;
-                  google-chrome = pkgs.google-chrome;
+                  flameshot =
+                    nixpkgs-unstable.legacyPackages."${prev.system}".flameshot;
                 })
               ];
             })
