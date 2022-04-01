@@ -37,7 +37,30 @@
         config.allowUnfree = true;
         config.allowBroken = true;
       };
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+        config.allowBroken = true;
+      };
+      mkHomeManagerModule = { user, imports }:
+        { config, ... }: {
+          imports = [ (home-manager.nixosModules.home-manager) ];
+          home-manager = {
+            # This is needed to make sure that home-manager follows the
+            # pkgs/nixpkgs specified in this flake.
+            #
+            # Relevant github issue: https://github.com/divnix/devos/issues/30
+            useGlobalPkgs = true;
+            useUserPackages = true;
+          };
+          home-manager.users."${user}" = { inherit imports; };
+        };
     in {
+
+      nixosModules.lxb-home = mkHomeManagerModule {
+        user = "lxb";
+        imports = [ ./by-user/lxb ];
+      };
 
       nixosConfigurations = {
         lxb = nixpkgs.lib.nixosSystem rec {
@@ -45,10 +68,17 @@
           modules = [
             vital-modules.nixosModules.foundation
             wonder-modules.nixosModules.warehouser
-            wonder-modules.nixosModules.devopsTools
             ({
               nixpkgs.overlays = [
                 (final: prev: {
+
+                  grafana-latest = pkgs-unstable.grafana;
+
+                  fastavro = pkgs-unstable.python38Packages.fastavro;
+
+                  flameshot = pkgs-unstable.flameshot;
+
+                  cloudflared = pkgs-unstable.cloudflared;
 
                   google-chrome-latest = pkgs.google-chrome;
 
@@ -62,6 +92,8 @@
                 })
               ];
             })
+            # inputs.wonder-deployhub.nixosModules.warehouser
+            # self.nixosModules.lxb-home
             ./machines/lxb
           ];
         };
