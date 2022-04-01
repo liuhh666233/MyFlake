@@ -17,8 +17,12 @@
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelPackages = pkgs.linuxPackages_5_15;
-  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+
+  # 查看主机启动时 视频输出信息
+  # dmesg | grep -i -e i915 -e drm -e vga
+  # boot.kernelParams = [ "i915.force_probe=4692" ];
+  boot.kernelModules = [ "kvm-intel" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/fcfc6671-e35a-4673-9861-3242e19bfbde";
