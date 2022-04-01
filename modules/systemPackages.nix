@@ -10,11 +10,6 @@
     wget
     ibus
     docker
-    lsd
-    glances
-    duf
-    p7zip
-    unrar
     inetutils
     dpkg
     ag
@@ -48,10 +43,7 @@
     nixfmt
     sqlitebrowser
     nixopsUnstable
-    nixUnstable
     airflow-python
-    # nixops
-    thefuck
     gnupg1
 
     # Personal
@@ -59,9 +51,9 @@
     fava
 
     # VPN
-    v2ray
-    qv2ray
-    openvpn
+    # v2ray
+    # qv2ray
+    # openvpn
 
     # Python
     python3
