@@ -13,7 +13,7 @@
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=UpdateFoundationModule";
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=master";
 
   };
 
