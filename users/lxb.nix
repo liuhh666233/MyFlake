@@ -4,13 +4,21 @@
     users.lxb = {
       isNormalUser = true;
       uid = 1001;
-      initialHashedPassword = lib.mkDefault "$6$c7xWgHnMCJKXlPHK$2Owbgw3Y5z/pgwD76O45nPzuRtABjN.Mr6M.yO1jOteDyVsXSOqgzgkAl1sD1kIowEQRFIoyXT45j8ZLmZ5SF1";
+      initialHashedPassword = lib.mkDefault
+        "$6$c7xWgHnMCJKXlPHK$2Owbgw3Y5z/pgwD76O45nPzuRtABjN.Mr6M.yO1jOteDyVsXSOqgzgkAl1sD1kIowEQRFIoyXT45j8ZLmZ5SF1";
       description = "The user lxb.";
       home = "/home/lxb";
       extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
       shell = pkgs.fish;
     };
   };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
+
+  home-manager.users.lxb = { imports = [ ../by-user/lxb ]; };
 
   programs.fish.enable = true;
   programs.fish.shellAliases = {
