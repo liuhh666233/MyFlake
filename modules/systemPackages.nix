@@ -80,6 +80,7 @@
         beancount
         PyGithub
         paramiko
+        xmltodict
       ]))
     # GO
     go

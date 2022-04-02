@@ -37,6 +37,7 @@
             GitPython
             redis
             paramiko
+            xmltodict
           ]));
       in {
         displayName = "Python 3";
