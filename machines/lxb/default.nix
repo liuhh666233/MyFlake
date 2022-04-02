@@ -21,14 +21,14 @@ in {
 
   wonder.binaryCaches = {
     enable = true;
-    nixServe.host = "sisyphus";
+    nixServe.host = baseParams.hosts.sisyphus;
     nixServe.port = baseParams.ports.nixServerPort;
   };
 
   wonder.remoteNixBuild = {
     enable = true;
     user = "root";
-    host = baseParams.hosts.sisyphus;
+    host = "sisyphus";
   };
 
   nixpkgs.config.allowUnfree = true;
