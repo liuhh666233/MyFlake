@@ -17,7 +17,7 @@
       "git+ssh://git@github.com/quant-wonderland/wonder-foundations";
 
     wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=AddWonderFoundations";
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules";
 
   };
 

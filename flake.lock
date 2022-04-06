@@ -2585,18 +2585,17 @@
         "wonder-foundations": "wonder-foundations_2"
       },
       "locked": {
-        "lastModified": 1649214392,
+        "lastModified": 1649220804,
         "narHash": "sha256-0WLECxOvy03WJt1yPIjQsKc40QezZV5DGiUPz2dx3LM=",
-        "ref": "AddWonderFoundations",
-        "rev": "1b2155d375121946fdd70e8f626d3fcdeaa9c5a1",
-        "revCount": 172,
+        "ref": "master",
+        "rev": "6783b3e2c41a9e0af1a5a74526fa76ca21b17b29",
+        "revCount": 173,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/wonder-modules.git"
+        "url": "ssh://git@github.com/quant-wonderland/wonder-modules"
       },
       "original": {
-        "ref": "AddWonderFoundations",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/wonder-modules.git"
+        "url": "ssh://git@github.com/quant-wonderland/wonder-modules"
       }
     }
   },
