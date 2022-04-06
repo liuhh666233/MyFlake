@@ -12,13 +12,17 @@
     vital-modules.url = "github:nixvital/vital-modules";
     vital-modules.inputs.nixpkgs.follows = "nixpkgs";
 
+    # wonder foundations
+    wonder-foundations.url =
+      "git+ssh://git@github.com/quant-wonderland/wonder-foundations";
+
     wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=master";
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules.git?ref=AddWonderFoundations";
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, vital-modules, wonder-modules
-    , ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, vital-modules, wonder-foundations
+    , wonder-modules, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -31,9 +35,8 @@
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
-            wonder-modules.nixosModules.foundation
+            wonder-foundations.nixosModules.foundation
             wonder-modules.nixosModules.warehouser
-            wonder-modules.nixosModules.devopsTools
             ({
               nixpkgs.overlays = [
                 (final: prev: {
