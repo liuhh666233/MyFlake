@@ -1008,8 +1008,6 @@
         "nix": "nix",
         "nixpkgs": [
           "wonder-foundations",
-          "hydra",
-          "nix",
           "nixpkgs"
         ]
       },
@@ -2531,11 +2529,11 @@
         "vitalpkgs": "vitalpkgs_2"
       },
       "locked": {
-        "lastModified": 1649212227,
-        "narHash": "sha256-cabx2On3vH8S5NtiRDL4HqWke/izm6RT7ZvtprvRGus=",
+        "lastModified": 1649221537,
+        "narHash": "sha256-lrXuZlD9XY+UnYAJdQsI4kwfu+go6VqP5YLmz9nx75w=",
         "ref": "master",
-        "rev": "4a872259e742bdd2f8c140c5beca8ca682aec962",
-        "revCount": 8,
+        "rev": "6887460e2aca795a6a255a1aaa18cb4dbd153836",
+        "revCount": 9,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
