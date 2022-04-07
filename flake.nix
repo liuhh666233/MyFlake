@@ -36,7 +36,8 @@
           inherit system;
           modules = [
             wonder-foundations.nixosModules.foundation
-            wonder-modules.nixosModules.warehouser
+            wonder-foundations.nixosModules.home-manager
+            wonder-foundations.nixosModules.devopsTools
             ({
               nixpkgs.overlays = [
                 (final: prev: {

@@ -31,6 +31,27 @@ in {
     host = "sisyphus";
   };
 
+  wonder.home-manager = {
+    enable = true;
+    user = "lxb";
+    extraImports = [ ];
+    vscodeServer.enable = true;
+    archer = {
+      enable = true;
+      remote_host = baseParams.hosts.bishop;
+      remote_port = 22;
+      remote_user = "lxb";
+      ssh_key = "/home/lxb/.ssh/id_rsa";
+      remote_warehouse_root = "/var/lib/wonder/warehouse";
+      local_warehouse_root = "/var/lib/wonder/warehouse";
+      ssh_proxy = "";
+    };
+    sshConfig = {
+      enable = true;
+      ssh_key = "/home/lxb/.ssh/id_rsa";
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   environment.gnome.excludePackages = with pkgs.gnome; [

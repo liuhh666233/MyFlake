@@ -13,13 +13,6 @@
     };
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
-
-  home-manager.users.lxb = { imports = [ ../by-user/lxb ]; };
-
   programs.fish.enable = true;
   programs.fish.shellAliases = {
     "gs" = "git status";
