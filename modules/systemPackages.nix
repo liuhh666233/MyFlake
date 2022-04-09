@@ -33,10 +33,8 @@
     google-chrome
     git
     freeoffice
-    goffice
     awscli2
     gftp
-    zoom-us
     dbeaver
     clickhouse-cli
     graphviz

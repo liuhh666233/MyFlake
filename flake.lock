@@ -1310,17 +1310,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1648648646,
-        "narHash": "sha256-pHAq/GvsP7zRHkUTCs+4d31C0IEtTIuC6/TFASIA+zg=",
+        "lastModified": 1646588256,
+        "narHash": "sha256-ZHljmNlt19nSm0Mz8fx6QEhddKUkU4hhwFmfNmGn+EY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "efea022d6fe0da84aa6613d4ddeafb80de713457",
+        "rev": "2ebb6c1e5ae402ba35cca5eec58385e5f1adea04",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-21.11",
         "repo": "nixpkgs",
+        "rev": "2ebb6c1e5ae402ba35cca5eec58385e5f1adea04",
         "type": "github"
       }
     },
@@ -1468,11 +1468,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1648632716,
-        "narHash": "sha256-kCmnDeiaMsdhfnNKjxdOzwRh2H6eQb8yWAL+nNabC/Y=",
+        "lastModified": 1649225869,
+        "narHash": "sha256-u1zLtPmQzhT9mNXyM8Ey9pk7orDrIKdwooeGDEXm5xM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "710fed5a2483f945b14f4a58af2cd3676b42d8c8",
+        "rev": "b6966d911da89e5a7301aaef8b4f0a44c77e103c",
         "type": "github"
       },
       "original": {
@@ -2692,11 +2692,11 @@
         "vitalpkgs": "vitalpkgs_2"
       },
       "locked": {
-        "lastModified": 1649323195,
-        "narHash": "sha256-lNzUCf6p+2/DzgQdu8ls9Xo8Jh0Qm/cmfT40D8qRqcc=",
+        "lastModified": 1649383082,
+        "narHash": "sha256-0ytiBjq5zndyFoVOzuDluxnUutFHhTfZHIMa9TwXllM=",
         "ref": "master",
-        "rev": "dad7976291b2c562cfcace7290a5e7b1eeb37779",
-        "revCount": 19,
+        "rev": "fed9e0aba5e8fe6d3eaa2ed9b07530ed3e4b0b8b",
+        "revCount": 24,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
@@ -2717,11 +2717,11 @@
         "vitalpkgs": "vitalpkgs_7"
       },
       "locked": {
-        "lastModified": 1649323195,
-        "narHash": "sha256-lNzUCf6p+2/DzgQdu8ls9Xo8Jh0Qm/cmfT40D8qRqcc=",
+        "lastModified": 1649383082,
+        "narHash": "sha256-0ytiBjq5zndyFoVOzuDluxnUutFHhTfZHIMa9TwXllM=",
         "ref": "master",
-        "rev": "dad7976291b2c562cfcace7290a5e7b1eeb37779",
-        "revCount": 19,
+        "rev": "fed9e0aba5e8fe6d3eaa2ed9b07530ed3e4b0b8b",
+        "revCount": 24,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
@@ -2745,11 +2745,11 @@
         "wonder-foundations": "wonder-foundations_2"
       },
       "locked": {
-        "lastModified": 1649324190,
-        "narHash": "sha256-p/NQzqYVoKq79IRfgkSK8nKxkWU3nXgPPbOYe9mp+4w=",
+        "lastModified": 1649418685,
+        "narHash": "sha256-DpF+h0iB/IUe9ZJ2AfiJTM/ONKEbaiDkn+dvOgAtYDE=",
         "ref": "master",
-        "rev": "639d34c0ca6d8e50b50db17fda8fdde9493d7d0f",
-        "revCount": 201,
+        "rev": "cc41463aadeb2830d903e3e038303b512a39de6b",
+        "revCount": 212,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-modules"
       },
