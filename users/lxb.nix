@@ -28,6 +28,9 @@
     "cat" = "bat";
     "cc" = "code -n";
     "gg" = "gedit";
+    "pr"  = "poetry run";
+    "pt"  = "poetry run pytest -v";
+    "gla" = "glances";
   };
 
   programs.fish.shellInit = ''
