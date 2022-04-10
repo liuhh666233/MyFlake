@@ -16,7 +16,7 @@
     "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelPackages = pkgs.linuxPackages_5_15;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = [ ];
 
   # 查看主机启动时 视频输出信息

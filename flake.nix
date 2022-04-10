@@ -6,26 +6,31 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs?rev=2ebb6c1e5ae402ba35cca5eec58385e5f1adea04";
 
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs?rev=a946fb970f985e20d038e9d12c0db68a8b3b2f19";
 
-    # Use vital-modules, with the same nixpkgs
-    vital-modules.url = "github:nixvital/vital-modules";
-    vital-modules.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # wonder foundations
     wonder-foundations.url =
       "git+ssh://git@github.com/quant-wonderland/wonder-foundations";
+    wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-modules.url =
       "git+ssh://git@github.com/quant-wonderland/wonder-modules";
+    wonder-modules.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, vital-modules, wonder-foundations
+  outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-unstable, wonder-foundations
     , wonder-modules, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        config.allowBroken = true;
+      };
+      pkgs-stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;

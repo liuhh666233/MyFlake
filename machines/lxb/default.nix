@@ -35,7 +35,7 @@ in {
     enable = true;
     user = "lxb";
     extraImports = [ ];
-    vscodeServer.enable = true;
+    vscodeServer.enable = false;
     archer = {
       enable = true;
       remote_host = baseParams.hosts.bishop;
