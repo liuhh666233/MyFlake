@@ -43,7 +43,7 @@
     nixopsUnstable
     airflow-python
     gnupg1
-
+    redis
     # Personal
     beancount
     fava
