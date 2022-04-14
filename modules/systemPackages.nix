@@ -27,6 +27,7 @@
     borgbackup
     jq
     flameshot
+    black
 
     # Work
     vscode
