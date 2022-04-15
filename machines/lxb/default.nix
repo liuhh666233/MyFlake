@@ -52,6 +52,15 @@ in {
     };
   };
 
+  services.airflow = {
+    enable = true;
+    startOnBoot = true;
+    dependency = [ "network.target" ];
+    user = "root";
+    airflowHome = "/var/lib/wonder/warehouse/airflow";
+    webServerPort = baseParams.ports.airFlowWebPort;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   environment.gnome.excludePackages = with pkgs.gnome; [
