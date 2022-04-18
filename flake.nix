@@ -14,7 +14,7 @@
 
     # wonder foundations
     wonder-foundations.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=EnableAirFlowExporter";
+      "git+ssh://git@github.com/quant-wonderland/wonder-foundations";
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-modules.url =
