@@ -58,6 +58,7 @@ in {
     dependency = [ "network.target" ];
     user = "root";
     airflowHome = "/var/lib/wonder/warehouse/airflow";
+    airflowDags = pkgs.airflow-production-dags;
     webServerPort = baseParams.ports.airFlowWebPort;
   };
 
