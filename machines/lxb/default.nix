@@ -53,8 +53,8 @@ in {
   };
 
   services.airflow = {
-    enable = true;
-    startOnBoot = true;
+    enable = false;
+    startOnBoot = false;
     dependency = [ "network.target" ];
     user = "root";
     airflowHome = "/var/lib/wonder/warehouse/airflow";
