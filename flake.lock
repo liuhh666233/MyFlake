@@ -7,11 +7,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1650259505,
-        "narHash": "sha256-R/Ac6I5XR6WVWd/DIRqEL1fq/v3H/ivbigquMOenc/o=",
+        "lastModified": 1650781184,
+        "narHash": "sha256-u4eTwSv+tcLorUKBYlEawUEg5Lx4OHmRCvxEnyLOd28=",
         "ref": "master",
-        "rev": "0fc3392fd75bbf6471c71cdf8d5bf31e9e30e153",
-        "revCount": 88,
+        "rev": "71d38076b3a6869fda56265810dd352fcc6bca0b",
+        "revCount": 133,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/airflow-dags.git"
       },
@@ -1086,11 +1086,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1649926528,
-        "narHash": "sha256-vXCs0/Egw38iujSdoVJgx14Hahs/K+4KdoE3WZKIfvk=",
+        "lastModified": 1650437271,
+        "narHash": "sha256-+l2Qomp39bhBE162SH5cSRqfbXh2kKbvMi7UR+pDG3A=",
         "ref": "master",
-        "rev": "5ec70bcfd71ad67ec6423e709b4a5d2e6869b84a",
-        "revCount": 339,
+        "rev": "43c9f1d4dc606215f30bc0f11050dab1a10d505f",
+        "revCount": 341,
         "type": "git",
         "url": "ssh://git@github.com/liuhh666233/imbox"
       },
@@ -2637,11 +2637,11 @@
         "vitalpkgs": "vitalpkgs"
       },
       "locked": {
-        "lastModified": 1650260120,
-        "narHash": "sha256-dsI27Zv+K45uZ6EKdgHS8n+hgVQoPKVO3cOYaBnMklU=",
+        "lastModified": 1650782092,
+        "narHash": "sha256-XEdEyB9/DtBcAkfQGcziqIG7BPHXTqD/gF8fVZ17NwU=",
         "ref": "master",
-        "rev": "f085165acf9114edab1c314b0656bdbae01c077e",
-        "revCount": 31,
+        "rev": "b018ce7e69e576b0e04381adabc4790890b5cfe3",
+        "revCount": 35,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
