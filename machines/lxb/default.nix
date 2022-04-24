@@ -19,6 +19,11 @@ in {
 
   vital.programs.modern-utils.enable = true;
 
+  vital.services.filerun = {
+    enable = true;
+    port = baseParams.ports.fileRunWebPort;
+  };
+
   wonder.binaryCaches = {
     enable = true;
     nixServe.host = baseParams.hosts.sisyphus;

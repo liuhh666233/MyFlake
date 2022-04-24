@@ -2637,11 +2637,11 @@
         "vitalpkgs": "vitalpkgs"
       },
       "locked": {
-        "lastModified": 1650782092,
-        "narHash": "sha256-XEdEyB9/DtBcAkfQGcziqIG7BPHXTqD/gF8fVZ17NwU=",
+        "lastModified": 1650793429,
+        "narHash": "sha256-WZ7buvYGrcvuFZth3Jpy4gkTkTzTZC37eWwdX0JLmKo=",
         "ref": "master",
-        "rev": "b018ce7e69e576b0e04381adabc4790890b5cfe3",
-        "revCount": 35,
+        "rev": "b85fdf69bd683f46575c909cfc8805425b0d61ef",
+        "revCount": 43,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
