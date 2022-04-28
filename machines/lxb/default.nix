@@ -39,7 +39,7 @@ in {
   wonder.home-manager = {
     enable = true;
     user = "lxb";
-    extraImports = [ ];
+    extraImports = [ ../../home/by-user/nix-dev.nix ];
     vscodeServer.enable = false;
     archer = {
       enable = true;
@@ -55,6 +55,14 @@ in {
       enable = true;
       ssh_key = "/home/lxb/.ssh/id_rsa";
     };
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_11;
+    port = 5432;
+    dataDir = "/var/lib/postgresql/11";
+    checkConfig = true;
   };
 
   services.airflow = {
