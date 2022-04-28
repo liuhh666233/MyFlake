@@ -32,7 +32,7 @@ in {
 
   wonder.remoteNixBuild = {
     enable = true;
-    user = "root";
+    user = "lxb";
     host = "sisyphus";
   };
 
