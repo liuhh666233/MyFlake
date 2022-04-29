@@ -11,7 +11,7 @@ in {
     ../../users/lxb.nix
   ];
 
-  vital.mainUser = "liuxiaobo";
+  vital.mainUser = "lxb";
 
   vital.graphical.enable = true;
 
