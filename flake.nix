@@ -32,7 +32,7 @@
         config.allowUnfree = true;
         config.allowBroken = true;
       };
-      pkgs-stable = import nixpkgs-stable {
+      pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;
@@ -50,6 +50,7 @@
                 (final: prev: {
                   flameshot =
                     nixpkgs-unstable.legacyPackages."${prev.system}".flameshot;
+                  google-chrome = pkgs-unstable.google-chrome;
                 })
               ];
             })
