@@ -5,11 +5,9 @@
 
   networking.hostName = "lxb";
   # head -c 8 /etc/machine-id
-  networking.hostId = "8d885cfc";
+  networking.hostId = "7dc1a3e5";
 
   services.openssh.enable = true;
 
   networking.firewall.enable = false;
-
-  networking.networkmanager.enable = true;
 }
