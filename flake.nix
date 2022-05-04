@@ -39,21 +39,22 @@
       };
     in {
       nixosConfigurations = {
+        wsl = nixpkgs.lib.nixosSystem rec {
+          inherit system;
+          modules = [
+            wonder-foundations.nixosModules.foundation
+            wonder-foundations.nixosModules.home-manager
+            wonder-foundations.nixosModules.devopsTools
+            ./machines/wsl
+          ];
+        };
+
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
-            ({
-              nixpkgs.overlays = [
-                (final: prev: {
-                  flameshot =
-                    nixpkgs-unstable.legacyPackages."${prev.system}".flameshot;
-                  google-chrome = pkgs-unstable.google-chrome;
-                })
-              ];
-            })
             ./machines/lxb
           ];
         };
