@@ -11,7 +11,6 @@ in {
     ../../modules/systemPackages.nix
     ../../modules/network.nix
     ../../modules/service/jupyter
-    ../../users/lxb.nix
   ];
 
   wsl = {
@@ -25,6 +24,8 @@ in {
   };
 
   vital.mainUser = "nixos";
+
+  users.users.nixos.shell = pkgs.fish;
 
   vital.graphical.enable = false;
 
@@ -46,7 +47,7 @@ in {
 
   wonder.home-manager = {
     enable = true;
-    user = "lxb";
+    user = "nixos";
     extraImports = [ ../../home/by-user/nix-dev.nix ];
     vscodeServer.enable = false;
     archer = {
@@ -54,14 +55,14 @@ in {
       remote_host = baseParams.hosts.bishop;
       remote_port = 22;
       remote_user = "lxb";
-      ssh_key = "/home/lxb/.ssh/id_rsa";
+      ssh_key = "/home/nixos/.ssh/id_rsa";
       remote_warehouse_root = "/var/lib/wonder/warehouse";
       local_warehouse_root = "/var/lib/wonder/warehouse";
       ssh_proxy = "";
     };
     sshConfig = {
       enable = true;
-      ssh_key = "/home/lxb/.ssh/id_rsa";
+      ssh_key = "/home/nixos/.ssh/id_rsa";
     };
   };
 
