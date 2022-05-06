@@ -66,6 +66,37 @@ in {
     };
   };
 
+  services.airflow = {
+    enable = true;
+    startOnBoot = true;
+    enablePostgresqlBackend = true;
+    dependency = [ "network.target" ];
+    user = config.vital.mainUser;
+    webServerPort = baseParams.ports.airFlowWebPort;
+    airflowDags = pkgs.airflow-production-dags;
+    airflowExecutor = "LocalExecutor";
+    postgreSql = {
+      host = baseParams.hosts.localhost;
+      port = baseParams.ports.postgreSqlTcpPort;
+      user = vitalParams.airflow.user;
+      password = vitalParams.airflow.password;
+      database = vitalParams.airflow.database;
+    };
+    airflowVariables = {
+      AIRFLOW_VAR_WAREHOUSE_PATH = "/var/lib/wonder/warehouse";
+      AIRFLOW_VAR_INTRADAY_HOT_ARCHIVE_PATH =
+        "/var/lib/wonder/warehouse/hot_data";
+      AIRFLOW_VAR_INTRADAY_PIPELINE_DATA_PATH =
+        "/var/lib/wonder/warehouse/intradayData";
+      AIRFLOW_VAR_MAIL_MIRRORER_RANGE_DAYS = "1";
+    };
+    airflowConnections = {
+      AIRFLOW_CONN_CLICKHOUSE = "http://login:password@localhost:29002/schema";
+      AIRFLOW_CONN_BUTLER_REDIS =
+        "redis://login:password@localhost:6379/schema?db=6";
+    };
+  };
+
   services.printing.enable = lib.mkForce false;
 
   services.avahi.enable = lib.mkForce false;
