@@ -18,7 +18,7 @@
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
 
     wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules?ref=UpdateAirflow";
+      "git+ssh://git@github.com/quant-wonderland/wonder-modules?ref=master";
     wonder-modules.inputs.nixpkgs.follows = "nixpkgs";
 
   };
@@ -45,6 +45,7 @@
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
+            wonder-modules.nixosModules.trading
             ./machines/wsl
           ];
         };

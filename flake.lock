@@ -3056,16 +3056,16 @@
         "wonder-foundations": "wonder-foundations_2"
       },
       "locked": {
-        "lastModified": 1651826225,
-        "narHash": "sha256-4LVdMZlEKqFYMGpit3Pjiw6x0BLl/zo8BUGky7uw99s=",
-        "ref": "UpdateAirflow",
-        "rev": "df9746258762010af46fd0488c63e7faebded764",
-        "revCount": 327,
+        "lastModified": 1651830110,
+        "narHash": "sha256-mknVPBsXityt07Z8GWfT4Ye5RZQgvWrNNS8z6gVGsJs=",
+        "ref": "master",
+        "rev": "99b55edca60400b05570f22e275f245a5c1fc5fc",
+        "revCount": 329,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-modules"
       },
       "original": {
-        "ref": "UpdateAirflow",
+        "ref": "master",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-modules"
       }
