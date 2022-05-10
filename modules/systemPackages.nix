@@ -56,6 +56,7 @@
         PyGithub
         paramiko
         xmltodict
+        lark-parser
       ]))
     # GO
     go
