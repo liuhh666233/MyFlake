@@ -5,7 +5,7 @@
   inputs = {
 
     nixpkgs.url =
-      "github:NixOS/nixpkgs?rev=2ebb6c1e5ae402ba35cca5eec58385e5f1adea04";
+      "github:NixOS/nixpkgs?rev=a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31";
 
     nixpkgs-stable.url =
       "github:NixOS/nixpkgs?rev=a946fb970f985e20d038e9d12c0db68a8b3b2f19";
@@ -20,7 +20,6 @@
     wonder-modules.url =
       "git+ssh://git@github.com/quant-wonderland/wonder-modules?ref=master";
     wonder-modules.inputs.nixpkgs.follows = "nixpkgs";
-
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-unstable
@@ -45,7 +44,7 @@
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
-            wonder-modules.nixosModules.trading
+            wonder-modules.nixosModules.productionAirflow
             ./machines/wsl
           ];
         };
