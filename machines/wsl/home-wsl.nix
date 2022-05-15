@@ -34,7 +34,7 @@ in {
   vital.programs.modern-utils.enable = true;
 
   wonder.binaryCaches = {
-    enable = true;
+    enable = false;
     nixServe.host = baseParams.hosts.localhost;
     nixServe.port = baseParams.ports.nixServerPort;
   };
