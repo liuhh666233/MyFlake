@@ -21,6 +21,7 @@
     # Work
     git
     gftp
+    git-lfs
     clickhouse-cli
     graphviz
     nixfmt
