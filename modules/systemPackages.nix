@@ -75,6 +75,14 @@
     doxygen
     cling
 
+    # C++
+    gcc
+    gdb
+    clang_11
+    nodejs
+    lua
+    cmake
+    doxygen
   ];
   nixpkgs.config.permittedInsecurePackages = [ "electron-9.4.4" ];
 }
