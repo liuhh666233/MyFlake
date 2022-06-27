@@ -33,11 +33,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652335407,
-        "narHash": "sha256-REgDqobGsQ7txfLoisNobVI+bPhTAdjVDqsDQJuwb7w=",
+        "lastModified": 1655435374,
+        "narHash": "sha256-g2DSXuE57PXLI591xFu/zAO0Y2Dy3i7Y/2GHk4gy1c4=",
         "ref": "master",
-        "rev": "ac00fa81184fafd5a761f6150f0a985997fa9a65",
-        "revCount": 175,
+        "rev": "85df0c3720dc7c14d3c20cdfb6066f94f0f15606",
+        "revCount": 203,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/airflow-dags.git"
       },
@@ -56,17 +56,17 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1651050135,
-        "narHash": "sha256-v85yNcVrQQ1ZfBYePK8yBzUCoKo50+/LVMCY1jG9y24=",
+        "lastModified": 1655081016,
+        "narHash": "sha256-uhHAQavEODg9nzxN6qpxzPXHgpwUVRSGi2oGwMyxZ9A=",
         "ref": "master",
-        "rev": "2ef9ac568bfa223551660bdc38988cab71797efe",
-        "revCount": 820,
+        "rev": "ba68bc5dbb3ee0648a6073713653c820111b0c8c",
+        "revCount": 855,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/alpha-research"
       },
       "original": {
         "ref": "master",
-        "rev": "2ef9ac568bfa223551660bdc38988cab71797efe",
+        "rev": "ba68bc5dbb3ee0648a6073713653c820111b0c8c",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/alpha-research"
       }
@@ -75,7 +75,10 @@
       "inputs": {
         "flake-utils": "flake-utils_7",
         "ml-pkgs": "ml-pkgs_2",
-        "nixpkgs": "nixpkgs_11",
+        "nixpkgs": [
+          "wonder-modules",
+          "nixpkgs"
+        ],
         "nixpkgs-20-09": "nixpkgs-20-09_2",
         "nixpkgs_unstable": "nixpkgs_unstable",
         "vitalpkgs": "vitalpkgs_2"
@@ -98,24 +101,25 @@
     },
     "archive-py": {
       "inputs": {
-        "ml-pkgs": "ml-pkgs_4",
         "nixpkgs": [
           "wonder-modules",
           "warehouse-py",
+          "research-toolkit",
           "nixpkgs"
         ],
         "utils": [
           "wonder-modules",
           "warehouse-py",
+          "research-toolkit",
           "utils"
         ]
       },
       "locked": {
-        "lastModified": 1644997009,
-        "narHash": "sha256-D+0IqI/p4YHr4MRr7MlkqtEvloEQL2rifRaqetTNFxw=",
+        "lastModified": 1650235412,
+        "narHash": "sha256-w3MNXBmkPdyOOrMBCKTZseBaGN0L/3LIVszqi/oJ+B0=",
         "ref": "master",
-        "rev": "a2f42817f42986dd8ef9fb1e514d99b9ea873f7d",
-        "revCount": 14,
+        "rev": "156dba349f82c4e2557f345d43088acbf89f650d",
+        "revCount": 19,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/archive-py"
       },
@@ -153,11 +157,6 @@
     },
     "archive-py-flake_2": {
       "inputs": {
-        "ml-pkgs": [
-          "wonder-modules",
-          "warehouse-py",
-          "ml-pkgs"
-        ],
         "nixpkgs": [
           "wonder-modules",
           "warehouse-py",
@@ -170,11 +169,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1644997009,
-        "narHash": "sha256-D+0IqI/p4YHr4MRr7MlkqtEvloEQL2rifRaqetTNFxw=",
+        "lastModified": 1650235412,
+        "narHash": "sha256-w3MNXBmkPdyOOrMBCKTZseBaGN0L/3LIVszqi/oJ+B0=",
         "ref": "master",
-        "rev": "a2f42817f42986dd8ef9fb1e514d99b9ea873f7d",
-        "revCount": 14,
+        "rev": "156dba349f82c4e2557f345d43088acbf89f650d",
+        "revCount": 19,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/archive-py"
       },
@@ -198,11 +197,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1641531769,
-        "narHash": "sha256-tkI8Y7Mn0lnTaE3+2tncUjwQWEQVZQgfWITroBQWtrU=",
+        "lastModified": 1655358140,
+        "narHash": "sha256-ESOhTYcP9x6pInURVOIBAdlegfos3iIuW+GwoNQoXWI=",
         "ref": "master",
-        "rev": "b1264b036ad99ba213c5303b7b3ba943d62e067b",
-        "revCount": 55,
+        "rev": "270cfe8fbecb26d93474ce23664438a4e2ca571b",
+        "revCount": 62,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/basis"
       },
@@ -218,7 +217,7 @@
           "datawarehouse",
           "nixpkgs"
         ],
-        "utils": "utils_9",
+        "utils": "utils_10",
         "vitalpkgs": [
           "wonder-modules",
           "datawarehouse",
@@ -301,27 +300,28 @@
         "butler-test-data-flake": "butler-test-data-flake_3",
         "butler-webui-flake": "butler-webui-flake",
         "gj-algoapi-flake": "gj-algoapi-flake",
-        "nixpkgs": "nixpkgs_15",
+        "nixpkgs": "nixpkgs_13",
         "record-archive-flake": "record-archive-flake",
         "sipuix": "sipuix",
         "tjapi-flake": "tjapi-flake",
-        "utils": "utils_8",
+        "tradex-api-flake": "tradex-api-flake",
+        "utils": "utils_9",
         "vitalpkgs": "vitalpkgs_3"
       },
       "locked": {
-        "lastModified": 1650863561,
-        "narHash": "sha256-Jm2qggsAH7ljKSqm+GOWMAOEZR2F5M+/8US0e+1bIq4=",
-        "ref": "fixed_v3.5.0_again",
-        "rev": "b220f6677e964b85d246b80ab0e1ec45216ec47c",
-        "revCount": 1048,
+        "lastModified": 1656291524,
+        "narHash": "sha256-STEOeLH1vx9cymTRQkeeVal6ZntJpD48u702QWW8ASo=",
+        "ref": "v3.0",
+        "rev": "7283d52669a46e138c6b6f734b10c5c43dc9d672",
+        "revCount": 1395,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/butler?tag=v3.5.0"
+        "url": "ssh://git@github.com/quant-wonderland/butler?tag=v3.9.2"
       },
       "original": {
-        "ref": "fixed_v3.5.0_again",
-        "rev": "b220f6677e964b85d246b80ab0e1ec45216ec47c",
+        "ref": "v3.0",
+        "rev": "7283d52669a46e138c6b6f734b10c5c43dc9d672",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/butler?tag=v3.5.0"
+        "url": "ssh://git@github.com/quant-wonderland/butler?tag=v3.9.2"
       }
     },
     "butler-py": {
@@ -357,16 +357,17 @@
     },
     "butler-py_2": {
       "inputs": {
+        "butler-stubs-flake": "butler-stubs-flake_2",
         "butler-test-data-flake": "butler-test-data-flake_2",
-        "nixpkgs": "nixpkgs_13",
-        "utils": "utils_6"
+        "nixpkgs": "nixpkgs_11",
+        "utils": "utils_7"
       },
       "locked": {
-        "lastModified": 1635240398,
-        "narHash": "sha256-Z2ANya0ZFyPRgA3FvUhFOObminoI/6xPC7mo67fkP60=",
+        "lastModified": 1653361298,
+        "narHash": "sha256-XQm84uherrt5KweRC6ZuqoG9pnBabR2JXvoqNRvhaAE=",
         "ref": "master",
-        "rev": "13e629ab6424154d6526157e1de03617bfc325b3",
-        "revCount": 125,
+        "rev": "9ab4078519ebab0772f487dfb628fcfce00f1b8a",
+        "revCount": 188,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/butler-py"
       },
@@ -377,7 +378,7 @@
     },
     "butler-py_3": {
       "inputs": {
-        "butler-stubs-flake": "butler-stubs-flake_2",
+        "butler-stubs-flake": "butler-stubs-flake_3",
         "butler-test-data-flake": "butler-test-data-flake_4",
         "nixpkgs": [
           "wonder-modules",
@@ -391,15 +392,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1650250001,
-        "narHash": "sha256-hP08OMK6qTgFqP/yy4btpxCwbpVucrx/67zyNgGVWi4=",
+        "lastModified": 1655116442,
+        "narHash": "sha256-ncLWrH61xp6DEZx+vshwcWIeocniXH78zw8eckeIG+A=",
         "ref": "master",
-        "rev": "90942e15d80f6aabb30461e10bbef3eba85b5edf",
-        "revCount": 170,
+        "rev": "c2ca8300645671b0c4a1f4e0a5a01dc23efd83bf",
+        "revCount": 215,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/butler-py"
       },
       "original": {
+        "ref": "master",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/butler-py"
       }
@@ -425,8 +427,37 @@
     },
     "butler-stubs-flake_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_18",
-        "utils": "utils_10"
+        "nixpkgs": [
+          "wonder-modules",
+          "butler",
+          "butler-py",
+          "nixpkgs"
+        ],
+        "utils": "utils_5"
+      },
+      "locked": {
+        "lastModified": 1650247317,
+        "narHash": "sha256-/lQWbr33uH49vi1rPWZHsGEvVsna3c74e0eKmYT8rtw=",
+        "ref": "master",
+        "rev": "42d0093f9f21cd89333ef3fda620002a08a2988a",
+        "revCount": 147,
+        "type": "git",
+        "url": "ssh://git@github.com/quant-wonderland/butler-stubs"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/quant-wonderland/butler-stubs"
+      }
+    },
+    "butler-stubs-flake_3": {
+      "inputs": {
+        "nixpkgs": [
+          "wonder-modules",
+          "intraday-alpha-research",
+          "butler-py",
+          "nixpkgs"
+        ],
+        "utils": "utils_11"
       },
       "locked": {
         "lastModified": 1650247317,
@@ -463,8 +494,13 @@
     },
     "butler-test-data-flake_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_12",
-        "utils": "utils_5"
+        "nixpkgs": [
+          "wonder-modules",
+          "butler",
+          "butler-py",
+          "nixpkgs"
+        ],
+        "utils": "utils_6"
       },
       "locked": {
         "lastModified": 1635239409,
@@ -482,8 +518,8 @@
     },
     "butler-test-data-flake_3": {
       "inputs": {
-        "nixpkgs": "nixpkgs_14",
-        "utils": "utils_7"
+        "nixpkgs": "nixpkgs_12",
+        "utils": "utils_8"
       },
       "locked": {
         "lastModified": 1635239409,
@@ -501,8 +537,13 @@
     },
     "butler-test-data-flake_4": {
       "inputs": {
-        "nixpkgs": "nixpkgs_19",
-        "utils": "utils_11"
+        "nixpkgs": [
+          "wonder-modules",
+          "intraday-alpha-research",
+          "butler-py",
+          "nixpkgs"
+        ],
+        "utils": "utils_12"
       },
       "locked": {
         "lastModified": 1635239409,
@@ -532,11 +573,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1644458929,
-        "narHash": "sha256-9QP+dD4KnBfu/XNW5XntgCVIh0o34kpr76E5jbEd/m8=",
+        "lastModified": 1654155134,
+        "narHash": "sha256-Y373wF17SjJXJXkviY9fB4sjr81ZCzJpuAR+tuhENs8=",
         "ref": "master",
-        "rev": "45db815fb98e1d0fd3bdbe8f317fd40961de8c6c",
-        "revCount": 127,
+        "rev": "25d8edc34e73e42e37bc9b18e217fa3bfd9516ae",
+        "revCount": 154,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/butler-webui"
       },
@@ -568,8 +609,8 @@
     "data-pipeline-monitor_2": {
       "inputs": {
         "devops-tools": "devops-tools_6",
-        "flake-utils": "flake-utils_27",
-        "nixpkgs": "nixpkgs_24"
+        "flake-utils": "flake-utils_28",
+        "nixpkgs": "nixpkgs_16"
       },
       "locked": {
         "lastModified": 1649671976,
@@ -587,7 +628,7 @@
     },
     "data-pipeline-webui-flake": {
       "inputs": {
-        "flake-utils": "flake-utils_15",
+        "flake-utils": "flake-utils_16",
         "nixpkgs": [
           "wonder-modules",
           "datawarehouse",
@@ -612,28 +653,28 @@
       "inputs": {
         "basis-flake": "basis-flake_2",
         "data-pipeline-webui-flake": "data-pipeline-webui-flake",
-        "flake-utils": "flake-utils_16",
+        "flake-utils": "flake-utils_17",
         "job-dispatcher-flake": "job-dispatcher-flake",
-        "nixpkgs": "nixpkgs_16",
+        "nixpkgs": "nixpkgs_14",
         "nixpkgs-20-09": "nixpkgs-20-09_3",
         "record-archive-flake": "record-archive-flake_2",
         "sipuix-flake": "sipuix-flake",
         "vitalpkgs": "vitalpkgs_4"
       },
       "locked": {
-        "lastModified": 1651033640,
-        "narHash": "sha256-kviVnVrHUChf5T+u1cWvXHqm6u45AC6Jnc0dO9kgpZQ=",
-        "ref": "release-3.7.1",
-        "rev": "df7f7e0f46b3e12efebef71e1e009ae071715d76",
-        "revCount": 1578,
+        "lastModified": 1653274265,
+        "narHash": "sha256-2CDyWBA/Z3Iey0M8+z2ZhOeZroqBDqk9QEk47erJ/Ko=",
+        "ref": "master",
+        "rev": "a88eedb7c61f69464c2a963e4c93abdd950d239b",
+        "revCount": 1681,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.7.2"
+        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.8.16"
       },
       "original": {
-        "ref": "release-3.7.1",
-        "rev": "df7f7e0f46b3e12efebef71e1e009ae071715d76",
+        "ref": "master",
+        "rev": "a88eedb7c61f69464c2a963e4c93abdd950d239b",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.7.2"
+        "url": "ssh://git@github.com/quant-wonderland/data-warehouse?tag=v3.8.16"
       }
     },
     "devops-tools": {
@@ -662,15 +703,16 @@
         "nixpkgs-unstable": "nixpkgs-unstable_2"
       },
       "locked": {
-        "lastModified": 1649903279,
-        "narHash": "sha256-y2Jm3CNaVy1qauBZJiPRlW766A/z7oEVwOjFY2Dn+6I=",
+        "lastModified": 1655286684,
+        "narHash": "sha256-s5bCmss5GXylf3lLqIDIEllL1KVq62TTif/0Yn0fE9A=",
         "ref": "master",
-        "rev": "046283453689407d40bd2017b4104d9323fee7fe",
-        "revCount": 460,
+        "rev": "d67d830253ebb847bd3ad5a237bcac1dbcd6b621",
+        "revCount": 468,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/devops-tools"
       },
       "original": {
+        "ref": "master",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/devops-tools"
       }
@@ -697,16 +739,19 @@
     },
     "devops-tools_4": {
       "inputs": {
-        "flake-utils": "flake-utils_21",
-        "nixpkgs": "nixpkgs_17",
+        "flake-utils": "flake-utils_22",
+        "nixpkgs": [
+          "wonder-modules",
+          "nixpkgs"
+        ],
         "nixpkgs-unstable": "nixpkgs-unstable_8"
       },
       "locked": {
-        "lastModified": 1651645090,
-        "narHash": "sha256-QBOr9M9M1oSizEJBm73E+Gpna9KyOjTQuuL54fmeBlU=",
+        "lastModified": 1655286684,
+        "narHash": "sha256-s5bCmss5GXylf3lLqIDIEllL1KVq62TTif/0Yn0fE9A=",
         "ref": "master",
-        "rev": "aa8f7a5a88921bae9dddeecf567ccd8f98ddd701",
-        "revCount": 461,
+        "rev": "d67d830253ebb847bd3ad5a237bcac1dbcd6b621",
+        "revCount": 468,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/devops-tools"
       },
@@ -717,7 +762,7 @@
     },
     "devops-tools_5": {
       "inputs": {
-        "flake-utils": "flake-utils_24",
+        "flake-utils": "flake-utils_25",
         "nixpkgs": [
           "wonder-modules",
           "warehouse-py",
@@ -726,11 +771,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable_10"
       },
       "locked": {
-        "lastModified": 1648005815,
-        "narHash": "sha256-6PfniQO3jjlk+Lg6AizPursWxmh0D52b1tUtZNsvQuI=",
+        "lastModified": 1649903279,
+        "narHash": "sha256-y2Jm3CNaVy1qauBZJiPRlW766A/z7oEVwOjFY2Dn+6I=",
         "ref": "master",
-        "rev": "076911893a953592a37fde5849dcdb9215197c0e",
-        "revCount": 403,
+        "rev": "046283453689407d40bd2017b4104d9323fee7fe",
+        "revCount": 460,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/devops-tools"
       },
@@ -741,8 +786,8 @@
     },
     "devops-tools_6": {
       "inputs": {
-        "flake-utils": "flake-utils_26",
-        "nixpkgs": "nixpkgs_23"
+        "flake-utils": "flake-utils_27",
+        "nixpkgs": "nixpkgs_15"
       },
       "locked": {
         "lastModified": 1644417888,
@@ -760,20 +805,21 @@
     },
     "devops-tools_7": {
       "inputs": {
-        "flake-utils": "flake-utils_28",
-        "nixpkgs": "nixpkgs_25",
+        "flake-utils": "flake-utils_29",
+        "nixpkgs": "nixpkgs_17",
         "nixpkgs-unstable": "nixpkgs-unstable_11"
       },
       "locked": {
-        "lastModified": 1649903279,
-        "narHash": "sha256-y2Jm3CNaVy1qauBZJiPRlW766A/z7oEVwOjFY2Dn+6I=",
+        "lastModified": 1655286684,
+        "narHash": "sha256-s5bCmss5GXylf3lLqIDIEllL1KVq62TTif/0Yn0fE9A=",
         "ref": "master",
-        "rev": "046283453689407d40bd2017b4104d9323fee7fe",
-        "revCount": 460,
+        "rev": "d67d830253ebb847bd3ad5a237bcac1dbcd6b621",
+        "revCount": 468,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/devops-tools"
       },
       "original": {
+        "ref": "master",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/devops-tools"
       }
@@ -855,6 +901,21 @@
     },
     "flake-utils_14": {
       "locked": {
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_15": {
+      "locked": {
         "lastModified": 1620759905,
         "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
         "owner": "numtide",
@@ -868,7 +929,7 @@
         "type": "github"
       }
     },
-    "flake-utils_15": {
+    "flake-utils_16": {
       "locked": {
         "lastModified": 1623660459,
         "narHash": "sha256-OTmOsh43po7r5F9s9H6lVCBQ2b0FikWbmiwLbMAGRdw=",
@@ -883,28 +944,13 @@
         "type": "github"
       }
     },
-    "flake-utils_16": {
+    "flake-utils_17": {
       "locked": {
         "lastModified": 1642700792,
         "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
         "owner": "numtide",
         "repo": "flake-utils",
         "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_17": {
-      "locked": {
-        "lastModified": 1620759905,
-        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
         "type": "github"
       },
       "original": {
@@ -930,11 +976,11 @@
     },
     "flake-utils_19": {
       "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "lastModified": 1620759905,
+        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
         "type": "github"
       },
       "original": {
@@ -960,6 +1006,21 @@
     },
     "flake-utils_20": {
       "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_21": {
+      "locked": {
         "lastModified": 1620759905,
         "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
         "owner": "numtide",
@@ -973,7 +1034,7 @@
         "type": "github"
       }
     },
-    "flake-utils_21": {
+    "flake-utils_22": {
       "locked": {
         "lastModified": 1629481132,
         "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
@@ -988,7 +1049,7 @@
         "type": "github"
       }
     },
-    "flake-utils_22": {
+    "flake-utils_23": {
       "locked": {
         "lastModified": 1614513358,
         "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
@@ -1003,28 +1064,13 @@
         "type": "github"
       }
     },
-    "flake-utils_23": {
+    "flake-utils_24": {
       "locked": {
         "lastModified": 1620759905,
         "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
         "owner": "numtide",
         "repo": "flake-utils",
         "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_24": {
-      "locked": {
-        "lastModified": 1629481132,
-        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
         "type": "github"
       },
       "original": {
@@ -1035,11 +1081,11 @@
     },
     "flake-utils_25": {
       "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "lastModified": 1629481132,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
         "type": "github"
       },
       "original": {
@@ -1050,6 +1096,21 @@
     },
     "flake-utils_26": {
       "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_27": {
+      "locked": {
         "lastModified": 1629481132,
         "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
         "owner": "numtide",
@@ -1063,7 +1124,7 @@
         "type": "github"
       }
     },
-    "flake-utils_27": {
+    "flake-utils_28": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
@@ -1078,28 +1139,13 @@
         "type": "github"
       }
     },
-    "flake-utils_28": {
+    "flake-utils_29": {
       "locked": {
         "lastModified": 1629481132,
         "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
         "owner": "numtide",
         "repo": "flake-utils",
         "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_29": {
-      "locked": {
-        "lastModified": 1620759905,
-        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
         "type": "github"
       },
       "original": {
@@ -1115,6 +1161,21 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_30": {
+      "locked": {
+        "lastModified": 1620759905,
+        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
         "type": "github"
       },
       "original": {
@@ -1257,7 +1318,7 @@
     },
     "home-manager_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_26"
+        "nixpkgs": "nixpkgs_18"
       },
       "locked": {
         "lastModified": 1647545448,
@@ -1331,26 +1392,27 @@
         "nixpkgs-20-09": "nixpkgs-20-09_4",
         "numpandas": "numpandas",
         "research-toolkit-flake": "research-toolkit-flake",
-        "utils": "utils_12"
+        "utils": "utils_13"
       },
       "locked": {
-        "lastModified": 1652348698,
-        "narHash": "sha256-IFOViYZ7tobNIruBLazNxH0LYHprYOthD4WvTA5R3bw=",
+        "lastModified": 1656322832,
+        "narHash": "sha256-6eApVZyhnxN6uRea2ass5vqGLqph2lpkm4sShbNhXrg=",
         "ref": "master",
-        "rev": "9fcffcca4f2a4aacf84c5a820414628023ba117c",
-        "revCount": 599,
+        "rev": "cd8cffbb6e1f258912af83e574347c764974528d",
+        "revCount": 967,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/intraday-alpha-research"
       },
       "original": {
         "ref": "master",
+        "rev": "cd8cffbb6e1f258912af83e574347c764974528d",
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/intraday-alpha-research"
       }
     },
     "job-dispatcher-flake": {
       "inputs": {
-        "flake-utils": "flake-utils_17",
+        "flake-utils": "flake-utils_18",
         "nixpkgs": [
           "wonder-modules",
           "datawarehouse",
@@ -1378,8 +1440,11 @@
     },
     "jsy-mirrorer": {
       "inputs": {
-        "flake-utils": "flake-utils_22",
-        "nixpkgs": "nixpkgs_20"
+        "flake-utils": "flake-utils_23",
+        "nixpkgs": [
+          "wonder-modules",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1635472065,
@@ -1481,60 +1546,6 @@
         "type": "github"
       }
     },
-    "ml-pkgs_3": {
-      "inputs": {
-        "nixpkgs": [
-          "wonder-modules",
-          "warehouse-py",
-          "nixpkgs"
-        ],
-        "utils": [
-          "wonder-modules",
-          "warehouse-py",
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1640242082,
-        "narHash": "sha256-GWP+w+uL68nkGLngk/1uab8cIzP3MLTZXdHZHojmSrg=",
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "rev": "61df363016369b365696123d431056ee1f434a2b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "type": "github"
-      }
-    },
-    "ml-pkgs_4": {
-      "inputs": {
-        "nixpkgs": [
-          "wonder-modules",
-          "warehouse-py",
-          "nixpkgs"
-        ],
-        "utils": [
-          "wonder-modules",
-          "warehouse-py",
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1640242082,
-        "narHash": "sha256-GWP+w+uL68nkGLngk/1uab8cIzP3MLTZXdHZHojmSrg=",
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "rev": "61df363016369b365696123d431056ee1f434a2b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "type": "github"
-      }
-    },
     "nix": {
       "inputs": {
         "lowdown-src": "lowdown-src",
@@ -1559,7 +1570,7 @@
     "nix_2": {
       "inputs": {
         "lowdown-src": "lowdown-src_2",
-        "nixpkgs": "nixpkgs_27",
+        "nixpkgs": "nixpkgs_19",
         "nixpkgs-regression": "nixpkgs-regression_2"
       },
       "locked": {
@@ -1993,16 +2004,16 @@
     },
     "nixpkgs_11": {
       "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
+        "lastModified": 1638239011,
+        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
+        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "21.05",
+        "ref": "21.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -2025,65 +2036,65 @@
     },
     "nixpkgs_13": {
       "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
+        "lastModified": 1627254826,
+        "narHash": "sha256-0FrYk5RXSXeDCiQWrid0jdd8w33WkmRjJMUdXX775vs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
+        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "21.05",
         "repo": "nixpkgs",
+        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
         "type": "github"
       }
     },
     "nixpkgs_14": {
       "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
+        "lastModified": 1627254826,
+        "narHash": "sha256-0FrYk5RXSXeDCiQWrid0jdd8w33WkmRjJMUdXX775vs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
+        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "21.05",
         "repo": "nixpkgs",
+        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
         "type": "github"
       }
     },
     "nixpkgs_15": {
       "locked": {
-        "lastModified": 1627254826,
-        "narHash": "sha256-0FrYk5RXSXeDCiQWrid0jdd8w33WkmRjJMUdXX775vs=",
+        "lastModified": 1638239011,
+        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
+        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
+        "ref": "21.11",
         "repo": "nixpkgs",
-        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
         "type": "github"
       }
     },
     "nixpkgs_16": {
       "locked": {
-        "lastModified": 1627254826,
-        "narHash": "sha256-0FrYk5RXSXeDCiQWrid0jdd8w33WkmRjJMUdXX775vs=",
+        "lastModified": 1638239011,
+        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
+        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
+        "ref": "21.11",
         "repo": "nixpkgs",
-        "rev": "e82ffe7b5f25d781eb52cc07c552899cf6f6547b",
         "type": "github"
       }
     },
@@ -2105,34 +2116,31 @@
     },
     "nixpkgs_18": {
       "locked": {
-        "lastModified": 1638239011,
-        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
+        "lastModified": 1648219316,
+        "narHash": "sha256-Ctij+dOi0ZZIfX5eMhgwugfvB+WZSrvVNAyAuANOsnQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
+        "rev": "30d3d79b7d3607d56546dd2a6b49e156ba0ec634",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "21.11",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nixpkgs_19": {
       "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
+        "lastModified": 1632864508,
+        "narHash": "sha256-d127FIvGR41XbVRDPVvozUPQ/uRHbHwvfyKHwEt5xFM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
+        "rev": "82891b5e2c2359d7e58d08849e4c89511ab94234",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "21.05",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "ref": "nixos-21.05-small",
+        "type": "indirect"
       }
     },
     "nixpkgs_2": {
@@ -2148,147 +2156,6 @@
         "owner": "NixOS",
         "ref": "21.11",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_20": {
-      "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "21.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_21": {
-      "locked": {
-        "lastModified": 1638239011,
-        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_22": {
-      "locked": {
-        "lastModified": 1622516815,
-        "narHash": "sha256-ZjBd81a6J3TwtlBr3rHsZspYUwT9OdhDk+a/SgSEf7I=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7e9b0dff974c89e070da1ad85713ff3c20b0ca97",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "21.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_23": {
-      "locked": {
-        "lastModified": 1638239011,
-        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_24": {
-      "locked": {
-        "lastModified": 1638239011,
-        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_25": {
-      "locked": {
-        "lastModified": 1638239011,
-        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_26": {
-      "locked": {
-        "lastModified": 1648219316,
-        "narHash": "sha256-Ctij+dOi0ZZIfX5eMhgwugfvB+WZSrvVNAyAuANOsnQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "30d3d79b7d3607d56546dd2a6b49e156ba0ec634",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_27": {
-      "locked": {
-        "lastModified": 1632864508,
-        "narHash": "sha256-d127FIvGR41XbVRDPVvozUPQ/uRHbHwvfyKHwEt5xFM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "82891b5e2c2359d7e58d08849e4c89511ab94234",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-21.05-small",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_28": {
-      "locked": {
-        "lastModified": 1647282937,
-        "narHash": "sha256-K8Oo6QyFCfiEWTRpQVfzcwI3YNMKlz6Tu8rr+o3rzRQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "64fc73bd74f04d3e10cb4e70e1c65b92337e76db",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "64fc73bd74f04d3e10cb4e70e1c65b92337e76db",
         "type": "github"
       }
     },
@@ -2431,11 +2298,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1650821609,
-        "narHash": "sha256-RjWsPatSnzcCphrBX7oXDZx04ld5iOJRNXmscRpcHFQ=",
+        "lastModified": 1654505863,
+        "narHash": "sha256-9dMgEk1/+V8zEuKAzmq+NTJx962/tgvehCl0gHlV4iw=",
         "ref": "master",
-        "rev": "4c4b283e2f3dcc9da4efb1a11f7e0129264b512d",
-        "revCount": 86,
+        "rev": "ca53951db6beb20d7c9c6ae4e624c21979aed5cd",
+        "revCount": 103,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/numpandas"
       },
@@ -2458,11 +2325,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1648093917,
-        "narHash": "sha256-JJiFW6BEdh+FSPX8+ErtI50i3TBF0npnhBu9lq7Hyxw=",
+        "lastModified": 1653482966,
+        "narHash": "sha256-bi1qDrTX/bI2o4C8/7MvZvoiqkdn8nRSnvkCpO8+muI=",
         "ref": "master",
-        "rev": "f6226cf6c589ce97c6dfe79aa2d9e1d9f1f45654",
-        "revCount": 73,
+        "rev": "83bf498884afd008a099202df56b38b684a3f034",
+        "revCount": 93,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/numpandas"
       },
@@ -2476,20 +2343,22 @@
         "nixpkgs": [
           "wonder-modules",
           "warehouse-py",
+          "research-toolkit",
           "nixpkgs"
         ],
         "utils": [
           "wonder-modules",
           "warehouse-py",
+          "research-toolkit",
           "utils"
         ]
       },
       "locked": {
-        "lastModified": 1648093917,
-        "narHash": "sha256-JJiFW6BEdh+FSPX8+ErtI50i3TBF0npnhBu9lq7Hyxw=",
+        "lastModified": 1653482966,
+        "narHash": "sha256-bi1qDrTX/bI2o4C8/7MvZvoiqkdn8nRSnvkCpO8+muI=",
         "ref": "master",
-        "rev": "f6226cf6c589ce97c6dfe79aa2d9e1d9f1f45654",
-        "revCount": 73,
+        "rev": "83bf498884afd008a099202df56b38b684a3f034",
+        "revCount": 93,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/numpandas"
       },
@@ -2513,11 +2382,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1632273940,
-        "narHash": "sha256-J3jOxc9OhGj2RPCJnED+oeVohXKWD5WuiujOGa103xY=",
+        "lastModified": 1643162174,
+        "narHash": "sha256-X12iT04H6bvj1Pst8hqy8nz7EfxaQ9lim899m13E/oU=",
         "ref": "master",
-        "rev": "267e9eeeeacdf2e7d6c70aea643e759c04fac05e",
-        "revCount": 95,
+        "rev": "114b571d1d2704da0c761414b2148d14adfdd777",
+        "revCount": 114,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/record-archive"
       },
@@ -2528,7 +2397,7 @@
     },
     "record-archive-flake_2": {
       "inputs": {
-        "flake-utils": "flake-utils_18",
+        "flake-utils": "flake-utils_19",
         "nixpkgs": [
           "wonder-modules",
           "datawarehouse",
@@ -2571,11 +2440,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1648099891,
-        "narHash": "sha256-33JDDd2kjlPd/mpdbQoLpRLLPRmrxyfEpgOmc65CiOY=",
+        "lastModified": 1653871939,
+        "narHash": "sha256-4LgaUT4VFaSxXtqlvpHY0tfeISS5FtTLp0s/c2Q2McA=",
         "ref": "master",
-        "rev": "2e31f81c010ac189c4b454bd82970526841a9e8d",
-        "revCount": 61,
+        "rev": "07bf7f08526eb50f258fd8e8396ded7f8bf17f3a",
+        "revCount": 138,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/research-toolkit"
       },
@@ -2609,11 +2478,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652158292,
-        "narHash": "sha256-7GsShWJaXzwti6i3R0npO3oT6j4Pg7uMw/UlVYgdftw=",
+        "lastModified": 1655463915,
+        "narHash": "sha256-e1ziHTv6vY6f/IK6k8ExhIV5PBZrdHh6Yb/pEBEwD+c=",
         "ref": "master",
-        "rev": "b8a1dbd4563c4c1f10b4b070d9973d324ecaf056",
-        "revCount": 116,
+        "rev": "e6670916362f78100c57e274442a76e17fcba9bd",
+        "revCount": 147,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/research-toolkit"
       },
@@ -2656,7 +2525,7 @@
     },
     "sipuix-flake": {
       "inputs": {
-        "flake-utils": "flake-utils_19",
+        "flake-utils": "flake-utils_20",
         "nixpkgs": [
           "wonder-modules",
           "datawarehouse",
@@ -2687,17 +2556,40 @@
         ]
       },
       "locked": {
-        "lastModified": 1650421656,
-        "narHash": "sha256-P1smrIxjIO+eOKOx2FHmnOZZ7acGn3u5ppKdBYEls6M=",
+        "lastModified": 1653458421,
+        "narHash": "sha256-LcbytsW766gthFTQKW5RKr5XOIRZjwQZT7HVRRvIsC0=",
         "ref": "master",
-        "rev": "20da234a6880e9d8cf4dded17f039464a1de70d7",
-        "revCount": 20,
+        "rev": "6b54b593d6515739914d1d146ddf12a623637dc2",
+        "revCount": 21,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/tjapi"
       },
       "original": {
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/tjapi"
+      }
+    },
+    "tradex-api-flake": {
+      "inputs": {
+        "flake-utils": "flake-utils_14",
+        "nixpkgs": [
+          "wonder-modules",
+          "butler",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1653554682,
+        "narHash": "sha256-J62YZLK1WnRiLJFbRcc63p2OdOdHjsG6XAHSEwzjYfQ=",
+        "ref": "master",
+        "rev": "808896e06a494c605b5c03aca5b094309b9efe6b",
+        "revCount": 11,
+        "type": "git",
+        "url": "ssh://git@github.com/quant-wonderland/tradex-api"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/quant-wonderland/tradex-api"
       }
     },
     "utils": {
@@ -2717,6 +2609,21 @@
     },
     "utils_10": {
       "locked": {
+        "lastModified": 1634851050,
+        "narHash": "sha256-N83GlSGPJJdcqhUxSCS/WwW5pksYf3VP1M13cDRTSVA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c91f3de5adaf1de973b797ef7485e441a65b8935",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_11": {
+      "locked": {
         "lastModified": 1638122382,
         "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
         "owner": "numtide",
@@ -2730,7 +2637,7 @@
         "type": "github"
       }
     },
-    "utils_11": {
+    "utils_12": {
       "locked": {
         "lastModified": 1631561581,
         "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
@@ -2745,7 +2652,7 @@
         "type": "github"
       }
     },
-    "utils_12": {
+    "utils_13": {
       "locked": {
         "lastModified": 1649676176,
         "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
@@ -2760,7 +2667,7 @@
         "type": "github"
       }
     },
-    "utils_13": {
+    "utils_14": {
       "locked": {
         "lastModified": 1644229661,
         "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
@@ -2822,11 +2729,11 @@
     },
     "utils_5": {
       "locked": {
-        "lastModified": 1631561581,
-        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "lastModified": 1638122382,
+        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
         "type": "github"
       },
       "original": {
@@ -2837,6 +2744,21 @@
     },
     "utils_6": {
       "locked": {
+        "lastModified": 1631561581,
+        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_7": {
+      "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
         "owner": "numtide",
@@ -2850,7 +2772,7 @@
         "type": "github"
       }
     },
-    "utils_7": {
+    "utils_8": {
       "locked": {
         "lastModified": 1631561581,
         "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
@@ -2865,28 +2787,13 @@
         "type": "github"
       }
     },
-    "utils_8": {
-      "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "utils_9": {
       "locked": {
-        "lastModified": 1634851050,
-        "narHash": "sha256-N83GlSGPJJdcqhUxSCS/WwW5pksYf3VP1M13cDRTSVA=",
+        "lastModified": 1652776076,
+        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c91f3de5adaf1de973b797ef7485e441a65b8935",
+        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
         "type": "github"
       },
       "original": {
@@ -2945,7 +2852,7 @@
     },
     "vitalpkgs_3": {
       "inputs": {
-        "flake-utils": "flake-utils_14",
+        "flake-utils": "flake-utils_15",
         "nixpkgs": [
           "wonder-modules",
           "butler",
@@ -2954,11 +2861,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable_6"
       },
       "locked": {
-        "lastModified": 1631595883,
-        "narHash": "sha256-7WCn+lDamdwCO+29kZQmBbPp9/au/pvNQADYKz4PLoQ=",
+        "lastModified": 1634531087,
+        "narHash": "sha256-E1UXb0q/Sard1ywRk4HrT+nRPoskQ5Y0pQ7Ys1vkIzc=",
         "owner": "nixvital",
         "repo": "vitalpkgs",
-        "rev": "20225428d30dd3b594a4e220374f22fb6ac70362",
+        "rev": "dc07cc44aaf127f7ebe581b8dc6dc7d2796366aa",
         "type": "github"
       },
       "original": {
@@ -2969,7 +2876,7 @@
     },
     "vitalpkgs_4": {
       "inputs": {
-        "flake-utils": "flake-utils_20",
+        "flake-utils": "flake-utils_21",
         "nixpkgs": [
           "wonder-modules",
           "datawarehouse",
@@ -2993,7 +2900,7 @@
     },
     "vitalpkgs_5": {
       "inputs": {
-        "flake-utils": "flake-utils_23",
+        "flake-utils": "flake-utils_24",
         "nixpkgs": [
           "wonder-modules",
           "nixpkgs"
@@ -3017,7 +2924,7 @@
     },
     "vitalpkgs_6": {
       "inputs": {
-        "flake-utils": "flake-utils_29",
+        "flake-utils": "flake-utils_30",
         "nixpkgs": [
           "wonder-modules",
           "wonder-foundations",
@@ -3044,32 +2951,37 @@
       "inputs": {
         "archive-py-flake": "archive-py-flake_2",
         "devops-tools": "devops-tools_5",
-        "ml-pkgs": "ml-pkgs_3",
-        "nixpkgs": "nixpkgs_21",
+        "nixpkgs": [
+          "wonder-modules",
+          "nixpkgs"
+        ],
         "numpandas-flake": "numpandas-flake",
         "research-toolkit": "research-toolkit",
-        "utils": "utils_13"
+        "utils": "utils_14"
       },
       "locked": {
-        "lastModified": 1648106000,
-        "narHash": "sha256-maxttYgovfWNCcLlx9BSoPSvr/1P5Bp2QhOY6CH4HKM=",
+        "lastModified": 1653873136,
+        "narHash": "sha256-8KjDq8BoQa46w6QprddvjHM8oX4p++J4SINklt/z900=",
         "ref": "master",
-        "rev": "de37535a7c239bac414cf34e89bfc3a70efe46ba",
-        "revCount": 61,
+        "rev": "2962a09500f9833c48055d2260f920cffa610a05",
+        "revCount": 66,
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/warehouse-py?tag=v0.3.0"
+        "url": "ssh://git@github.com/quant-wonderland/warehouse-py?tag=v0.4.2"
       },
       "original": {
         "ref": "master",
-        "rev": "de37535a7c239bac414cf34e89bfc3a70efe46ba",
+        "rev": "2962a09500f9833c48055d2260f920cffa610a05",
         "type": "git",
-        "url": "ssh://git@github.com/quant-wonderland/warehouse-py?tag=v0.3.0"
+        "url": "ssh://git@github.com/quant-wonderland/warehouse-py?tag=v0.4.2"
       }
     },
     "wind-mirrorer": {
       "inputs": {
-        "flake-utils": "flake-utils_25",
-        "nixpkgs": "nixpkgs_22"
+        "flake-utils": "flake-utils_26",
+        "nixpkgs": [
+          "wonder-modules",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1641782733,
@@ -3098,11 +3010,11 @@
         "vitalpkgs": "vitalpkgs"
       },
       "locked": {
-        "lastModified": 1652234620,
-        "narHash": "sha256-t9z2ApOb8m3jed6jZ1lVSHb6hCY/z2n9DQ6bEpE6BbQ=",
+        "lastModified": 1655290882,
+        "narHash": "sha256-vdHCah23/hhAq0Gvecw1+zWruDM/Jro9DTKZFB+5ajQ=",
         "ref": "master",
-        "rev": "bce54e394ad3c16c4f4885a2aac0f30cd5aa6ebd",
-        "revCount": 59,
+        "rev": "7fa843e5c2b737e4b436d9b2a266ccd0cef92ee1",
+        "revCount": 68,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
@@ -3117,16 +3029,19 @@
         "devops-tools": "devops-tools_7",
         "home-manager": "home-manager_2",
         "hydra": "hydra_2",
-        "nixpkgs": "nixpkgs_28",
+        "nixpkgs": [
+          "wonder-modules",
+          "nixpkgs"
+        ],
         "nixpkgs-21-05": "nixpkgs-21-05_3",
         "vitalpkgs": "vitalpkgs_6"
       },
       "locked": {
-        "lastModified": 1652234620,
-        "narHash": "sha256-t9z2ApOb8m3jed6jZ1lVSHb6hCY/z2n9DQ6bEpE6BbQ=",
+        "lastModified": 1655290882,
+        "narHash": "sha256-vdHCah23/hhAq0Gvecw1+zWruDM/Jro9DTKZFB+5ajQ=",
         "ref": "master",
-        "rev": "bce54e394ad3c16c4f4885a2aac0f30cd5aa6ebd",
-        "revCount": 59,
+        "rev": "7fa843e5c2b737e4b436d9b2a266ccd0cef92ee1",
+        "revCount": 68,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
@@ -3155,11 +3070,11 @@
         "wonder-foundations": "wonder-foundations_2"
       },
       "locked": {
-        "lastModified": 1652359245,
-        "narHash": "sha256-oxbKqGmKa1pcZE51y3lGfBVQ3tYz+F6SUK2+LNvzPtc=",
+        "lastModified": 1656325320,
+        "narHash": "sha256-brjd4BPQ8bLnh2esorLez4KCYQh1m6AjnjDIWriSUGU=",
         "ref": "master",
-        "rev": "cf795fb16e090cf5a747aebf574faf1626244c32",
-        "revCount": 350,
+        "rev": "da179d64e6dd2f4b789a35e0a161e92de2bdae97",
+        "revCount": 656,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-modules"
       },
