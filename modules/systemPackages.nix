@@ -29,6 +29,7 @@
     nixopsUnstable
     gnupg1
     redis
+    morph
 
     # Python
     python3
