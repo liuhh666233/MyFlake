@@ -30,6 +30,7 @@
     gnupg1
     redis
     morph
+    streamlit
 
     # Python
     python3
