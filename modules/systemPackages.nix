@@ -8,7 +8,7 @@
     docker
     inetutils
     dpkg
-    ag
+    silver-searcher
     tig
     tmux
     starship
@@ -58,7 +58,7 @@
         PyGithub
         paramiko
         xmltodict
-        lark-parser
+        lark
       ]))
     # GO
     go

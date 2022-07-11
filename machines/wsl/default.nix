@@ -66,22 +66,22 @@ in {
     };
   };
 
-  wonder.productionAirflow = {
-    enable = false;
-    warehousePath = "/var/lib/wonder/warehouse";
-    redis = {
-      host = baseParams.hosts.localhost;
-      port = baseParams.ports.redisTcpPort;
-      datasourcerRedisNum =
-        baseParams.redisDatabases.dataSourcerFilePathDatabaseNum;
-      pubStreamsRedisNum =
-        baseParams.redisDatabases.dataPipelinePubsubDatabaseNum;
-    };
-    clickhouse = {
-      host = baseParams.hosts.thor;
-      port = baseParams.ports.warehouserClickhouseTcpPort;
-    };
-  };
+  # wonder.productionAirflow = {
+  #   enable = false;
+  #   warehousePath = "/var/lib/wonder/warehouse";
+  #   redis = {
+  #     host = baseParams.hosts.localhost;
+  #     port = baseParams.ports.redisTcpPort;
+  #     datasourcerRedisNum =
+  #       baseParams.redisDatabases.dataSourcerFilePathDatabaseNum;
+  #     pubStreamsRedisNum =
+  #       baseParams.redisDatabases.dataPipelinePubsubDatabaseNum;
+  #   };
+  #   clickhouse = {
+  #     host = baseParams.hosts.thor;
+  #     port = baseParams.ports.warehouserClickhouseTcpPort;
+  #   };
+  # };
 
   services.printing.enable = lib.mkForce false;
 
@@ -91,4 +91,7 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
+  security.polkit.enable = true;
+
+  system.stateVersion = "22.05";
 }

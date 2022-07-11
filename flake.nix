@@ -5,25 +5,17 @@
   inputs = {
 
     nixpkgs.url =
-      "github:NixOS/nixpkgs?rev=a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31";
-
-    nixpkgs-stable.url =
-      "github:NixOS/nixpkgs?rev=a946fb970f985e20d038e9d12c0db68a8b3b2f19";
+      "github:NixOS/nixpkgs?rev=ce6aa13369b667ac2542593170993504932eb836&tag=22.05";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # wonder foundations
     wonder-foundations.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-foundations";
+      "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=dev/22.05";
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
-
-    wonder-modules.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-modules?ref=master";
-    wonder-modules.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-unstable
-    , wonder-foundations, wonder-modules, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -44,7 +36,6 @@
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
-            wonder-modules.nixosModules.productionAirflow
             ./machines/wsl
           ];
         };
