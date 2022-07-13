@@ -38,7 +38,7 @@
             redis
             paramiko
             xmltodict
-            lark-parser
+            lark
           ]));
       in {
         displayName = "Python 3";

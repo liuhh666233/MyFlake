@@ -8,7 +8,7 @@
     docker
     inetutils
     dpkg
-    ag
+    silver-searcher
     tig
     tmux
     starship
@@ -31,6 +31,7 @@
     redis
     morph
     streamlit
+    nixops_unstable
 
     # Python
     python3
@@ -58,7 +59,7 @@
         PyGithub
         paramiko
         xmltodict
-        lark-parser
+        lark
       ]))
     # GO
     go
