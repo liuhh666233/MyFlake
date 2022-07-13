@@ -31,6 +31,7 @@
     redis
     morph
     streamlit
+    nixops_unstable
 
     # Python
     python3
