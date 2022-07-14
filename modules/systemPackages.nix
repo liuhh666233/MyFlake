@@ -16,16 +16,14 @@
     borgbackup
     jq
     black
+    ripgrep
 
     # Work
     git
-    awscli2
     gftp
-    dbeaver
     clickhouse-cli
     graphviz
     nixfmt
-    sqlitebrowser
     nixopsUnstable
     gnupg1
     redis
