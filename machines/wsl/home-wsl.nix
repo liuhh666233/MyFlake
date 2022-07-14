@@ -78,4 +78,9 @@ in {
 
   system.stateVersion = "22.05";
 
+  # Update nix config
+  nix = {
+    gc.automatic = lib.mkForce false;
+    autoOptimiseStore = false;
+  };
 }
