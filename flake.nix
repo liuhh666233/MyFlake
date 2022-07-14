@@ -40,6 +40,16 @@
           ];
         };
 
+        home = nixpkgs.lib.nixosSystem rec {
+          inherit system;
+          modules = [
+            wonder-foundations.nixosModules.foundation
+            wonder-foundations.nixosModules.home-manager
+            wonder-foundations.nixosModules.devopsTools
+            ./machines/wsl/home-wsl.nix
+          ];
+        };
+
         lxb = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [

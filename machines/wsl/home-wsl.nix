@@ -34,13 +34,13 @@ in {
   vital.programs.modern-utils.enable = true;
 
   wonder.binaryCaches = {
-    enable = true;
-    nixServe.host = baseParams.hosts.sisyphus;
+    enable = false;
+    nixServe.host = baseParams.hosts.localhost;
     nixServe.port = baseParams.ports.nixServerPort;
   };
 
   wonder.remoteNixBuild = {
-    enable = true;
+    enable = false;
     user = "lxb";
     host = "sisyphus";
   };
@@ -51,7 +51,7 @@ in {
     extraImports = [ ../../home/by-user/nix-dev.nix ];
     vscodeServer.enable = false;
     archer = {
-      enable = true;
+      enable = false;
       remote_host = baseParams.hosts.bishop;
       remote_port = 22;
       remote_user = "lxb";
@@ -66,23 +66,6 @@ in {
     };
   };
 
-  # wonder.productionAirflow = {
-  #   enable = false;
-  #   warehousePath = "/var/lib/wonder/warehouse";
-  #   redis = {
-  #     host = baseParams.hosts.localhost;
-  #     port = baseParams.ports.redisTcpPort;
-  #     datasourcerRedisNum =
-  #       baseParams.redisDatabases.dataSourcerFilePathDatabaseNum;
-  #     pubStreamsRedisNum =
-  #       baseParams.redisDatabases.dataPipelinePubsubDatabaseNum;
-  #   };
-  #   clickhouse = {
-  #     host = baseParams.hosts.thor;
-  #     port = baseParams.ports.warehouserClickhouseTcpPort;
-  #   };
-  # };
-
   services.printing.enable = lib.mkForce false;
 
   services.avahi.enable = lib.mkForce false;
@@ -94,10 +77,10 @@ in {
   security.polkit.enable = true;
 
   system.stateVersion = "22.05";
+
   # Update nix config
   nix = {
     gc.automatic = lib.mkForce false;
     autoOptimiseStore = false;
   };
-
 }

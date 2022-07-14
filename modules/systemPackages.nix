@@ -16,16 +16,16 @@
     borgbackup
     jq
     black
+    ripgrep
+    nodejs-16_x
 
     # Work
     git
-    awscli2
     gftp
-    dbeaver
+    git-lfs
     clickhouse-cli
     graphviz
     nixfmt
-    sqlitebrowser
     nixopsUnstable
     gnupg1
     redis
@@ -76,6 +76,13 @@
     doxygen
     cling
 
+    # C++
+    gcc
+    gdb
+    clang_11
+    lua
+    cmake
+    doxygen
   ];
   nixpkgs.config.permittedInsecurePackages = [ "electron-9.4.4" ];
 }
