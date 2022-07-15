@@ -60,6 +60,7 @@
         paramiko
         xmltodict
         lark
+        openpyxl
       ]))
     # GO
     go

@@ -39,6 +39,7 @@
             paramiko
             xmltodict
             lark
+            openpyxl
           ]));
       in {
         displayName = "Python 3";
