@@ -40,6 +40,7 @@
             xmltodict
             lark
             openpyxl
+            xlrd
           ]));
       in {
         displayName = "Python 3";

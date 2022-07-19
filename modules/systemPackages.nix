@@ -61,6 +61,7 @@
         xmltodict
         lark
         openpyxl
+        xlrd
       ]))
     # GO
     go
