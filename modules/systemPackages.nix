@@ -17,7 +17,7 @@
     jq
     black
     ripgrep
-    nodejs-16_x
+    nodejs-14_x
 
     # Work
     git
@@ -72,7 +72,6 @@
     gcc
     gdb
     clang_11
-    nodejs
     lua
     cmake
     doxygen
