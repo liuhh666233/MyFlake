@@ -18,7 +18,8 @@
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-21, nixpkgs-unstable, wonder-foundations, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-21, nixpkgs-unstable, wonder-foundations
+    , ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -40,6 +41,10 @@
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
             ./machines/wsl
+            ({
+              nixpkgs.overlays =
+                [ (final: prev: { nodejs-14_x = pkgs-21.nodejs-14_x; }) ];
+            })
           ];
         };
 
@@ -61,11 +66,8 @@
             wonder-foundations.nixosModules.devopsTools
             ./machines/home
             ({
-              nixpkgs.overlays = [
-                (final: prev: {
-                  nodejs-14_x = pkgs-21.nodejs-14_x;
-                })
-              ];
+              nixpkgs.overlays =
+                [ (final: prev: { nodejs-14_x = pkgs-21.nodejs-14_x; }) ];
             })
           ];
         };

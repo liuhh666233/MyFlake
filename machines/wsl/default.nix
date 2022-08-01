@@ -13,6 +13,9 @@ in {
     ../../modules/service/jupyter
   ];
 
+  # File system "/boot" is not a FAT EFI System Partition (ESP) file system.
+  boot.loader.systemd-boot.enable = false;
+
   wsl = {
     enable = true;
     automountPath = "/mnt";

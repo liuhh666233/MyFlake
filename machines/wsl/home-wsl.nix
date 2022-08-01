@@ -25,6 +25,8 @@ in {
 
   vital.mainUser = "nixos";
 
+  boot.loader.systemd-boot.enable = false;
+
   users.users.nixos.shell = pkgs.fish;
 
   vital.graphical.enable = false;

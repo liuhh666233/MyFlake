@@ -10,6 +10,8 @@ in {
     # ../../modules/service/jupyter
   ];
 
+  boot.loader.systemd-boot.enable = false;
+
   vital.mainUser = "lhh";
 
   vital.graphical.enable = true;
@@ -21,8 +23,8 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   networking.defaultGateway = "192.168.31.88";
-  
-  networking.nameservers = ["192.168.31.88"];
+
+  networking.nameservers = [ "192.168.31.88" ];
 
   wonder.home-manager = {
     enable = true;
