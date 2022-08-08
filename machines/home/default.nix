@@ -7,7 +7,7 @@ in {
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
     ../../modules/network.nix
-    # ../../modules/service/jupyter
+    ../../modules/service/jupyter
   ];
 
   boot.loader.systemd-boot.enable = false;
