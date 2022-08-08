@@ -10,7 +10,7 @@ in {
     ../../modules/service/jupyter
   ];
 
-  boot.loader.systemd-boot.enable = false;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   vital.mainUser = "lhh";
 
