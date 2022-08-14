@@ -22,9 +22,9 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  networking.defaultGateway = "192.168.31.88";
+  networking.defaultGateway = "192.168.31.3";
 
-  networking.nameservers = [ "192.168.31.88" ];
+  networking.nameservers = [ "192.168.31.3" ];
 
   wonder.home-manager = {
     enable = true;
