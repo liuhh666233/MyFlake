@@ -62,6 +62,7 @@
         lark
         openpyxl
         xlrd
+        requests
       ]))
     # GO
     go
