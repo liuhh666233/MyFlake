@@ -49,5 +49,18 @@ in {
 
   virtualisation.docker.enable = true;
 
+  nix = {
+    # Automatically optimize storage spaces /nix/store
+    autoOptimiseStore = false;
+
+    # Automatic garbage collection
+    gc = {
+      automatic = false;
+      dates = "weekly";
+      options = "--delete-older-than 120d";
+    };
+  };
+
   system.stateVersion = "22.05";
+
 }
