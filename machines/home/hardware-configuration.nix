@@ -25,15 +25,6 @@
     [ { device = "/dev/disk/by-uuid/d3f69235-2ea2-43ff-8963-54443bccd92c"; }
     ];
 
-  fileSystems."/var/lib/wonder/warehouse" =
-    { device = "/dev/disk/by-uuid/04e86efb-6c72-4cc4-be41-39ae2ab28a54";
-      fsType = "ext4";
-    };
-
-  fileSystems."/var/lib/wonder/nas" =
-    { device = "/dev/disk/by-uuid/cb37c05d-be98-48f6-a628-888a819054a8";
-      fsType = "ext4";
-    };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
