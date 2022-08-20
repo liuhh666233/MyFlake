@@ -11,8 +11,8 @@ in {
 
   # Bootloader.
 
-  boot.loader.systemd-boot.enable = false;   
-  
+  boot.loader.systemd-boot.enable = false;
+
   boot.loader.grub.enable = true;
 
   boot.loader.grub.device = "/dev/sdc";
@@ -65,6 +65,14 @@ in {
       ssh_key = "/home/lhh/.ssh/id_rsa";
     };
   };
+
+  vital.services.filerun = {
+    enable = true;
+    workDir = "/var/lib/wonder/nas/filerun";
+    port = baseParams.ports.fileRunWebPort;
+  };
+
+  services.base-exporters.enable = true;
 
   virtualisation.docker.enable = true;
 
