@@ -66,6 +66,7 @@ in {
     };
   };
 
+  # TODO(xiaobo): Fixed podman network create filerun_network
   vital.services.filerun = {
     enable = true;
     workDir = "/var/lib/wonder/nas/filerun";
