@@ -17,7 +17,7 @@ in {
 
   boot.loader.grub.device = "/dev/sdc";
 
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.useOSProber = false;
 
   vital.mainUser = "lhh";
 
