@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1649671976,
-        "narHash": "sha256-0F0QH0USWiOMQOtAabISe747P8cKIg55eJjSVCt+DIo=",
+        "lastModified": 1660818407,
+        "narHash": "sha256-C2Syyl5AD1Zgyn0LmqFSdULlU4oUh+2pgG9WgiBxl4Y=",
         "ref": "master",
-        "rev": "181247c6e6bb371b106d54181f6ae2ab0ad9ac6a",
-        "revCount": 515,
+        "rev": "0748b0505ecca344851cb600ae8fc1439933930a",
+        "revCount": 519,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/data-pipeline-monitor"
       },
@@ -425,11 +425,11 @@
         "vitalpkgs": "vitalpkgs"
       },
       "locked": {
-        "lastModified": 1658458396,
-        "narHash": "sha256-gc622VNaCP4evunMxfDfBE4C3f1EYMoE4i4JB0CfQ54=",
+        "lastModified": 1660988708,
+        "narHash": "sha256-5Z6m/TklrxViABGj4/rVpUIxv8U1s6p2GYe0jz9xm4Y=",
         "ref": "dev/22.05",
-        "rev": "ae3b82ccfed38e150b7020dbcfa0047d90a745c2",
-        "revCount": 80,
+        "rev": "a1634507835f95b6f01aa9e9d34a052882779701",
+        "revCount": 92,
         "type": "git",
         "url": "ssh://git@github.com/quant-wonderland/wonder-foundations"
       },
