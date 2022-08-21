@@ -76,6 +76,9 @@ in {
   services.base-exporters.enable = true;
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {
+    hosts = [ "tcp://0.0.0.0:2375" "unix:///run/docker.sock" ];
+  };
 
   nix = {
     # Automatically optimize storage spaces /nix/store
