@@ -80,6 +80,12 @@ in {
     hosts = [ "tcp://0.0.0.0:2375" "unix:///run/docker.sock" ];
   };
 
+  wonder.binaryCaches = {
+    enable = false;
+    nixServe.host = baseParams.hosts.localhost;
+    nixServe.port = baseParams.ports.nixServerPort;
+  };
+
   nix = {
     # Automatically optimize storage spaces /nix/store
     autoOptimiseStore = false;
