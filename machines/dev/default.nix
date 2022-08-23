@@ -67,6 +67,13 @@ in {
     };
   };
 
+  wonder.binaryCaches = {
+    enable = true;
+    pubilcKeys = "nas:5DfJlCQhhx/i+mTy8OI6aPZSi1XTuIJYSAPIFmYvYAY=";
+    nixServe.host = "192.168.31.126";
+    nixServe.port = baseParams.ports.nixServerPort;
+  };
+
   system.stateVersion = "22.05";
 
 }
