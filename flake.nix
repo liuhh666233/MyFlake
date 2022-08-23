@@ -71,8 +71,8 @@
             })
           ];
         };
-        
-        dev = nixpkgs.lib.nixosSystem rec {
+
+        nas = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
             wonder-foundations.nixosModules.foundation
