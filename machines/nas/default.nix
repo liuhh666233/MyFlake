@@ -80,6 +80,12 @@ in {
     hosts = [ "tcp://0.0.0.0:2375" "unix:///run/docker.sock" ];
   };
 
+  services.nix-server = {
+    enable = true;
+    webServerPort = baseParams.ports.nixServerPort;
+    secretKeyFile = "/var/cache-priv-key.pem";
+  };
+
   wonder.binaryCaches = {
     enable = false;
     nixServe.host = baseParams.hosts.localhost;
