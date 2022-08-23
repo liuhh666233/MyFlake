@@ -6,7 +6,6 @@ in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
-    ../../modules/network.nix
     ../../modules/service/jupyter
   ];
 
@@ -25,6 +24,13 @@ in {
   networking.defaultGateway = "192.168.31.3";
 
   networking.nameservers = [ "192.168.31.3" ];
+
+  # Enable automatic login for the user.
+  services.getty.autologinUser = "lhh";
+
+  services.openssh.enable = true;
+
+  networking.hostName = "dev"; # Define your hostname.
 
   wonder.home-manager = {
     enable = true;

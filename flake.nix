@@ -58,17 +58,13 @@
           ];
         };
 
-        home = nixpkgs.lib.nixosSystem rec {
+        dev = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
-            ./machines/home
-            ({
-              nixpkgs.overlays =
-                [ (final: prev: { nodejs-14_x = pkgs-21.nodejs-14_x; }) ];
-            })
+            ./machines/dev
           ];
         };
 
@@ -78,7 +74,7 @@
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
-            ./machines/dev
+            ./machines/nas
           ];
         };
 
