@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.fd ];
+  home.packages = [ pkgs.fd pkgs.home-manager ];
   # ...other config, other config...
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
