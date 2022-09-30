@@ -34,6 +34,9 @@
       source (${pkgs.z-lua}/bin/z --init fish | psub)
       set fzf_fd_opts --hidden --exclude=.git
       fzf_configure_bindings --git_status=\cg --history=\ch --processes=\co --variables --directory --git_log
+      set --global hydro_color_pwd blue
+      set --global hydro_color_git green
+      set --global hydro_color_duration cyan
     '';
     plugins = [
     {
