@@ -1,13 +1,15 @@
 { pkgs, ... }:
 
 {
+  home.packages = [ pkgs.fd ];
   # ...other config, other config...
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   # OR
   #   programs.zsh.enable = true;
   # Or any other shell you're using.
-
+  programs.fzf.enable = true;
+  programs.bat.enable = true;
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -30,6 +32,8 @@
     };
     shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
+      set fzf_fd_opts --hidden --exclude=.git
+      fzf_configure_bindings --git_status=\cg --history=\ch --processes=\co --variables --directory --git_log
     '';
     plugins = [
     {

@@ -7,27 +7,19 @@
     nixpkgs.url =
       "github:NixOS/nixpkgs?rev=ce6aa13369b667ac2542593170993504932eb836&tag=22.05";
 
-    nixpkgs-21.url =
-      "github:NixOS/nixpkgs?rev=64fc73bd74f04d3e10cb4e70e1c65b92337e76db&tag=nixos-21.11";
-
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # wonder foundations
     wonder-foundations.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=dev/22.05";
+      "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=master";
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-21, nixpkgs-unstable, wonder-foundations
+  outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations
     , ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        config.allowBroken = true;
-      };
-      pkgs-21 = import nixpkgs-21 {
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;
@@ -41,10 +33,6 @@
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
             ./machines/wsl
-            ({
-              nixpkgs.overlays =
-                [ (final: prev: { nodejs-14_x = pkgs-21.nodejs-14_x; }) ];
-            })
           ];
         };
 
