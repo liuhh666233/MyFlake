@@ -26,7 +26,7 @@
     };
     
     interactiveShellInit = ''
-      printf '%s@%s%s %s%s' $USER (set_color $fish_color_cwd) $hostname (set_color normal) (date '+%y/%m/%d') \n
+      printf '%s@%s%s %s%s' $USER (set_color red) $hostname (set_color normal) (date '+%y/%m/%d') \n
     '';
 
     shellInit = ''
