@@ -14,12 +14,12 @@
     enable = true;
     shellAliases = {
       "gs" = "git status";
-      "ga" = "git add";
+      # "ga" = "git add";
       "gl" = "git log";
       "gp" = "git push";
       "gc" = "git commit -m";
       "gb" = "git branch";
-      "gd" = "git diff";
+      # "gd" = "git diff";
       "cc" = "code -n";
       "pr" = "poetry run";
       "pt" = "poetry run pytest -v";
@@ -44,6 +44,7 @@
     }
     { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
     { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+    { name = "forgit"; src = pkgs.fishPlugins.forgit.src; }
   ];
   };
 }
