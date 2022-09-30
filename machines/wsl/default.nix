@@ -54,7 +54,7 @@ in {
     extraImports = [ ../../home/by-user/nix-dev.nix ];
     vscodeServer.enable = false;
     archer = {
-      enable = true;
+      enable = false;
       remote_host = baseParams.hosts.bishop;
       remote_port = 22;
       remote_user = "lxb";
