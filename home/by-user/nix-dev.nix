@@ -24,6 +24,11 @@
       "pr" = "poetry run";
       "pt" = "poetry run pytest -v";
     };
+    
+    interactiveShellInit = ''
+      printf '%s@%s%s %s%s' $USER (set_color $fish_color_cwd) $hostname (set_color normal) (date '+%y/%m/%d') \n
+    '';
+
     shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
 
@@ -35,9 +40,9 @@
       set --global hydro_color_git green
       set --global hydro_color_duration cyan
 
-      function fish_right_prompt -d "Write out the right prompt"
-          printf '%s@%s%s %s%s' $USER (set_color $fish_color_cwd) $hostname (set_color normal) (date '+%m/%d/%y')
-      end
+      # function fish_right_prompt -d "Write out the right prompt"
+      #     printf '%s@%s%s %s%s' $USER (set_color $fish_color_cwd) $hostname (set_color normal) (date '+%m/%d/%y')
+      # end
     '';
     plugins = [
     {
