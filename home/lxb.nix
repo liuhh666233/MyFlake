@@ -3,7 +3,7 @@
 {
   home.packages = [ pkgs.fd ];
 
-  programs.home-manager.enable = true;
+  programs.home-manager.enable = false;
 
   # ...other config, other config...
   programs.direnv.enable = true;
