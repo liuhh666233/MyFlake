@@ -15,16 +15,21 @@
     enable = true;
     shellAliases = {
       "gs" = "git status";
-      "ga" = "git add";
+      # "ga" = "git add";
       "gl" = "git log";
       "gp" = "git push";
       "gc" = "git commit -m";
       "gb" = "git branch";
-      "gd" = "git diff";
+      # "gd" = "git diff";
       "cc" = "code -n";
       "pr" = "poetry run";
       "pt" = "poetry run pytest -v";
     };
+
+    interactiveShellInit = ''
+      printf '%s@%s%s %s%s' $USER (set_color red) $hostname (set_color normal) (date '+%y/%m/%d') \n
+    '';
+
     shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
       set fzf_fd_opts --hidden --exclude=.git
@@ -45,6 +50,7 @@
     }
     { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
     { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+    { name = "forgit"; src = pkgs.fishPlugins.forgit.src; }
   ];
   };
 }
