@@ -103,6 +103,8 @@ in {
     };
   };
 
+  services.cron.systemCronJobs = [ "0 3 * * * sudo reboot" ];
+
   system.stateVersion = "22.05";
 
 }
