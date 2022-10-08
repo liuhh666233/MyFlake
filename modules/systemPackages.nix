@@ -86,5 +86,5 @@
     cmake
     doxygen
   ];
-  nixpkgs.config.permittedInsecurePackages = [ "electron-9.4.4" ];
+
 }
