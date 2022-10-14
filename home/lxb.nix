@@ -1,6 +1,15 @@
 { pkgs, ... }:
 
 {
+  # <install home-manager>
+  # home-manager build --flake .#lxb
+  # home-manager switch --flake 'git+ssh://git@github.com/liuhh666233/MyFlake#lxb' 
+
+  # <install oh my fish>
+  # curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+  # omf install lambda
+  # omf theme lambda
+
   home.packages = [ pkgs.fd ];
 
   programs.home-manager.enable = false;
