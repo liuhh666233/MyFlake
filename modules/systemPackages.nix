@@ -17,7 +17,7 @@
     jq
     black
     ripgrep
-    nodejs-14_x
+    nodejs
 
     # Work
     git
