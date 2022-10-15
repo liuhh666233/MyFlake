@@ -7,6 +7,7 @@ in {
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
     ../../modules/service/tailscale
+    ../../modules/service/samba
   ];
 
   # Bootloader.
