@@ -8,6 +8,7 @@ in {
     ../../modules/systemPackages.nix
     ../../modules/service/tailscale
     ../../modules/service/samba
+    ../../modules/service/transmission
   ];
 
   # Bootloader.
