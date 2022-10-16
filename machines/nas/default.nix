@@ -9,6 +9,7 @@ in {
     ../../modules/service/tailscale
     ../../modules/service/samba
     ../../modules/service/transmission
+    ../../modules/service/aria2
   ];
 
   # Bootloader.
