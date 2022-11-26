@@ -7,6 +7,7 @@ in {
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
     ../../modules/service/jupyter
+    ../../users/lhh.nix
   ];
 
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
