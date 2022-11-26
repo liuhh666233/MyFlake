@@ -10,6 +10,7 @@ in {
     ../../modules/service/samba
     ../../modules/service/transmission
     ../../modules/service/aria2
+    ../../users/lhh.nix
   ];
 
   # Bootloader.
