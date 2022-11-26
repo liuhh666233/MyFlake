@@ -32,6 +32,7 @@
     morph
     streamlit
     nixops_unstable
+    colmena
 
     # Python
     python3
