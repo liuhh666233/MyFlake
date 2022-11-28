@@ -14,10 +14,12 @@
       "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=master";
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager?rev=93a69d07389311ffd6ce1f4d01836bbc2faec644";
+    home-manager.url =
+      "github:nix-community/home-manager?rev=93a69d07389311ffd6ce1f4d01836bbc2faec644";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
+    , ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -39,6 +41,11 @@
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
             ./machines/wsl
+            ({
+              nixpkgs.overlays =
+                [ (final: prev: { duckdb = pkgs-unstable.duckdb; }) ];
+            })
+
           ];
         };
 

@@ -32,7 +32,8 @@
     morph
     streamlit
     nixops_unstable
-    colmena
+    # colmena
+    duckdb
 
     # Python
     python3
