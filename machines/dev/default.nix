@@ -58,7 +58,9 @@ in {
 
   nix = {
     # Automatically optimize storage spaces /nix/store
-    autoOptimiseStore = false;
+    settings = {
+      auto-optimise-store = false;
+    };
 
     # Automatic garbage collection
     gc = {
