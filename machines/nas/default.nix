@@ -98,8 +98,10 @@ in {
 
   nix = {
     # Automatically optimize storage spaces /nix/store
-    autoOptimiseStore = false;
-    trustedUsers = [ "lhh" ];
+    settings = {
+      trusted-users = [ "lhh" ];
+      auto-optimise-store = false;
+    };
     # Automatic garbage collection
     gc = {
       automatic = false;
