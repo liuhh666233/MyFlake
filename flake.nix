@@ -14,8 +14,7 @@
       "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=master";
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url =
-      "github:nix-community/home-manager?rev=93a69d07389311ffd6ce1f4d01836bbc2faec644";
+    home-manager.url = "github:nix-community/home-manager?ref=master";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
@@ -86,11 +85,33 @@
 
       };
 
+      # "https://nix-community.github.io/home-manager/release-notes.html" # sec-release-22.11-highlights
       homeConfigurations.lxb = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs system;
-        username = "lxb";
-        homeDirectory = "/home/lxb";
-        configuration = import ./home/lxb.nix;
+        inherit pkgs;
+        modules = [
+          ./home/default.nix
+          {
+            home = {
+              username = "lxb";
+              homeDirectory = "/home/lxb";
+              stateVersion = "22.11";
+            };
+          }
+        ];
+      };
+
+      homeConfigurations.nixos = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home/default.nix
+          {
+            home = {
+              username = "nixos";
+              homeDirectory = "/home/nixos";
+              stateVersion = "22.11";
+            };
+          }
+        ];
       };
     };
 }
