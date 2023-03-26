@@ -115,7 +115,7 @@ in {
   services.mongodb = {
     enable = true;
     dbpath="/var/lib/wonder/warehouse/mongodb";
-    bind_ip="192.168.31.244";
+    bind_ip="0.0.0.0";
   };
 
   system.stateVersion = "22.05";
