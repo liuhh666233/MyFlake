@@ -112,6 +112,12 @@ in {
 
   services.cron.systemCronJobs = [ "0 4 * * * root  reboot" ];
 
+  services.mongodb = {
+    enable = true;
+    dbpath="/var/lib/wonder/warehouse/mongodb";
+    bind_ip="192.168.31.244";
+  };
+
   system.stateVersion = "22.05";
 
 }
