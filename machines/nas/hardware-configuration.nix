@@ -12,6 +12,14 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # allow perf as user
+  boot.kernel.sysctl."kernel.perf_event_paranoid" = -1;
+  boot.kernel.sysctl."kernel.kptr_restrict" = lib.mkForce 0;
+  # so perf can find kernel modules
+  systemd.tmpfiles.rules = [
+    "L /lib - - - - /run/current/system/lib"
+  ];
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/8385410b-127b-41fa-a0eb-266efd7e76c8";
     fsType = "ext4";
