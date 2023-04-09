@@ -25,7 +25,14 @@
     [ { device = "/dev/disk/by-uuid/d3f69235-2ea2-43ff-8963-54443bccd92c"; }
     ];
 
-
+  # allow perf as user
+  boot.kernel.sysctl."kernel.perf_event_paranoid" = -1;
+  boot.kernel.sysctl."kernel.kptr_restrict" = lib.mkForce 0;
+  # so perf can find kernel modules
+  systemd.tmpfiles.rules = [
+    "L /lib - - - - /run/current/system/lib"
+  ];
+  
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
