@@ -110,7 +110,7 @@ in {
     };
   };
 
-  services.cron.systemCronJobs = [ "0 4 * * * root  reboot" ];
+  # services.cron.systemCronJobs = [ "0 4 * * * root  reboot" ];
 
   services.mongodb = {
     enable = true;
