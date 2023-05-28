@@ -65,7 +65,7 @@ in {
       ssh_proxy = "";
     };
     sshConfig = {
-      enable = true;
+      enable = false;
       ssh_key = "/home/lhh/.ssh/id_rsa";
     };
   };
