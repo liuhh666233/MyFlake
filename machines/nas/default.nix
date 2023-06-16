@@ -77,7 +77,7 @@ in {
     port = baseParams.ports.fileRunWebPort;
   };
 
-  services.base-exporters.enable = true;
+  services.base-exporters.enable = false;
 
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings = {
@@ -113,7 +113,7 @@ in {
   # services.cron.systemCronJobs = [ "0 4 * * * root  reboot" ];
 
   services.mongodb = {
-    enable = true;
+    enable = false;
     dbpath="/var/lib/wonder/warehouse/mongodb";
     bind_ip="0.0.0.0";
   };
