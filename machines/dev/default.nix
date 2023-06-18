@@ -48,6 +48,9 @@ in {
       local_warehouse_root = "/var/lib/wonder/warehouse";
       ssh_proxy = "";
     };
+    # https://github.com/vernesong/OpenClash/issues/1960
+    # github.com 链接失败, 需要在ssh config中讲ssh.github.com的22端口切换为443端口
+    # 部分机场存在此问题.
     sshConfig = {
       enable = false;
       ssh_key = "/home/lhh/.ssh/id_rsa";
