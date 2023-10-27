@@ -3,7 +3,7 @@
 let
   vscode-server-src = fetchTarball {
     url = "https://github.com/msteen/nixos-vscode-server/tarball/master";
-    sha256 = "1vgq7141mv67r7xgdpgg54hy41kbhlgp3870kyrh6z5fn4zyb74p";
+    sha256 = "0sz8njfxn5bw89n6xhlzsbxkafb6qmnszj4qxy2w0hw2mgmjp829";
   };
 in {
   imports = [ "${vscode-server-src}/modules/vscode-server/home.nix" ];
