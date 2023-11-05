@@ -29,7 +29,7 @@ in {
 
   users.users.nixos.shell = pkgs.fish;
 
-  vital.graphical.enable = false;
+  vital.graphical.enable = true;
 
   vital.pre-installed.level = 5;
 
@@ -83,6 +83,6 @@ in {
   # Update nix config
   nix = {
     gc.automatic = lib.mkForce false;
-    autoOptimiseStore = false;
+    settings.auto-optimise-store = false;
   };
 }
