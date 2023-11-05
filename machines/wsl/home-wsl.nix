@@ -63,7 +63,7 @@ in {
       ssh_proxy = "";
     };
     sshConfig = {
-      enable = true;
+      enable = false;
       ssh_key = "/home/nixos/.ssh/id_rsa";
     };
   };
