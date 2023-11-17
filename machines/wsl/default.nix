@@ -29,6 +29,8 @@ in {
   vital.mainUser = "nixos";
 
   users.users.nixos.shell = pkgs.fish;
+  
+  programs.fish.enable = true;
 
   vital.graphical.enable = false;
 
@@ -38,14 +40,14 @@ in {
 
   wonder.binaryCaches = {
     enable = true;
-    nixServe.host = baseParams.hosts.sisyphus;
+    nixServe.host = baseParams.hosts.datahub;
     nixServe.port = baseParams.ports.nixServerPort;
   };
 
   wonder.remoteNixBuild = {
     enable = true;
     user = "lxb";
-    host = "sisyphus";
+    host = "datahub";
   };
 
   wonder.home-manager = {
@@ -69,23 +71,6 @@ in {
     };
   };
 
-  # wonder.productionAirflow = {
-  #   enable = false;
-  #   warehousePath = "/var/lib/wonder/warehouse";
-  #   redis = {
-  #     host = baseParams.hosts.localhost;
-  #     port = baseParams.ports.redisTcpPort;
-  #     datasourcerRedisNum =
-  #       baseParams.redisDatabases.dataSourcerFilePathDatabaseNum;
-  #     pubStreamsRedisNum =
-  #       baseParams.redisDatabases.dataPipelinePubsubDatabaseNum;
-  #   };
-  #   clickhouse = {
-  #     host = baseParams.hosts.thor;
-  #     port = baseParams.ports.warehouserClickhouseTcpPort;
-  #   };
-  # };
-
   services.printing.enable = lib.mkForce false;
 
   services.avahi.enable = lib.mkForce false;
@@ -96,11 +81,11 @@ in {
 
   security.polkit.enable = true;
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "23.05";
   # Update nix config
   nix = {
     gc.automatic = lib.mkForce false;
-    autoOptimiseStore = false;
+    settings.auto-optimise-store = false;
   };
 
 }
