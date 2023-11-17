@@ -3,9 +3,8 @@
   description = "All of our deployment, period";
 
   inputs = {
-
-    nixpkgs.url =
-      "github:NixOS/nixpkgs?rev=4d2b37a84fad1091b9de401eb450aae66f1a741e&tag=22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    # nix flake lock --override-input nixpkgs "github:NixOS/nixpkgs?rev=841889913dfd06a70ffb39f603e29e46f45f0c1a"
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -14,7 +13,8 @@
       "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=master";
     wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager?ref=master";
+    home-manager.url = "github:nix-community/home-manager?ref=release-23.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
