@@ -9,7 +9,7 @@
       shell = pkgs.fish;
     };
   };
-  programs.fish.enable = true
+  programs.fish.enable = true;
   security.sudo.extraRules = [{
     users = [ "lhh" ];
     commands = [{
