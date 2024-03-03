@@ -8,24 +8,21 @@ in {
     ../../modules/systemPackages.nix
     ../../modules/service/tailscale
     ../../modules/service/samba
-    ../../modules/service/transmission
-    ../../modules/service/aria2
+    # ../../modules/service/transmission
+    # ../../modules/service/aria2
     ../../users/lhh.nix
   ];
 
   # Bootloader.
+  boot.loader.systemd-boot.enable = true;
 
-  boot.loader.systemd-boot.enable = false;
-
-  boot.loader.grub.enable = true;
-
-  boot.loader.grub.device = "/dev/sdc";
-
-  boot.loader.grub.useOSProber = false;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   vital.mainUser = "lhh";
 
   vital.pre-installed.level = 5;
+
+  vital.graphical.enable = false;
 
   vital.programs.modern-utils.enable = true;
 
@@ -49,30 +46,8 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  wonder.home-manager = {
-    enable = true;
-    user = "lhh";
-    extraImports = [ ../../home/by-user/nix-dev.nix ];
-    vscodeServer.enable = false;
-    archer = {
-      enable = false;
-      remote_host = baseParams.hosts.bishop;
-      remote_port = 22;
-      remote_user = "lxb";
-      ssh_key = "/home/lhh/.ssh/id_rsa";
-      remote_warehouse_root = "/var/lib/wonder/warehouse";
-      local_warehouse_root = "/var/lib/wonder/warehouse";
-      ssh_proxy = "";
-    };
-    sshConfig = {
-      enable = false;
-      ssh_key = "/home/lhh/.ssh/id_rsa";
-    };
-  };
-
-  # TODO(xiaobo): Fixed podman network create filerun_network
   vital.services.filerun = {
-    enable = true;
+    enable = false;
     workDir = "/var/lib/wonder/nas/filerun";
     port = baseParams.ports.fileRunWebPort;
   };
@@ -80,12 +55,13 @@ in {
   services.base-exporters.enable = false;
 
   virtualisation.docker.enable = true;
+
   virtualisation.docker.daemon.settings = {
     hosts = [ "tcp://0.0.0.0:2375" "unix:///run/docker.sock" ];
   };
 
   services.nix-server = {
-    enable = true;
+    enable = false;
     webServerPort = baseParams.ports.nixServerPort;
     secretKeyFile = "/var/cache-priv-key.pem";
   };
@@ -112,12 +88,6 @@ in {
 
   # services.cron.systemCronJobs = [ "0 4 * * * root  reboot" ];
 
-  services.mongodb = {
-    enable = false;
-    dbpath="/var/lib/wonder/warehouse/mongodb";
-    bind_ip="0.0.0.0";
-  };
-
-  system.stateVersion = "22.05";
+  system.stateVersion = "23.11";
 
 }

@@ -2,39 +2,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # System
-    wget
-    ibus
-    docker
-    inetutils
-    dpkg
-    silver-searcher
-    tig
-    tmux
-    starship
-    fish
-    borgbackup
-    jq
-    black
-    ripgrep
-    nodejs
-
-    # Work
-    git
-    gftp
-    git-lfs
-    clickhouse-cli
-    graphviz
-    nixfmt
-    nixopsUnstable
-    gnupg1
-    redis
-    morph
-    streamlit
-    nixops_unstable
-    # colmena
-    duckdb
-
     # Python
     python3
     (python3.withPackages (ps:
@@ -66,27 +33,67 @@
         xlrd
         requests
       ]))
-    # GO
-    go
-    gophernotes
-    gopls
-
-    # C++
-    gcc
-    gdb
-    clang_11
-    lua
-    cmake
-    doxygen
-    cling
-
-    # C++
-    gcc
-    gdb
-    clang_11
-    lua
-    cmake
-    doxygen
+        gparted
+        jq
+        ntp
+        graphviz
+        awscli2
+        nixops
+        clickhouse-cli
+        wget
+        vim
+        redis
+        nodejs-16_x
+        cmake
+        python
+        neovim
+        git
+        gdb
+        docker
+        ibus
+        fcitx5
+        graphviz
+        dpkg
+        nixfmt
+        tree
+        ncdu
+        ripgrep
+        libev
+        linuxPackages.cpupower
+        dmidecode
+        black
+        cpu-x
+        unrar
+        p7zip
+        rclone
+        rsync
+        parted
+        ethtool
+        iperf
+        nvme-cli
+        smartmontools
+        cifs-utils
   ];
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+    cudaCapabilities = [ "7.5" "8.6" ];
+    cudaForwardCompat = false;
+    permittedInsecurePackages = [
+      # *Exceptionally*, those packages will be cached with their *secure* dependents
+      # because they will reach EOL in the middle of the 23.05 release
+      # and it will be too much painful for our users to recompile them
+      # for no real reason.
+      # Remove them for 23.11.
+      "nodejs-16.20.2"
+      "openssl-1.1.1u"
+      "openssl-1.1.1v"
+      "openssl-1.1.1w"
+      "python2.7-pyjwt-1.7.1"
+      "python-2.7.18.6"
+      "python2.7-certifi-2021.10.8"
+    ];
+  };
 
 }

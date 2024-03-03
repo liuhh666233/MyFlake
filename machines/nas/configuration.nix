@@ -11,9 +11,9 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sdc";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -29,7 +29,19 @@
   time.timeZone = "Asia/Shanghai";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "zh_CN.utf8";
+  i18n.defaultLocale = "zh_CN.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "zh_CN.UTF-8";
+    LC_IDENTIFICATION = "zh_CN.UTF-8";
+    LC_MEASUREMENT = "zh_CN.UTF-8";
+    LC_MONETARY = "zh_CN.UTF-8";
+    LC_NAME = "zh_CN.UTF-8";
+    LC_NUMERIC = "zh_CN.UTF-8";
+    LC_PAPER = "zh_CN.UTF-8";
+    LC_TELEPHONE = "zh_CN.UTF-8";
+    LC_TIME = "zh_CN.UTF-8";
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -44,9 +56,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "lhh";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -83,6 +92,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
