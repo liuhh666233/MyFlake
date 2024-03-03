@@ -25,8 +25,8 @@
       map to guest = bad user
     '';
     shares = {
-      public = {
-        path = "/var/lib/wonder/warehouse/Shares/Public";
+      nas = {
+        path = "/var/lib/wonder/warehousePool/Shares";
         browseable = "yes";
         "read only" = "no";
         "guest ok" = "yes";
@@ -35,17 +35,6 @@
         "force user" = "lhh";
         "force group" = "users";
       };
-      private = {
-        path = "/var/lib/wonder/warehouse/Shares/Private";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "lhh";
-        "force group" = "users";
-      };
     };
   };
-
 }
