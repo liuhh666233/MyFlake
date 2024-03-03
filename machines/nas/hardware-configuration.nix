@@ -12,6 +12,10 @@
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.extraPools = [ "NAS" ];
+  # Set zfs.zfs_arc_max to 2GB
+  boot.kernelParams = [ "zfs.zfs_arc_max=2147483648" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/c02da5a0-df41-4b7f-8f02-1e87a6403d74";
@@ -33,5 +37,9 @@
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+
 }

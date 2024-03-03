@@ -41,6 +41,8 @@ in {
   # Enable networking
   networking.networkmanager.enable = true;
 
+  networking.hostId = "a8e6e22e";
+
   networking.firewall.enable = false;
 
   # Allow unfree packages
