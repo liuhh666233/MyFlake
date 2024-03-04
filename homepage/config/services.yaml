@@ -1,0 +1,58 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- NetWork:
+    - OpenWrt:
+        href: http://192.168.31.3/cgi-bin/luci/admin/services/openclash/client
+        description: OpenWrt
+        ping: 192.168.31.3
+    - OpenClash:
+        href: http://192.168.31.3:9090/ui/yacd/?hostname=192.168.31.3&port=9090&secret=123456#/proxies
+        description: OpenClash
+    - PVE:
+        href: https://192.168.31.2:8006/
+        description: PVE
+        ping: 192.168.31.2
+    - Router:
+        href: http://192.168.31.211/
+        description: Router
+        ping: 192.168.31.211
+
+- Data:
+    - DSM:
+        href: http://192.168.31.109:5000/
+        description: DSM
+        ping: 192.168.31.109
+    - Alist:
+        href: http://192.168.31.109:5244/
+        description: Alist
+        
+- Docker:
+    - Portainer R:
+        href: http://192.168.31.4:9000/#!/home
+        description: Portainer
+        ping: 192.168.31.4
+        widget:
+            type: portainer
+            url: http://192.168.31.4:9000
+            env: 2
+            key: ptr_+I9YCesJjEkKbsZD26LRObuowAIct34yp1l33h43guw=
+    - Portainer Nas:
+        href: http://192.168.31.4:9000/#!/home
+        description: Portainer
+        widget:
+            type: portainer
+            url: http://192.168.31.4:9000
+            env: 45
+            key: ptr_+I9YCesJjEkKbsZD26LRObuowAIct34yp1l33h43guw=
+
+- Monitor:
+    - Grafana:
+        href: http://192.168.31.4:3000/?orgId=1
+        description: Grafana
+    - Prometheus:
+        href: http://192.168.31.4:9090
+        widget:
+            type: prometheus
+            url: http://192.168.31.4:9090

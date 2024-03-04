@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  dsm:
+    container_name: dsm
+    image: vdsm/virtual-dsm
+    environment:
+      DISK_SIZE: "4096G"
+      RAM_SIZE: "2G"
+      CPU_CORES: "2"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 5000:5000
+    volumes:
+      - /var/lib/wonder/warehousePool/DSM:/storage
+    restart: on-failure
+    stop_grace_period: 2m
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - 3001:3000
+    volumes:
+      - /var/lib/wonder/warehouse/homepage/config:/app/config
+    restart: on-failure
+  node-exporter:
+    image: bitnami/node-exporter:latest
+    container_name: node-exporter
+    ports:
+      - 9100:9100
+    restart: on-failure

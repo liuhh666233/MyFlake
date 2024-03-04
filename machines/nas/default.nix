@@ -7,7 +7,7 @@ in {
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
     ../../modules/service/tailscale
-    ../../modules/service/samba
+    # ../../modules/service/samba
     # ../../modules/service/transmission
     # ../../modules/service/aria2
     ../../users/lhh.nix
