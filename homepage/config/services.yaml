@@ -13,7 +13,12 @@
     - PVE:
         href: https://192.168.31.2:8006/
         description: PVE
-        ping: 192.168.31.2
+        widget:
+            type: proxmox
+            url: https://192.168.31.2:8006
+            username: api@pam!homepage
+            password: 82cb60ea-eb26-4203-a7fc-3780f594825e
+            node: pve
     - Router:
         href: http://192.168.31.211/
         description: Router
@@ -29,7 +34,7 @@
     - AliyunWebdav:
         href: http://192.168.31.4:8080/
         description: Aliyun
-        
+
 - Docker:
     - Portainer R:
         href: http://192.168.31.4:9000/#!/home
