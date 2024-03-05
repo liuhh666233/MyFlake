@@ -63,3 +63,18 @@
         widget:
             type: prometheus
             url: http://192.168.31.4:9090
+- Other:
+    - Calender:
+        widget:
+            type: calendar
+            firstDayInWeek: sunday # optional - defaults to monday
+            view: monthly # optional - possible values monthly, agenda
+            maxEvents: 10 # optional - defaults to 10
+            showTime: true # optional - show time for event happening today - defaults to false
+            timezone: America/Los_Angeles
+    - HomeAssistant:
+        href: http://192.168.31.4:8123
+        widget:
+            type: homeassistant
+            url: http://192.168.31.4:8123
+            key: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI1YTk4NjlhYTUxNzI0NGNhYTA3MTQyNWM5ZjlmYmQ3MiIsImlhdCI6MTcwOTY1MDY2OCwiZXhwIjoyMDI1MDEwNjY4fQ.Sr9T10b_NBxo-zk6HfY31wBy3A1wAAaDUhE538qPpNs
