@@ -23,10 +23,12 @@
     - DSM:
         href: http://192.168.31.208:5000/
         description: DSM
-        ping: 192.168.31.208
     - Alist:
-        href: http://192.168.31.109:5244/
+        href: http://192.168.31.4:5244/
         description: Alist
+    - AliyunWebdav:
+        href: http://192.168.31.4:8080/
+        description: Aliyun
         
 - Docker:
     - Portainer R:
