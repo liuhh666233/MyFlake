@@ -28,6 +28,9 @@
     - DSM:
         href: http://192.168.31.208:5000/
         description: DSM
+    - NasTools:
+        href: http://192.168.31.109:3100/
+        description: NasTools
     - Alist:
         href: http://192.168.31.4:5244/
         description: Alist
