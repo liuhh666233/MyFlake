@@ -3,32 +3,13 @@ networks:
   vdsm:
     external: true
 services:
-  nas-tools:
-    image: hsuyelin/nas-tools:latest
-    ports:
-      - 3100:3000 # 默认的webui控制端口
-    volumes:
-      - /var/lib/wonder/warehouse/nas-tools:/config # 冒号左边请修改为你想保存配置的路径
-      - /var/lib/wonder/warehousePool/Shares:/Movie # 媒体目录，多个目录需要分别映射进来，需要满足配置文件说明中的要求
-    environment:
-      - PUID=1000 # 想切换为哪个用户来运行程序，该用户的uid
-      - PGID=100 # 想切换为哪个用户来运行程序，该用户的gid
-      - UMASK=000 # 掩码权限，默认000，可以考虑设置为022
-      - NASTOOL_AUTO_UPDATE=true # 如需在启动容器时自动升级程程序请设置为true
-      - NASTOOL_CN_UPDATE=false # 如果开启了容器启动自动升级程序，并且网络不太友好时，可以设置为true，会使用国内源进行软件更新
-    #- REPO_URL=https://ghproxy.com/https://github.com/hsuyelin/nas-tools.git  # 当你访问github网络很差时，可以考虑解释本行注释
-    restart: always
-    network_mode: bridge
-    hostname: nas-tools
-    container_name: nas-tools
   dsm:
     container_name: dsm
     image: vdsm/virtual-dsm
     environment:
       DISK_SIZE: "4096G"
-      RAM_SIZE: "2G"
-      CPU_CORES: "2"
-      DHCP: "Y"
+      RAM_SIZE: "4G"
+      CPU_CORES: "4"
     device_cgroup_rules:
       - 'c *:* rwm'
     devices:
@@ -43,7 +24,7 @@ services:
     stop_grace_period: 2m
     networks:
       vdsm:
-        ipv4_address: 192.168.31.100
+        ipv4_address: 192.168.31.208
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage

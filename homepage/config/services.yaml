@@ -29,8 +29,14 @@
         href: http://192.168.31.208:5000/
         description: DSM
     - NasTools:
-        href: http://192.168.31.109:3100/
+        href: http://192.168.31.208:3100/
         description: NasTools
+    - Emby:
+        href: http://192.168.31.208:8096/
+        description: NasTools
+    - qBittorrent:
+        href: http://192.168.31.208:8989/
+        description: qBittorrent
     - Alist:
         href: http://192.168.31.4:5244/
         description: Alist
