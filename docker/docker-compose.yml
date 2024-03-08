@@ -8,8 +8,9 @@ services:
     image: vdsm/virtual-dsm
     environment:
       DISK_SIZE: "4096G"
-      RAM_SIZE: "4G"
-      CPU_CORES: "4"
+      RAM_SIZE: "2G"
+      CPU_CORES: "2"
+      DHCP: "Y"
     device_cgroup_rules:
       - 'c *:* rwm'
     devices:
