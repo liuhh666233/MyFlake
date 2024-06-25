@@ -40,14 +40,14 @@ in {
 
   wonder.binaryCaches = {
     enable = true;
-    nixServe.host = baseParams.hosts.datahub;
+    nixServe.host = "192.168.110.223";
     nixServe.port = baseParams.ports.nixServerPort;
   };
 
   wonder.remoteNixBuild = {
     enable = true;
     user = "lxb";
-    host = "datahub";
+    host = "192.168.110.223";
   };
 
   wonder.home-manager = {
@@ -66,7 +66,7 @@ in {
       ssh_proxy = "";
     };
     sshConfig = {
-      enable = true;
+      enable = false;
       ssh_key = "/home/nixos/.ssh/id_rsa";
     };
   };
