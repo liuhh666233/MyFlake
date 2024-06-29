@@ -43,7 +43,7 @@
         wget
         vim
         redis
-        nodejs-16_x
+        nodejs-18_x
         cmake
         python
         neovim
