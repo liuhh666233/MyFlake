@@ -20,22 +20,22 @@
             password: 82cb60ea-eb26-4203-a7fc-3780f594825e
             node: pve
     - Router:
-        href: http://192.168.31.211/
+        href: http://192.168.31.175/
         description: Router
-        ping: 192.168.31.211
+        ping: 192.168.31.175
 
 - Data:
     - DSM:
-        href: http://192.168.31.141:5000/
+        href: http://192.168.31.144:5000/
         description: DSM
     - NasTools:
-        href: http://192.168.31.141:3100/
+        href: http://192.168.31.144:3100/
         description: NasTools
     - Emby:
-        href: http://192.168.31.141:8096/
+        href: http://192.168.31.144:8096/
         description: NasTools
     - qBittorrent:
-        href: http://192.168.31.141:8989/
+        href: http://192.168.31.144:8989/
         description: qBittorrent
     - jackett:
         href: http://192.168.31.4:9117/UI/Dashboard
