@@ -11,6 +11,10 @@
   # omf theme lambda
   imports = [ ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "nodejs-16.20.2"
+  ];
+
   home.packages = [ pkgs.fd pkgs.oh-my-fish ];
 
   # https://github.com/NixOS/nixpkgs/issues/196651
@@ -35,9 +39,6 @@
       "gc" = "git commit -m";
       "gb" = "git branch";
       "gd" = "git diff";
-      "cc" = "code -n";
-      "pr" = "poetry run";
-      "pt" = "poetry run pytest -v";
     };
 
     shellInit = ''
