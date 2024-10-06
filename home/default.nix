@@ -46,7 +46,7 @@
 
       set fzf_fd_opts --hidden --exclude=.git
 
-      fzf_configure_bindings --git_status=\cg --history=\ch --processes=\co --variables=\ci --directory=\cd --git_log=\cl
+      fzf_configure_bindings --git_status=\cg --history=\ch --processes=\co --variables --directory=\cd --git_log=\cl
     '';
     plugins = [
       {
