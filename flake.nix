@@ -113,5 +113,19 @@
           }
         ];
       };
+
+      homeConfigurations.wonder = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home/default.nix
+          {
+            home = {
+              username = "wonder";
+              homeDirectory = "/home/wonder";
+              stateVersion = "22.11";
+            };
+          }
+        ];
+      };
     };
 }
