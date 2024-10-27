@@ -15,7 +15,7 @@
     "nodejs-16.20.2"
   ];
 
-  home.packages = [ pkgs.fd pkgs.oh-my-fish ];
+  home.packages = [ pkgs.fd pkgs.oh-my-fish translate-shell];
 
   # https://github.com/NixOS/nixpkgs/issues/196651
   # Fix /nix/store/0czacppvzvmiyx32p7j1d5p9mvjvsi0l-manual-combined/manual-combined.xml fails to validate
@@ -39,6 +39,8 @@
       "gc" = "git commit -m";
       "gb" = "git branch";
       "gd" = "git diff";
+      "te"  = "trans -s en -t zh";
+      "tz"  = "trans -s zh -t en";
     };
 
     shellInit = ''
