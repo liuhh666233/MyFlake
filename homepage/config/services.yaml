@@ -25,17 +25,14 @@
         ping: 192.168.31.175
 
 - Data:
-    - DSM:
-        href: http://192.168.31.144:5000/
-        description: DSM
     - NasTools:
-        href: http://192.168.31.144:3100/
+        href: http://192.168.31.110:3000/
         description: NasTools
     - Emby:
-        href: http://192.168.31.144:8096/
+        href: http://192.168.31.110:8096/
         description: NasTools
     - qBittorrent:
-        href: http://192.168.31.144:8989/
+        href: http://192.168.31.110:18080/
         description: qBittorrent
     - jackett:
         href: http://192.168.31.4:9117/UI/Dashboard
@@ -56,14 +53,6 @@
             type: portainer
             url: http://192.168.31.4:9000
             env: 2
-            key: ptr_+I9YCesJjEkKbsZD26LRObuowAIct34yp1l33h43guw=
-    - Portainer Nas:
-        href: http://192.168.31.4:9000/#!/home
-        description: Portainer
-        widget:
-            type: portainer
-            url: http://192.168.31.4:9000
-            env: 45
             key: ptr_+I9YCesJjEkKbsZD26LRObuowAIct34yp1l33h43guw=
 
 - Monitor:
