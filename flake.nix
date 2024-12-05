@@ -5,6 +5,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     # nix flake lock --override-input nixpkgs "github:NixOS/nixpkgs?rev=841889913dfd06a70ffb39f603e29e46f45f0c1a"
+    utils.url = "github:numtide/flake-utils";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -18,9 +19,14 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
-    , ... }@inputs:
-    let
-      system = "x86_64-linux";
+    , ... }@inputs: inputs.utils.lib.eachSystem [
+      # Add the system/architecture you would like to support here. Note that not
+      # all packages in the official nixpkgs support all platforms.
+      "x86_64-linux"
+      "i686-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+    ] (system: let
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -100,6 +106,20 @@
         ];
       };
 
+      homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home/default.nix
+          {
+            home = {
+              username = "lhh";
+              homeDirectory = "/Users/lhh";
+              stateVersion = "22.11";
+            };
+          }
+        ];
+      };
+
       homeConfigurations.nixos = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
@@ -127,5 +147,5 @@
           }
         ];
       };
-    };
+    });
 }

@@ -15,7 +15,7 @@
     "nodejs-16.20.2"
   ];
 
-  home.packages = [ pkgs.fd pkgs.oh-my-fish translate-shell];
+  home.packages = [ pkgs.fd pkgs.oh-my-fish ];
 
   # https://github.com/NixOS/nixpkgs/issues/196651
   # Fix /nix/store/0czacppvzvmiyx32p7j1d5p9mvjvsi0l-manual-combined/manual-combined.xml fails to validate
