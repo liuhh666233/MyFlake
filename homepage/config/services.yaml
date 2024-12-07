@@ -25,14 +25,17 @@
         ping: 192.168.31.174
 
 - Data:
+    - Nas:
+        href: https://lhh-nas.local:9443
+        description: NasTools
     - NasTools:
-        href: http://192.168.31.110:3000/
+        href: http://192.168.31.135:3000/
         description: NasTools
     - Emby:
-        href: http://192.168.31.110:8096/
+        href: http://192.168.31.135:8096/
         description: NasTools
     - qBittorrent:
-        href: http://192.168.31.110:18080/
+        href: http://192.168.31.135:18080/
         description: qBittorrent
     - jackett:
         href: http://192.168.31.4:9117/UI/Dashboard
