@@ -20,9 +20,9 @@
             password: 82cb60ea-eb26-4203-a7fc-3780f594825e
             node: pve
     - Router:
-        href: http://192.168.31.175/
+        href: http://192.168.31.174/
         description: Router
-        ping: 192.168.31.175
+        ping: 192.168.31.174
 
 - Data:
     - NasTools:
