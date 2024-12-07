@@ -5,13 +5,13 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - /var/lib/wonder/warehouse/nas-tools:/config
-      - /var/lib/wonder/warehousePool/Shares/Video/Anime:/Anime
-      - /var/lib/wonder/warehousePool/Shares/Video/Movie:/Movie
-      - /var/lib/wonder/warehousePool/Shares/Video/TV:/TV
+      - /volume1/docker/config/nastools:/config
+      - /volume1/nastools/Anime:/Anime
+      - /volume1/nastools/Movie:/Movie
+      - /volume1/nastools/TV:/TV
     environment:
       - PUID=1000 # 想切换为哪个用户来运行程序，该用户的uid
-      - PGID=100 # 想切换为哪个用户来运行程序，该用户的gid
+      - PGID=10 # 想切换为哪个用户来运行程序，该用户的gid
       - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
       - NASTOOL_AUTO_UPDATE=true # 如需在启动容器时自动升级程程序请设置为true
       - NASTOOL_CN_UPDATE=true # 如果开启了容器启动自动升级程序，并且网络不太友好时，可以设置为true，会使用国内源进行软件更新
@@ -25,7 +25,7 @@ services:
     environment:
       #- PAGID=10000
       - PGID=1000
-      - PUID=100
+      - PUID=10
       - QBT_LEGAL_NOTICE=confirm
       - QBT_VERSION=5.0.2-1
       - QBT_WEBUI_PORT=18080
@@ -44,20 +44,20 @@ services:
       - /tmp
     tty: true
     volumes:
-      - /var/lib/wonder/warehouse/qbittorrent-nox:/config
-      - /var/lib/wonder/warehousePool/Shares/RealVideo:/downloads
+      - /volume1/docker/config/qbittorrent-nox:/config
+      - /volume1/Video:/downloads
   emby:
     image: lscr.io/linuxserver/emby:latest
     container_name: emby
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=10
       - TZ=CTS
     volumes:
-      - /var/lib/wonder/warehouse/emby:/config
-      - /var/lib/wonder/warehousePool/Shares/RealVideo/TV:/data/tvshows
-      - /var/lib/wonder/warehousePool/Shares/RealVideo/Movie:/data/movies
-      - /var/lib/wonder/warehousePool/Shares/RealVideo/Anime:/data/anime
+      - /volume1/docker/config/emby:/config
+      - /volume1/Video/TV:/data/tvshows
+      - /volume1/Video/Movie:/data/movies
+      - /volume1/Video/Anime:/data/anime
     ports:
       - 8096:8096
       - 8920:8920 #optional
