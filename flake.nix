@@ -19,14 +19,9 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
-    , ... }@inputs: inputs.utils.lib.eachSystem [
-      # Add the system/architecture you would like to support here. Note that not
-      # all packages in the official nixpkgs support all platforms.
-      "x86_64-linux"
-      "i686-linux"
-      "aarch64-linux"
-      "x86_64-darwin"
-    ] (system: let
+    , ... }@inputs:
+    let
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -34,6 +29,11 @@
       };
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
+        config.allowUnfree = true;
+        config.allowBroken = true;
+      };
+      pkgs-macos = import nixpkgs {
+        system = "x86_64-darwin";
         config.allowUnfree = true;
         config.allowBroken = true;
       };
@@ -107,7 +107,7 @@
       };
 
       homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgs-macos;
         modules = [
           ./home/default.nix
           {
@@ -147,5 +147,5 @@
           }
         ];
       };
-    });
+    };
 }
