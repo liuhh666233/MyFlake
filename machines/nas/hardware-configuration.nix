@@ -13,9 +13,9 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.extraPools = [ "NAS" ];
+  # boot.zfs.extraPools = [ "NAS" ];
   # Set zfs.zfs_arc_max to 2GB
-  boot.kernelParams = [ "zfs.zfs_arc_max=2147483648" ];
+  # boot.kernelParams = [ "zfs.zfs_arc_max=2147483648" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/c02da5a0-df41-4b7f-8f02-1e87a6403d74";
