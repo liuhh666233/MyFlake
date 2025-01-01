@@ -101,3 +101,15 @@ services:
     volumes:
       - /volume1/docker/config/homepage:/app/config
     restart: on-failure
+  portainer_agent:
+    image: portainer/agent:latest
+    container_name: portainer_agent
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /volume1/docker:/var/lib/docker/volumes
+    ports:
+      - "9001:9001"
+    # environment:
+    #   - AGENT_SECRET=your_agent_secret_here  # 可选：设置代理密钥
+    network_mode: bridge
