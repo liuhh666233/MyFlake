@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # <install home-manager>
@@ -13,7 +13,9 @@
 
   nixpkgs.config.permittedInsecurePackages = [ "nodejs-16.20.2" ];
 
-  home.packages = [ pkgs.fd pkgs.oh-my-fish ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["tokenizer.json"];
+
+  home.packages = [ pkgs.fd pkgs.oh-my-fish pkgs.goose-cli];
 
   # https://github.com/NixOS/nixpkgs/issues/196651
   # Fix /nix/store/0czacppvzvmiyx32p7j1d5p9mvjvsi0l-manual-combined/manual-combined.xml fails to validate
