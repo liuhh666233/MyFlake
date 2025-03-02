@@ -17,6 +17,9 @@
 
     home-manager.url = "github:nix-community/home-manager?ref=release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
@@ -27,6 +30,7 @@
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;
+        overlays = [ inputs.ml-pkgs.overlays.gen-ai ];
       };
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
@@ -97,6 +101,7 @@
         inherit pkgs;
         modules = [
           ./home/default.nix
+          
           {
             home = {
               username = "lxb";

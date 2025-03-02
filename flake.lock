@@ -207,6 +207,27 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
+          "ml-pkgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1730504689,
+        "narHash": "sha256-hgmguH29K2fvs9szpq2r3pz2/8cJd2LPS+b4tfNFCwE=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "506278e768c2a08bec68eb62932193e341f55c90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
           "wonder-foundations",
           "ml-pkgs",
           "nixpkgs"
@@ -390,6 +411,27 @@
     "ml-pkgs": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740739086,
+        "narHash": "sha256-vCpGLzVC4cU/8cV64nLrncusWmUkK3vvPYpebgKoKAo=",
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "rev": "f2f5eb6c2121425f3508c740a28342993d49f660",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "type": "github"
+      }
+    },
+    "ml-pkgs_2": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
         "nixpkgs": [
           "wonder-foundations",
           "nixpkgs"
@@ -719,6 +761,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "utils": "utils",
@@ -1043,7 +1086,7 @@
           "home-manager"
         ],
         "hydra": "hydra",
-        "ml-pkgs": "ml-pkgs",
+        "ml-pkgs": "ml-pkgs_2",
         "nixpkgs": [
           "nixpkgs"
         ],
