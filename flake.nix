@@ -101,11 +101,10 @@
         inherit pkgs;
         modules = [
           ./home/default.nix
-          
           {
             home = {
-              username = "lxb";
-              homeDirectory = "/home/lxb";
+              username = "lhh";
+              homeDirectory = "/home/lhh";
               stateVersion = "22.11";
             };
           }
