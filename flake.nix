@@ -103,8 +103,8 @@
           ./home/default.nix
           {
             home = {
-              username = "lhh";
-              homeDirectory = "/home/lhh";
+              username = "lxb";
+              homeDirectory = "/home/lxb";
               stateVersion = "22.11";
             };
           }
