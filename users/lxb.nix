@@ -11,5 +11,6 @@
       extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
       shell = pkgs.fish;
     };
+    programs.nix-ld.enable = true;
   };
 }

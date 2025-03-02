@@ -11,9 +11,7 @@
   # omf theme lambda
   imports = [ ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "nodejs-16.20.2"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "nodejs-16.20.2" ];
 
   home.packages = [ pkgs.fd pkgs.oh-my-fish ];
 
@@ -39,8 +37,8 @@
       "gc" = "git commit -m";
       "gb" = "git branch";
       "gd" = "git diff";
-      "te"  = "trans -s en -t zh";
-      "tz"  = "trans -s zh -t en";
+      "te" = "trans -s en -t zh";
+      "tz" = "trans -s zh -t en";
     };
     # macos 需要通过如下命令设置 fish_user_paths 变量，以保证能够找到macos本身安装的包，和nix安装的包
     # set -U fish_user_paths /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin 

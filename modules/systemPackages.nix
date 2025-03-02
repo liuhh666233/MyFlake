@@ -33,53 +33,48 @@
         xlrd
         requests
       ]))
-        gparted
-        jq
-        ntp
-        graphviz
-        awscli2
-        nixops
-        clickhouse-cli
-        wget
-        vim
-        redis
-        nodejs-18_x
-        cmake
-        python
-        neovim
-        git
-        gdb
-        docker
-        ibus
-        fcitx5
-        graphviz
-        dpkg
-        nixfmt
-        tree
-        ncdu
-        ripgrep
-        libev
-        linuxPackages.cpupower
-        dmidecode
-        black
-        cpu-x
-        unrar
-        p7zip
-        rclone
-        rsync
-        parted
-        ethtool
-        iperf
-        nvme-cli
-        smartmontools
-        cifs-utils
+    gparted
+    jq
+    ntp
+    graphviz
+    wget
+    vim
+    cmake
+    python
+    neovim
+    git
+    gdb
+    docker
+    ibus
+    fcitx5
+    graphviz
+    dpkg
+    nixfmt
+    tree
+    ncdu
+    ripgrep
+    libev
+    linuxPackages.cpupower
+    dmidecode
+    black
+    cpu-x
+    unrar
+    p7zip
+    rclone
+    rsync
+    parted
+    ethtool
+    iperf
+    nvme-cli
+    smartmontools
+    cifs-utils
   ];
 
   nixpkgs.config = {
     allowUnfree = true;
     cudaSupport = true;
     cudaCapabilities = [ "7.5" "8.6" ];
-    cudaForwardCompat = false;
+    cudaForwardCompat = true;
     permittedInsecurePackages = [
       # *Exceptionally*, those packages will be cached with their *secure* dependents
       # because they will reach EOL in the middle of the 23.05 release
@@ -92,6 +87,7 @@
       "openssl-1.1.1w"
       "python2.7-pyjwt-1.7.1"
       "python-2.7.18.6"
+      "python-2.7.18.8"
       "python2.7-certifi-2021.10.8"
     ];
   };
