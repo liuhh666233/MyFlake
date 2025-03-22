@@ -43,6 +43,12 @@
         config.allowBroken = true;
       };
     in {
+      templates = {
+        python-dev-starter = {
+          path = ./templates/python-dev-starter;
+          description = "Generate a python dev starter package.";
+        };
+      };
       nixosConfigurations = {
         wsl = nixpkgs.lib.nixosSystem rec {
           inherit system;
