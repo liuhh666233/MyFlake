@@ -4,12 +4,15 @@
 
 - NetWork:
     - OpenWrt:
-        href: http://192.168.31.3/cgi-bin/luci/admin/services/openclash/client
+        href: http://192.168.31.1/cgi-bin/luci/
         description: OpenWrt
-        ping: 192.168.31.3
+        ping: 192.168.31.1
     - OpenClash:
-        href: http://192.168.31.3:9090/ui/yacd/?hostname=192.168.31.3&port=9090&secret=123456#/proxies
+        href: http://192.168.31.1:9090/ui/zashboard/#/proxies
         description: OpenClash
+    - PVE-master:
+        href: https://192.168.31.5:8006/
+        description: PVE
     - PVE:
         href: https://192.168.31.2:8006/
         description: PVE
@@ -20,9 +23,9 @@
             password: 82cb60ea-eb26-4203-a7fc-3780f594825e
             node: pve
     - Router:
-        href: http://192.168.31.174/
+        href: http://192.168.31.178/
         description: Router
-        ping: 192.168.31.174
+        ping: 192.168.31.178
 
 - Data:
     - Nas:
