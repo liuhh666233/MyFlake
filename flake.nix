@@ -48,6 +48,10 @@
           path = ./templates/python-dev-starter;
           description = "Generate a python dev starter package.";
         };
+        rust-dev-starter = {
+          path = ./templates/rust-dev-starter;
+          description = "Generate a rust dev starter package.";
+        };
       };
       nixosConfigurations = {
         wsl = nixpkgs.lib.nixosSystem rec {
