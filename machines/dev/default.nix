@@ -7,6 +7,7 @@ in {
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
     ../../modules/service/jupyter
+    ../../modules/service/pixlator
     ../../users/lhh.nix
   ];
 
@@ -80,6 +81,12 @@ in {
     nixServe.port = baseParams.ports.nixServerPort;
   };
 
+  services.pixlator = {
+    enable = true;
+    user = config.vital.mainUser;
+    webServerPort = 13000;
+    warehousePath = "/var/lib/pixlator";
+  };
   system.stateVersion = "22.05";
 
 }

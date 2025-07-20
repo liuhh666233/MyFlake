@@ -33,7 +33,7 @@
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;
-        overlays = [ inputs.ml-pkgs.overlays.gen-ai inputs.pixlator.overlays.default ];
+        overlays = [ inputs.ml-pkgs.overlays.gen-ai ];
       };
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
@@ -89,6 +89,10 @@
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
             ./machines/dev
+            ({
+              nixpkgs.overlays =
+                [ (final: prev: { pixlator = inputs.pixlator.packages.${system}.default; }) ];
+            })
           ];
         };
 
