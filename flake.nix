@@ -20,6 +20,9 @@
 
     ml-pkgs.url = "github:nixvital/ml-pkgs";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
+
+    pixlator.url = "git+ssh://git@github.com/liuhh666233/pixlator?ref=master";
+    pixlator.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
@@ -30,7 +33,7 @@
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;
-        overlays = [ inputs.ml-pkgs.overlays.gen-ai ];
+        overlays = [ inputs.ml-pkgs.overlays.gen-ai inputs.pixlator.overlays.default ];
       };
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
