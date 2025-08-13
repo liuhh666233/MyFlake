@@ -45,6 +45,10 @@
     shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
 
+      # 禁用 fish 的目录补全
+      set -g fish_complete_dirs 0
+
+      # 设置 fzf 的配置
       set fzf_fd_opts --hidden --exclude=.git
 
       fzf_configure_bindings --git_status --history=\ch --processes=\co --variables --directory --git_log
