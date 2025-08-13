@@ -11,8 +11,6 @@
   # omf theme lambda
   imports = [ ];
 
-  nixpkgs.config.permittedInsecurePackages = [ "nodejs-16.20.2" ];
-
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["tokenizer.json"];
 
   home.packages = [ pkgs.fd pkgs.oh-my-fish pkgs.goose-cli];
@@ -28,7 +26,7 @@
   programs.direnv.nix-direnv.enable = true;
 
   programs.fzf.enable = true;
-  programs.bat.enable = true;
+  programs.bat.enable = false;
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -43,15 +41,13 @@
       "tz" = "trans -s zh -t en";
     };
     # macos 需要通过如下命令设置 fish_user_paths 变量，以保证能够找到macos本身安装的包，和nix安装的包
-    # set -U fish_user_paths /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin 
+    # set -U fish_user_paths /run/wrappers/bin /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin /opt/homebrew/bin
     shellInit = ''
-      set -U fish_user_paths /run/wrappers/bin /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin /opt/homebrew/bin
-      
       source (${pkgs.z-lua}/bin/z --init fish | psub)
 
       set fzf_fd_opts --hidden --exclude=.git
 
-      fzf_configure_bindings --git_status=\cg --history=\ch --processes=\co --variables --directory=\cd --git_log=\cl
+      fzf_configure_bindings --git_status --history=\ch --processes=\co --variables --directory --git_log
     '';
     plugins = [
       {
