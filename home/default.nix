@@ -3,7 +3,7 @@
 {
   # <install home-manager>
   # home-manager build --flake .#lxb
-  # home-manager switch --flake 'git+ssh://git@github.com/liuhh666233/MyFlake#lxb' 
+  # home-manager switch --flake 'git+ssh://git@github.com/liuhh666233/MyFlake#lxb'  --refresh
 
   # <install oh my fish>
   # curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
@@ -13,7 +13,7 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["tokenizer.json"];
 
-  home.packages = [ pkgs.fd pkgs.oh-my-fish pkgs.goose-cli];
+  home.packages = [ pkgs.fd pkgs.oh-my-fish];
 
   # https://github.com/NixOS/nixpkgs/issues/196651
   # Fix /nix/store/0czacppvzvmiyx32p7j1d5p9mvjvsi0l-manual-combined/manual-combined.xml fails to validate
