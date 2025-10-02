@@ -72,6 +72,7 @@
     smartmontools
     cifs-utils
     bottom
+    deskflow
   ];
 
   nixpkgs.config = {

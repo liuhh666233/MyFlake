@@ -90,8 +90,11 @@
             wonder-foundations.nixosModules.devopsTools
             ./machines/dev
             ({
-              nixpkgs.overlays =
-                [ (final: prev: { pixlator = inputs.pixlator.packages.${system}.default; }) ];
+              nixpkgs.overlays = [
+                (final: prev: {
+                  pixlator = inputs.pixlator.packages.${system}.default;
+                })
+              ];
             })
           ];
         };
@@ -104,8 +107,12 @@
             wonder-foundations.nixosModules.devopsTools
             ./machines/nezha
             ({
-              nixpkgs.overlays =
-                [ (final: prev: { pixlator = inputs.pixlator.packages.${system}.default; }) ];
+              nixpkgs.overlays = [
+                (final: prev: {
+                  pixlator = inputs.pixlator.packages.${system}.default;
+                  deskflow = pkgs-unstable.deskflow;
+                })
+              ];
             })
           ];
         };
