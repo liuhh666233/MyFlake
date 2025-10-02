@@ -6,7 +6,7 @@ in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/systemPackages.nix
-    ../../modules/service/jupyter
+    # ../../modules/service/jupyter
     ../../modules/service/pixlator
     ../../users/lhh.nix
   ];
@@ -82,7 +82,7 @@ in {
   };
 
   services.pixlator = {
-    enable = true;
+    enable = false;
     user = config.vital.mainUser;
     webServerPort = 13000;
     warehousePath = "/var/lib/pixlator";

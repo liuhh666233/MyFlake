@@ -6,32 +6,38 @@
     python3
     (python3.withPackages (ps:
       with ps; [
-        jupyter
-        jupyter_core
-        notebook
-        ipython
-        ipykernel
-        pandas
-        numpy
-        systemd
-        click
-        jinja2
-        clickhouse-driver
-        flask
-        autopep8
-        pip
-        pyyaml
-        pytz
-        websockets
-        black
-        beancount
-        PyGithub
-        paramiko
-        xmltodict
-        lark
-        openpyxl
-        xlrd
-        requests
+            jupyter
+            jupyterlab
+            jupyterlab-server
+            jupyter_core
+            notebook
+            ipython
+            ipykernel
+            jupyterlab-widgets
+            ipywidgets
+            pandas
+            scikitlearn
+            numpy
+            systemd
+            click
+            jinja2
+            clickhouse-driver
+            flask
+            autopep8
+            pip
+            pyyaml
+            pytz
+            matplotlib
+            websockets
+            black
+            PyGithub
+            GitPython
+            redis
+            paramiko
+            xmltodict
+            lark
+            openpyxl
+            xlrd
       ]))
     gparted
     jq

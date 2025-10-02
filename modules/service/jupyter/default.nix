@@ -13,10 +13,14 @@
         env = (pkgs.python3.withPackages (pythonPackages:
           with pythonPackages; [
             jupyter
+            jupyterlab
+            jupyterlab-server
             jupyter_core
             notebook
             ipython
             ipykernel
+            jupyterlab-widgets
+            ipywidgets
             pandas
             scikitlearn
             numpy
