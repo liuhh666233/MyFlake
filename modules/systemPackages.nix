@@ -65,6 +65,7 @@
     nvme-cli
     smartmontools
     cifs-utils
+    bottom
   ];
 
   nixpkgs.config = {
