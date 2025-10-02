@@ -15,6 +15,7 @@
           with pythonPackages; [
             jupyter
             jupyter_core
+            jupyterlab
             notebook
             ipython
             ipykernel
