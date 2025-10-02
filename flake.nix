@@ -96,15 +96,29 @@
           ];
         };
 
-        nas = nixpkgs.lib.nixosSystem rec {
+        nezha = nixpkgs.lib.nixosSystem rec {
           inherit system;
           modules = [
             wonder-foundations.nixosModules.foundation
             wonder-foundations.nixosModules.home-manager
             wonder-foundations.nixosModules.devopsTools
-            ./machines/nas
+            ./machines/nezha
+            ({
+              nixpkgs.overlays =
+                [ (final: prev: { pixlator = inputs.pixlator.packages.${system}.default; }) ];
+            })
           ];
         };
+
+        # nas = nixpkgs.lib.nixosSystem rec {
+        #   inherit system;
+        #   modules = [
+        #     wonder-foundations.nixosModules.foundation
+        #     wonder-foundations.nixosModules.home-manager
+        #     wonder-foundations.nixosModules.devopsTools
+        #     ./machines/nas
+        #   ];
+        # };
 
         demo-vm = nixpkgs.lib.nixosSystem rec {
           inherit system;
@@ -122,7 +136,21 @@
             home = {
               username = "lxb";
               homeDirectory = "/home/lxb";
-              stateVersion = "22.11";
+              stateVersion = "24.11";
+            };
+          }
+        ];
+      };
+
+      homeConfigurations.lhh = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home/default.nix
+          {
+            home = {
+              username = "lhh";
+              homeDirectory = "/home/lhh";
+              stateVersion = "24.11";
             };
           }
         ];
@@ -136,7 +164,7 @@
             home = {
               username = "lhh";
               homeDirectory = "/Users/lhh";
-              stateVersion = "22.11";
+              stateVersion = "24.11";
             };
           }
         ];
@@ -150,7 +178,7 @@
             home = {
               username = "nixos";
               homeDirectory = "/home/nixos";
-              stateVersion = "22.11";
+              stateVersion = "24.11";
             };
           }
         ];
@@ -164,7 +192,7 @@
             home = {
               username = "wonder";
               homeDirectory = "/home/wonder";
-              stateVersion = "22.11";
+              stateVersion = "24.11";
             };
           }
         ];

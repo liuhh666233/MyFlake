@@ -49,18 +49,15 @@
     fcitx5
     graphviz
     dpkg
-    nixfmt-classic.
+    nixfmt-classic
     tree
-    ncdu
     ripgrep
-    libev
     linuxPackages.cpupower
     dmidecode
     black
     cpu-x
     unrar
     p7zip
-    rclone
     rsync
     parted
     ethtool
