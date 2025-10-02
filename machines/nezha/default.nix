@@ -15,7 +15,7 @@ in {
 
   vital.mainUser = "lhh";
 
-  vital.graphical.enable = false;
+  vital.graphical.enable = true;
 
   vital.pre-installed.level = 5;
 
