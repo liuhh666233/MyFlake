@@ -49,9 +49,9 @@
       set -g fish_complete_dirs 0
 
       # 设置 fzf 的配置
-      # set fzf_fd_opts --hidden --exclude=.git
+      set fzf_fd_opts --hidden --exclude=.git
 
-      # fzf_configure_bindings --git_status --history=\ch --processes=\co --variables --directory --git_log
+      fzf_configure_bindings --git_status --history=\ch --processes=\co --variables --directory --git_log
     '';
     plugins = [
       {
@@ -63,19 +63,19 @@
           sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
         };
       }
-      # {
-      #   name = "fzf-fish";
-      #   src = pkgs.fishPlugins.fzf-fish.src;
-      # }
-      # {
-      #   name = "foreign-env";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "oh-my-fish";
-      #     repo = "plugin-foreign-env";
-      #     rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
-      #     sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
-      #   };
-      # }
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
+      {
+        name = "foreign-env";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-foreign-env";
+          rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
+          sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
+        };
+      }
     ];
   };
 }
