@@ -17,3 +17,9 @@ cargo build
 
 cargo run
 ```
+## 2. 使用 `nix flake template` 初始化项目
+
+```bash
+nix flake init -t "git+ssh://git@github.com/liuhh666233/MyFlake#rust-dev-starter" --refresh  
+nix flake lock --override-input nixpkgs "github:NixOS/nixpkgs?rev=cdd2ef009676ac92b715ff26630164bb88fec4e0"    
+```
