@@ -46,7 +46,12 @@
     # set -U fish_user_paths /run/wrappers/bin /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin /opt/homebrew/bin
     shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
-
+      # pnpm
+      set -gx PNPM_HOME "/home/lxb/.local/share/pnpm"
+      if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+      end
+      # pnpm end
       # 禁用 fish 的目录补全
       set -g fish_complete_dirs 0
 
