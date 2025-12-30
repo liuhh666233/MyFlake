@@ -11,7 +11,8 @@
   # omf theme lambda
   imports = [ ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["tokenizer.json"];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [ "tokenizer.json" ];
 
   # home.packages = [ pkgs.fd ];
 
@@ -43,7 +44,7 @@
       "tz" = "trans -s zh -t en";
     };
     # macos 需要通过如下命令设置 fish_user_paths 变量，以保证能够找到macos本身安装的包，和nix安装的包
-    # set -U fish_user_paths /run/wrappers/bin /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin /opt/homebrew/bin
+    # set -U fish_user_paths /home/lxb/.cargo/bin /run/wrappers/bin /nix/var/nix/profiles/default/bin /Users/lhh/.nix-profile/bin /run/current-system/sw/bin /usr/local/sbin /usr/local/bin /usr/bin /opt/homebrew/bin
     shellInit = ''
       source (${pkgs.z-lua}/bin/z --init fish | psub)
       # pnpm
@@ -51,29 +52,31 @@
       if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
       end
+      # cargo
+      set -gx PATH $HOME/.cargo/bin $PATH
       # pnpm end
       # 禁用 fish 的目录补全
       set -g fish_complete_dirs 0
 
       # 设置 fzf 的配置
-      # set fzf_fd_opts --hidden --exclude=.git
+      set fzf_fd_opts --hidden --exclude=.git
 
-      # fzf_configure_bindings --git_status --history=\ch --processes=\co --variables --directory --git_log
+      fzf_configure_bindings --git_status --history=\ch --processes=\co --variables --directory --git_log
     '';
     plugins = [
-      {
-        name = "z";
-        src = pkgs.fetchFromGitHub {
-          owner = "jethrokuan";
-          repo = "z";
-          rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
-          sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
-        };
-      }
       # {
-      #   name = "fzf-fish";
-      #   src = pkgs.fishPlugins.fzf-fish.src;
+      #   name = "z";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "jethrokuan";
+      #     repo = "z";
+      #     rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
+      #     sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
+      #   };
       # }
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
       # {
       #   name = "foreign-env";
       #   src = pkgs.fetchFromGitHub {
