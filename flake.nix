@@ -55,6 +55,10 @@
           path = ./templates/rust-dev-starter;
           description = "Generate a rust dev starter package.";
         };
+        webapp-dev-starter = {
+          path = ./templates/webapp-dev-starter;
+          description = "Generate a webapp dev starter package.";
+        };
       };
       nixosConfigurations = {
         wsl = nixpkgs.lib.nixosSystem rec {
