@@ -5,37 +5,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     # nix flake lock --override-input nixpkgs "github:NixOS/nixpkgs?rev=b681065d0919f7eb5309a93cea2cfa84dec9aa88"
-    utils.url = "github:numtide/flake-utils";
-
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    # wonder foundations
-    wonder-foundations.url =
-      "git+ssh://git@github.com/quant-wonderland/wonder-foundations?ref=dev/24.11";
-    wonder-foundations.inputs.nixpkgs.follows = "nixpkgs";
-    wonder-foundations.inputs.home-manager.follows = "home-manager";
 
     home-manager.url = "github:nix-community/home-manager?ref=release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
-    ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
-
-    pixlator.url = "git+ssh://git@github.com/liuhh666233/pixlator?ref=master";
-    pixlator.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, wonder-foundations, home-manager
-    , ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        config.allowBroken = true;
-        overlays = [ inputs.ml-pkgs.overlays.gen-ai ];
-      };
-      pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
         config.allowBroken = true;
@@ -60,83 +38,6 @@
           description = "Generate a webapp dev starter package.";
         };
       };
-      nixosConfigurations = {
-        wsl = nixpkgs.lib.nixosSystem rec {
-          inherit system;
-          modules = [
-            wonder-foundations.nixosModules.foundation
-            wonder-foundations.nixosModules.home-manager
-            wonder-foundations.nixosModules.devopsTools
-            ./machines/wsl
-            ({
-              nixpkgs.overlays =
-                [ (final: prev: { duckdb = pkgs-unstable.duckdb; }) ];
-            })
-
-          ];
-        };
-
-        home-wsl = nixpkgs.lib.nixosSystem rec {
-          inherit system;
-          modules = [
-            wonder-foundations.nixosModules.foundation
-            wonder-foundations.nixosModules.home-manager
-            wonder-foundations.nixosModules.devopsTools
-            ./machines/wsl/home-wsl.nix
-          ];
-        };
-
-        dev = nixpkgs.lib.nixosSystem rec {
-          inherit system;
-          modules = [
-            wonder-foundations.nixosModules.foundation
-            wonder-foundations.nixosModules.home-manager
-            wonder-foundations.nixosModules.devopsTools
-            ./machines/dev
-            ({
-              nixpkgs.overlays = [
-                (final: prev: {
-                  pixlator = inputs.pixlator.packages.${system}.default;
-                })
-              ];
-            })
-          ];
-        };
-
-        nezha = nixpkgs.lib.nixosSystem rec {
-          inherit system;
-          modules = [
-            wonder-foundations.nixosModules.foundation
-            wonder-foundations.nixosModules.home-manager
-            wonder-foundations.nixosModules.devopsTools
-            ./machines/nezha
-            ({
-              nixpkgs.overlays = [
-                (final: prev: {
-                  pixlator = inputs.pixlator.packages.${system}.default;
-                  deskflow = pkgs-unstable.deskflow;
-                })
-              ];
-            })
-          ];
-        };
-
-        # nas = nixpkgs.lib.nixosSystem rec {
-        #   inherit system;
-        #   modules = [
-        #     wonder-foundations.nixosModules.foundation
-        #     wonder-foundations.nixosModules.home-manager
-        #     wonder-foundations.nixosModules.devopsTools
-        #     ./machines/nas
-        #   ];
-        # };
-
-        demo-vm = nixpkgs.lib.nixosSystem rec {
-          inherit system;
-          modules = [ ./machines/demo-vm ];
-        };
-
-      };
 
       # "https://nix-community.github.io/home-manager/release-notes.html" # sec-release-22.11-highlights
       homeConfigurations.lxb = home-manager.lib.homeManagerConfiguration {
@@ -153,20 +54,6 @@
         ];
       };
 
-      homeConfigurations.lhh = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home/default.nix
-          {
-            home = {
-              username = "lhh";
-              homeDirectory = "/home/lhh";
-              stateVersion = "24.11";
-            };
-          }
-        ];
-      };
-
       homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-macos;
         modules = [
@@ -175,34 +62,6 @@
             home = {
               username = "lhh";
               homeDirectory = "/Users/lhh";
-              stateVersion = "24.11";
-            };
-          }
-        ];
-      };
-
-      homeConfigurations.nixos = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home/default.nix
-          {
-            home = {
-              username = "nixos";
-              homeDirectory = "/home/nixos";
-              stateVersion = "24.11";
-            };
-          }
-        ];
-      };
-
-      homeConfigurations.wonder = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home/default.nix
-          {
-            home = {
-              username = "wonder";
-              homeDirectory = "/home/wonder";
               stateVersion = "24.11";
             };
           }
