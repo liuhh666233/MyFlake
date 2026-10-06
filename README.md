@@ -12,6 +12,8 @@ lxb / lhh 在各台机器上的 home-manager 配置，以及几个项目模板�
 
 HM 用自己的 nixpkgs（26.05），与宿主系统的版本无关。
 
+athena 还没有切换到本配置，步骤和这一批的遗留事项见 [docs/athena-migration.md](docs/athena-migration.md)。
+
 ## 使用
 
 ```bash
